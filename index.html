@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sidrah Labs turns WhatsApp into a high-converting sales channel for Pakistan's merchants, with AI parsing, courier dispatch, and PKR-first infrastructure."
+    />
+    <title>Sidrah Labs | WhatsApp Commerce Infrastructure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#ecfdf5',
+                100: '#d1fae5',
+                200: '#a7f3d0',
+                300: '#6ee7b7',
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065f46',
+                900: '#064e3b',
+              },
+              slatebg: '#07130f',
+              panel: '#0b1715',
+              soft: '#122723',
+            },
+            boxShadow: {
+              glow: '0 0 26px rgba(16, 185, 129, 0.26)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-slatebg text-white antialiased selection:bg-emerald-500/30">
+    <div class="min-h-screen bg-[radial-gradient(circle_at_top,#183d35_0%,rgba(7,19,15,0.9)_28%,rgba(7,19,15,1)_100%)]">
+      <header class="sticky top-0 z-50 border-b border-white/10 bg-slatebg/75 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
+          <a href="#top" class="flex items-center gap-3" aria-label="Sidrah Labs home">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-glow">
+              <span class="text-lg font-black text-slate-900">S</span>
+            </div>
+            <div>
+              <div class="text-base font-bold tracking-tight">Sidrah Labs</div>
+            </div>
+          </a>
+
+          <div class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+            <a href="#solutions" class="transition hover:text-white">Platform</a>
+            <a href="#engine" class="transition hover:text-white">Engineering</a>
+            <a href="#pricing" class="transition hover:text-white">Pricing</a>
+            <a href="#faq" class="transition hover:text-white">FAQ</a>
+            <a href="#contact" class="transition hover:text-white">Contact</a>
+          </div>
+
+          <div class="hidden items-center gap-3 md:flex">
+            <a href="#faq" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-500/60 hover:text-white">See how it works</a>
+            <a href="https://wa.me/923207914744?text=Hello%20Sidrah%20Labs%2C%20I%27d%20like%20to%20learn%20more%20about%20Portal." target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">WhatsApp us</a>
+          </div>
+
+          <button
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-200 md:hidden"
+            aria-label="Toggle menu"
+            x-data
+            @click="$dispatch('menu-toggle')"
+          >
+            ☰
+          </button>
+        </nav>
+
+        <div
+          x-data="{ open: false }"
+          @menu-toggle.window="open = !open"
+          x-show="open"
+          x-transition
+          class="border-t border-white/10 bg-slatebg md:hidden"
+          style="display:none;"
+        >
+          <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-sm text-slate-300">
+            <a href="#solutions" class="hover:text-white">Platform</a>
+            <a href="#engine" class="hover:text-white">Engineering</a>
+            <a href="#pricing" class="hover:text-white">Pricing</a>
+            <a href="#faq" class="hover:text-white">FAQ</a>
+            <a href="#contact" class="hover:text-white">Contact</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="relative isolate overflow-hidden">
+          <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-12 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-20 lg:pt-20">
+            <div>
+              <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-200">
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                Portal by Sidrah Labs
+              </div>
+
+              <h1 class="max-w-xl text-4xl font-black leading-[0.95] tracking-[-0.07em] text-white sm:text-5xl lg:text-[4.3rem]">
+                The WhatsApp Frontend for Businesses. Turn chats into orders.
+              </h1>
+
+              <p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+                Keep your website. Add a simple WhatsApp storefront that lets customers browse, ask questions, and place orders in the app they already use every day.
+              </p>
+
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="https://wa.me/923207914744?text=Hello%20Sidrah%20Labs%2C%20I%27d%20like%20to%20learn%20more%20about%20Portal." target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">WhatsApp us</a>
+                <a href="#solutions" class="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-white transition hover:border-emerald-500/60 hover:bg-emerald-500/5">See how it works</a>
+              </div>
+
+              <div class="mt-8 flex flex-wrap items-center gap-6 text-sm text-slate-300">
+                <div>
+                  <span class="block text-2xl font-black text-white">No website rebuild</span>
+                  <span>Keep your current store</span>
+                </div>
+                <div>
+                  <span class="block text-2xl font-black text-white">Less manual work</span>
+                  <span>Orders captured in chat</span>
+                </div>
+                <div>
+                  <span class="block text-2xl font-black text-white">PKR pricing</span>
+                  <span>Simple local billing</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-8 top-12 h-24 w-24 rounded-full bg-emerald-500/20 blur-3xl"></div>
+              <div class="absolute -right-10 bottom-10 h-28 w-28 rounded-full bg-teal-400/20 blur-3xl"></div>
+
+              <div class="relative overflow-hidden rounded-[2rem] border border-emerald-500/25 bg-[#0c1716]/90 p-3 shadow-glow">
+                <div class="flex items-center justify-between border-b border-white/10 bg-[#111d1b] px-4 py-3">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/20 text-sm font-bold text-emerald-300">P</div>
+                    <div>
+                      <div class="text-sm font-semibold text-white">Portal</div>
+                      <div class="text-[10px] uppercase tracking-[0.18em] text-slate-400">Order parser</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-[10px] uppercase tracking-[0.14em] text-emerald-200">
+                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                    Live
+                  </div>
+                </div>
+
+                <div class="grid gap-4 p-4 md:grid-cols-[1fr_1.05fr]">
+                  <div class="rounded-[1.5rem] border border-white/10 bg-[#0e1917] p-3">
+                    <div class="mb-3 flex items-center justify-between text-[11px] uppercase tracking-[0.12em] text-slate-400">
+                      <span>Customer</span>
+                      <span>now</span>
+                    </div>
+
+                    <div class="space-y-3">
+                      <div class="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-emerald-500 px-3 py-2 text-sm text-slate-950">
+                        Assalamualaikum, mujhe 2 black hoodie chahiye. 0300-1234567, Karachi, Gulshan, flat no 11 near TCS.
+                      </div>
+                      <div class="max-w-[90%] rounded-2xl rounded-bl-md bg-[#1a2d2a] px-3 py-2 text-sm text-slate-100">
+                        Thanks! I’ve noted your order. One moment while I confirm the details.
+                      </div>
+                    </div>
+
+                    <div class="mt-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-3 text-xs text-emerald-200">
+                      Order captured · Karachi · PostEx · Cash on delivery
+                    </div>
+                  </div>
+
+                  <div class="rounded-[1.5rem] border border-white/10 bg-[#111a19] p-3">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                      <span class="text-[11px] uppercase tracking-[0.16em] text-slate-400">Order fields</span>
+                      <span class="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] text-emerald-200">Ready</span>
+                    </div>
+
+                    <div class="mt-3 space-y-2 text-[11px] leading-5 text-emerald-200">
+                      <div><span class="text-slate-400">customer:</span> Ahsan</div>
+                      <div><span class="text-slate-400">phone:</span> 0300-1234567</div>
+                      <div><span class="text-slate-400">city:</span> Karachi</div>
+                      <div><span class="text-slate-400">address:</span> Gulshan-e-Iqbal, House 11, near TCS</div>
+                      <div><span class="text-slate-400">items:</span> 2 black hoodies, size M</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="border-y border-white/10 bg-[#0a1715]/80">
+          <div class="mx-auto grid max-w-7xl gap-3 px-6 py-8 text-center text-xs font-medium uppercase tracking-[0.18em] text-slate-300 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+            <div>Shopify</div>
+            <div>WooCommerce</div>
+            <div>PostEx</div>
+            <div>Trax</div>
+            <div>WhatsApp</div>
+          </div>
+        </section>
+
+        <section id="solutions" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="mb-12 max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">How Portal works</p>
+            <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Simple setup. More sales from the app customers already use.</h2>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">01</div>
+              <h3 class="text-2xl font-bold text-white">Keep your store</h3>
+              <p class="mt-3 text-slate-300">Your website stays in place. Portal plugs into the way customers already buy from you on mobile.</p>
+            </article>
+            <article class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">02</div>
+              <h3 class="text-2xl font-bold text-white">Understand the order</h3>
+              <p class="mt-3 text-slate-300">Messy messages, Roman Urdu, and delivery notes are turned into clean order details without manual typing.</p>
+            </article>
+            <article class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">03</div>
+              <h3 class="text-2xl font-bold text-white">Send it forward</h3>
+              <p class="mt-3 text-slate-300">We prepare the order for dispatch, tracking, or internal processing depending on how your business runs.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="engine" class="bg-[#091613] py-20">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mb-12 max-w-3xl">
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Built for real business problems</p>
+              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Less admin, fewer missed sales, cleaner operations.</h2>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-3">
+              <article class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-b from-[#0d1f1d] to-[#0b1514] p-6">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">A</div>
+                <h3 class="text-2xl font-bold text-white">Order intake</h3>
+                <p class="mt-3 text-slate-300">Customers send messages in their own way. Portal turns those messages into usable order data.</p>
+              </article>
+
+              <article class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-b from-[#0d1f1d] to-[#0b1514] p-6">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">B</div>
+                <h3 class="text-2xl font-bold text-white">Order checks</h3>
+                <p class="mt-3 text-slate-300">It helps catch weak address patterns and helps prevent costly mistakes before a parcel is sent.</p>
+              </article>
+
+              <article class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-b from-[#0d1f1d] to-[#0b1514] p-6">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">C</div>
+                <h3 class="text-2xl font-bold text-white">Tracking + books</h3>
+                <p class="mt-3 text-slate-300">Orders and payment records stay in one cleaner flow, instead of being spread across chats, Excel files, and courier portals.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Local infrastructure</p>
+              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Made for Pakistan. Simple pricing. No surprise USD shocks.</h2>
+              <p class="mt-5 text-lg text-slate-300">Portal runs on local infrastructure and is priced in PKR so business owners know what they are paying without currency swings affecting their budget.</p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div class="text-3xl text-emerald-300">📲</div>
+                <h3 class="mt-4 text-xl font-bold text-white">Built for mobile buyers</h3>
+                <p class="mt-3 text-slate-300">Most customers are already on WhatsApp. This brings the buying flow into that channel.</p>
+              </div>
+              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div class="text-3xl text-emerald-300">⚡</div>
+                <h3 class="mt-4 text-xl font-bold text-white">Fast setup</h3>
+                <p class="mt-3 text-slate-300">Lightweight setup that works alongside your current ecommerce workflow.</p>
+              </div>
+              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div class="text-3xl text-emerald-300">₨</div>
+                <h3 class="mt-4 text-xl font-bold text-white">PKR pricing</h3>
+                <p class="mt-3 text-slate-300">Clear pricing in local currency, easier to manage and easier to plan around.</p>
+              </div>
+              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div class="text-3xl text-emerald-300">🧾</div>
+                <h3 class="mt-4 text-xl font-bold text-white">Less spreadsheet chaos</h3>
+                <p class="mt-3 text-slate-300">Fewer disconnected order notes and less manual reconciliation inside Excel.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" class="bg-[#091613] py-20">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mb-12 text-center">
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Simple pricing</p>
+              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Start small. Scale when your volume grows.</h2>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-3">
+              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <p class="text-sm uppercase tracking-[0.16em] text-slate-300">Starter</p>
+                <div class="mt-4 flex items-end gap-2">
+                  <span class="text-4xl font-black text-white">Rs. 5,000</span>
+                  <span class="text-slate-400">/ month</span>
+                </div>
+                <ul class="mt-6 space-y-3 text-slate-300">
+                  <li>• WhatsApp order intake</li>
+                  <li>• Basic order parsing</li>
+                  <li>• Courier booking</li>
+                  <li>• Support included</li>
+                </ul>
+              </div>
+
+              <div class="relative rounded-[2rem] border border-emerald-500/40 bg-gradient-to-b from-emerald-500/10 to-[#0c1716] p-6 shadow-glow">
+                <div class="absolute right-5 top-5 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-[10px] uppercase tracking-[0.14em] text-emerald-200">Popular</div>
+                <p class="text-sm uppercase tracking-[0.16em] text-emerald-200">Growth</p>
+                <div class="mt-4 flex items-end gap-2">
+                  <span class="text-4xl font-black text-white">Rs. 15,000</span>
+                  <span class="text-slate-400">/ month</span>
+                </div>
+                <ul class="mt-6 space-y-3 text-slate-300">
+                  <li>• Everything in Starter</li>
+                  <li>• Better order checks</li>
+                  <li>• Volume-based support</li>
+                  <li>• Order reporting</li>
+                </ul>
+              </div>
+
+              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <p class="text-sm uppercase tracking-[0.16em] text-slate-300">Scale</p>
+                <div class="mt-4 flex items-end gap-2">
+                  <span class="text-4xl font-black text-white">Custom</span>
+                  <span class="text-slate-400">pricing</span>
+                </div>
+                <ul class="mt-6 space-y-3 text-slate-300">
+                  <li>• Multi-store support</li>
+                  <li>• Custom workflows</li>
+                  <li>• Dedicated onboarding</li>
+                  <li>• Priority support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="mx-auto max-w-5xl px-6 py-20 lg:px-8" x-data="{
+          open: 0,
+          items: [
+            {
+              q: 'Will this replace my website?',
+              a: 'No. Portal works alongside your current store. It gives you a WhatsApp sales channel without rebuilding your ecommerce setup.'
+            },
+            {
+              q: 'How does the AI understand Roman Urdu?',
+              a: 'It reads common customer messages in Roman Urdu and converts them into cleaner order details such as name, phone, city, item, and address.'
+            },
+            {
+              q: 'What if customers send messy delivery notes?',
+              a: 'Portal helps standardize the details so the order is easier to process and less likely to get lost in manual follow-up.'
+            },
+            {
+              q: 'Can I keep using my current courier?',
+              a: 'Yes. Portal is designed to fit into the way your business already ships and manages orders.'
+            }
+          ]
+        }">
+          <div class="mb-12 text-center">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">FAQ</p>
+            <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Questions merchants usually ask before they try WhatsApp sales.</h2>
+          </div>
+
+          <div class="space-y-4">
+            <template x-for="(item, index) in items" :key="index">
+              <div class="rounded-[1.5rem] border border-white/10 bg-white/5">
+                <button
+                  type="button"
+                  class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-lg font-semibold text-white"
+                  @click="open = (open === index ? -1 : index)"
+                >
+                  <span x-text="item.q"></span>
+                  <span class="text-emerald-300" x-text="open === index ? '−' : '+'"></span>
+                </button>
+                <div x-show="open === index" x-transition class="px-5 pb-5 text-slate-300" x-text="item.a"></div>
+              </div>
+            </template>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+          <div class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-r from-emerald-500/10 via-transparent to-teal-500/10 p-8 text-center md:p-12">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Ready to move faster?</p>
+            <h2 class="mx-auto mt-4 max-w-3xl text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Turn more customer chats into real orders without adding more admin work.</h2>
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-300">Portal is meant to help merchants capture more mobile sales with less manual effort and more clarity.</p>
+            <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+              <a href="https://wa.me/923207914744?text=Hello%20Sidrah%20Labs%2C%20I%27d%20like%20to%20learn%20more%20about%20Portal." target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">WhatsApp us</a>
+              <a href="#pricing" class="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-white transition hover:border-emerald-500/60 hover:bg-emerald-500/5">View pricing</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Contact</p>
+              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Talk to us about your WhatsApp sales flow.</h2>
+              <p class="mt-5 text-lg text-slate-300">Tell us what you sell, where orders are getting lost today, and how you want to handle WhatsApp orders more cleanly.</p>
+
+              <div class="mt-8 space-y-4 text-slate-300">
+                <div class="flex items-center gap-3"><span class="text-emerald-300">✉</span> azeem@sidrahlabs.com</div>
+                <div class="flex items-center gap-3"><span class="text-emerald-300">📍</span> Pakistan • Local deployment • PKR billing</div>
+              </div>
+            </div>
+
+            <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8" x-data="{
+              form: { name: '', email: '', company: '', message: '' },
+              submitted: false,
+              submit() { this.submitted = true; }
+            }">
+              <form @submit.prevent="submit" class="space-y-5">
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <label class="block text-sm text-slate-300">
+                    <span class="mb-2 block">Name</span>
+                    <input x-model="form.name" type="text" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="Your name" />
+                  </label>
+                  <label class="block text-sm text-slate-300">
+                    <span class="mb-2 block">Email</span>
+                    <input x-model="form.email" type="email" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="you@company.com" />
+                  </label>
+                </div>
+
+                <label class="block text-sm text-slate-300">
+                  <span class="mb-2 block">Business</span>
+                  <input x-model="form.company" type="text" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="Shop name or company" />
+                </label>
+
+                <label class="block text-sm text-slate-300">
+                  <span class="mb-2 block">What do you want to automate?</span>
+                  <textarea x-model="form.message" rows="5" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="We want to capture more WhatsApp orders and reduce manual order entry."></textarea>
+                </label>
+
+                <div class="flex items-center justify-between gap-4">
+                  <button type="submit" class="rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">Send inquiry</button>
+                  <template x-if="submitted">
+                    <span class="text-sm text-emerald-300">Thanks — we’ll be in touch.</span>
+                  </template>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/10 bg-[#07130f]">
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between lg:px-8">
+          <p>© 2026 Sidrah Labs. Built for Pakistan’s next chapter of commerce.</p>
+          <div class="flex items-center gap-6">
+            <a href="#solutions" class="transition hover:text-white">Platform</a>
+            <a href="#pricing" class="transition hover:text-white">Pricing</a>
+            <a href="#contact" class="transition hover:text-white">Contact</a>
+            <a href="privacy.html" class="transition hover:text-white">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
