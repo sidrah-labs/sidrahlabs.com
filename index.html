@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Sidrah Labs engineers high-assurance data infrastructure: Databricks pipelines, legacy ERP migrations, and deterministic AI evaluation."
+      content="Sidrah Labs engineers high-assurance data infrastructure, legacy ERP-to-Databricks migrations, and formally verified systems."
     />
-    <meta name="theme-color" content="#f5f4ef" />
-    <title>Sidrah Labs — Verified Data Infrastructure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#F5F4EF" />
+    <title>Sidrah Labs — High-Assurance Data Infrastructure</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,12 +21,14 @@
         --paper: #f5f4ef;
         --ink: #171916;
         --muted: #65675f;
-        --line: #d7d7ce;
         --accent: #315d47;
         --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
+        --line: #171916;
       }
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
 
@@ -55,182 +56,615 @@
         outline-offset: 4px;
       }
 
-      .font-mono {
-        font-family: var(--mono);
-      }
-
       .paper-grid {
+        min-height: 100vh;
+        background-color: var(--paper);
         background-image: linear-gradient(to right, rgba(23, 25, 22, 0.035) 1px, transparent 1px);
         background-size: 4.5rem 100%;
+      }
+
+      .font-mono {
+        font-family: var(--mono);
       }
 
       .rule {
         border-color: var(--line);
       }
 
+      .site-header {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .container {
+        width: min(100% - 2.5rem, 72rem);
+        margin-inline: auto;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-block: 1.25rem;
+      }
+
+      .brand {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-decoration: none;
+      }
+
+      .brand span {
+        font-weight: 500;
+      }
+
+      .nav-links,
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 0.8125rem;
+      }
+
+      .nav-links a,
+      .footer-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:hover,
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .hero {
+        padding-block: 6rem 5rem;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        line-height: 1.6;
+        text-transform: uppercase;
+      }
+
+      .eyebrow span {
+        color: #77796f;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      .hero h1 {
+        max-width: 68rem;
+        margin-block: 2rem 0;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 600;
+        letter-spacing: -0.055em;
+        line-height: 1.08;
+      }
+
+      .hero h1 span {
+        white-space: nowrap;
+      }
+
+      .hero-copy {
+        max-width: 54rem;
+        margin-block: 1.75rem 0;
+        color: #44463f;
+        font-size: clamp(1rem, 1.5vw, 1.125rem);
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem;
+        margin-top: 2.25rem;
+      }
+
+      .button-primary {
+        display: inline-flex;
+        min-height: 3rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        background: var(--ink);
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .button-primary:hover {
+        background: var(--accent);
+      }
+
+      .button-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-block: 0.75rem;
+        border-bottom: 1px solid #77796f;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .button-secondary:hover {
+        border-color: var(--ink);
+      }
+
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 5rem;
+        padding-block: 1.25rem;
+        border-block: 1px solid var(--line);
+      }
+
+      .hero-metric {
+        padding: 0.5rem 1.25rem;
+        border-right: 1px solid var(--line);
+      }
+
+      .hero-metric:first-child {
+        padding-left: 0;
+      }
+
+      .hero-metric:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .metric-label,
+      .metric-value {
+        margin: 0;
+      }
+
+      .metric-label {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.6875rem;
+      }
+
+      .metric-value {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      .section-band {
+        border-block: 1px solid var(--line);
+        background: #eeede7;
+      }
+
+      .section-inner {
+        padding-block: 4.5rem;
+      }
+
+      .section-heading {
+        margin: 1rem 0 0;
+        font-size: clamp(1.875rem, 4vw, 2.5rem);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 1.15;
+      }
+
+      .section-kicker {
+        margin: 0;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .commercial-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .commercial-summary {
+        max-width: 23rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      .commercial-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.65fr);
+        gap: 2.5rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .commercial-copy {
+        max-width: 52rem;
+        margin: 0;
+        color: #44463f;
+        font-size: 0.9375rem;
+        line-height: 1.9;
+      }
+
+      .commercial-tags {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+      }
+
+      .commercial-tags li::before {
+        content: "› ";
+        color: var(--ink);
+      }
+
+      .proof {
+        padding-block: 4.5rem;
+      }
+
+      .proof-heading {
+        margin-bottom: 2rem;
+      }
+
       .terminal {
+        padding: 2rem;
+        border: 1px solid #333a34;
         background-color: #1c211d;
         background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
         background-size: 100% 2rem;
+        color: #f5f4ef;
       }
 
-      @media (max-width: 640px) {
+      .terminal-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .terminal-title,
+      .terminal-status {
+        margin: 0;
+        font-family: var(--mono);
+        text-transform: uppercase;
+      }
+
+      .terminal-title {
+        color: #c2cbbf;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+      }
+
+      .terminal-status {
+        color: #9cad99;
+        font-size: 0.6875rem;
+      }
+
+      .terminal-copy {
+        max-width: 60rem;
+        margin: 1.75rem 0 0;
+        color: #d9ded6;
+        font-family: var(--mono);
+        font-size: 0.9375rem;
+        line-height: 2;
+      }
+
+      .terminal-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin: 2rem 0 0;
+        padding: 1.25rem 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        color: #b8c5b4;
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        list-style: none;
+      }
+
+      .terminal-metrics li::before {
+        content: "› ";
+        color: #82987f;
+      }
+
+      .research-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: 4rem;
+      }
+
+      .research-copy {
+        margin: 0;
+        color: #44463f;
+        font-size: 1rem;
+        line-height: 2;
+      }
+
+      .research-link {
+        display: inline-flex;
+        gap: 0.5rem;
+        margin-top: 1.75rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid var(--accent);
+        color: var(--accent);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .research-link:hover {
+        color: var(--ink);
+      }
+
+      .site-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-block: 2rem;
+      }
+
+      .footer-brand {
+        margin: 0;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      .footer-links {
+        gap: 1.5rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          width: min(100% - 2rem, 72rem);
+        }
+
         .paper-grid {
           background-size: 2.5rem 100%;
+        }
+
+        .site-nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          gap: 1rem;
+        }
+
+        .hero {
+          padding-block: 4rem 3.5rem;
+        }
+
+        .hero h1 span {
+          white-space: normal;
+        }
+
+        .hero-metrics {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          margin-top: 3.5rem;
+        }
+
+        .hero-metric {
+          padding: 0.75rem 1rem;
+        }
+
+        .hero-metric:nth-child(2) {
+          border-right: 0;
+        }
+
+        .hero-metric:nth-child(3),
+        .hero-metric:nth-child(4) {
+          border-top: 1px solid var(--line);
+        }
+
+        .hero-metric:nth-child(3) {
+          padding-left: 0;
+        }
+
+        .hero-metric:last-child {
+          padding-right: 0;
+        }
+
+        .commercial-header,
+        .commercial-content,
+        .research-layout {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5rem;
+        }
+
+        .section-inner,
+        .proof {
+          padding-block: 3.5rem;
+        }
+
+        .terminal {
+          padding: 1.25rem;
+        }
+
+        .terminal-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .research-layout {
+          display: grid;
         }
       }
     </style>
   </head>
   <body>
-    <div class="paper-grid min-h-screen">
-      <header class="border-b rule">
-        <nav
-          class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-5 sm:px-8"
-          aria-label="Main navigation"
-        >
-          <a class="text-sm font-bold tracking-tight sm:text-base" href="#top" aria-label="Sidrah Labs home">
-            Sidrah Labs <span lang="ar" dir="rtl" class="font-medium">سِدْرَة لابس</span>
+    <div class="paper-grid">
+      <header class="site-header">
+        <nav class="container site-nav" aria-label="Main navigation">
+          <a class="brand" href="#top" aria-label="Sidrah Labs home">
+            Sidrah Labs <span lang="ar" dir="rtl">سِدْرَة لابس</span>
           </a>
-          <div class="flex items-center gap-4 text-xs text-stone-700 sm:gap-8 sm:text-sm">
-            <a href="#services" class="hover:underline">Services</a>
-            <a href="#research" class="hover:underline">Research</a>
-            <a href="https://github.com/sidrahlabs" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
-            <a href="#contact" class="hover:underline">Contact</a>
+          <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#work">Proof of work</a>
+            <a href="#research">Research</a>
+            <a href="https://github.com/sidrahlabs" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </nav>
       </header>
 
       <main id="top">
-        <section class="mx-auto max-w-6xl px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:pt-32">
-          <div class="max-w-4xl">
-            <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
-              Independent data infrastructure lab <span class="text-stone-400">/</span> Est. for systems that matter
-            </p>
-            <h1 class="mt-8 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
-              Formally Verified Incremental Compute &amp; AI-Ready Data Lakehouses.
-            </h1>
-            <p class="mt-7 max-w-2xl text-base leading-7 text-stone-700 sm:text-lg sm:leading-8">
-              We engineer high-assurance Databricks pipelines, legacy ERP migrations, and deterministic AI evaluation harnesses. No generic SaaS wrappers. Just resilient enterprise data infrastructure.
-            </p>
-            <div class="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <a
-                href="mailto:azeem@sidrahlabs.com?subject=Architecture%20Audit"
-                class="inline-flex min-h-12 items-center justify-center bg-[var(--ink)] px-5 py-3 text-sm font-medium text-white hover:bg-[var(--accent)]"
-              >
-                Book an Architecture Audit
-                <span aria-hidden="true" class="ml-3">↗</span>
-              </a>
-              <a
-                href="https://github.com/sidrahlabs"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex min-h-12 items-center border-b border-stone-400 py-3 text-sm font-medium hover:border-[var(--ink)]"
-              >
-                View GitHub <span aria-hidden="true" class="ml-2">↗</span>
-              </a>
-            </div>
+        <section class="container hero" aria-labelledby="hero-title">
+          <p class="eyebrow">
+            Independent data infrastructure lab <span>/</span> Est. for systems that matter
+          </p>
+          <h1 id="hero-title">
+            Sidrah Labs <span lang="ar" dir="rtl">(سِدْرَة لابس)</span> — Engineering High-Assurance Data Infrastructure and Formally Verified Systems.
+          </h1>
+          <p class="hero-copy">
+            Science and systems engineering built for deterministic execution. We architect legacy ERP-to-Databricks migrations and build pre-execution logic firewalls that mathematically block silent data corruption.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button-primary"
+              href="mailto:azeem@sidrahlabs.com?subject=14-Day%20Architecture%20Audit"
+            >
+              Book a 14-Day Architecture Audit <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button-secondary"
+              href="https://github.com/sidrahlabs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Open-Source Benchmarks <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div class="mt-16 grid grid-cols-2 border-y rule py-5 sm:mt-20 sm:grid-cols-4">
-            <div class="py-2 sm:border-r rule sm:pr-5">
-              <p class="font-mono text-xs text-stone-500">01 / SYSTEMS</p>
-              <p class="mt-2 text-sm font-medium">Incremental by design</p>
+
+          <div class="hero-metrics" aria-label="Engineering principles">
+            <div class="hero-metric">
+              <p class="metric-label">01 / SYSTEMS</p>
+              <p class="metric-value">Incremental by design</p>
             </div>
-            <div class="py-2 sm:border-r rule sm:px-5">
-              <p class="font-mono text-xs text-stone-500">02 / CONTROL</p>
-              <p class="mt-2 text-sm font-medium">Deterministic pipelines</p>
+            <div class="hero-metric">
+              <p class="metric-label">02 / CONTROL</p>
+              <p class="metric-value">Deterministic pipelines</p>
             </div>
-            <div class="py-2 sm:border-r rule sm:px-5">
-              <p class="font-mono text-xs text-stone-500">03 / DEPLOYMENT</p>
-              <p class="mt-2 text-sm font-medium">Production-grade CI/CD</p>
+            <div class="hero-metric">
+              <p class="metric-label">03 / DEPLOYMENT</p>
+              <p class="metric-value">Production-grade CI/CD</p>
             </div>
-            <div class="py-2 sm:pl-5">
-              <p class="font-mono text-xs text-stone-500">04 / PRINCIPLE</p>
-              <p class="mt-2 text-sm font-medium">No black boxes</p>
+            <div class="hero-metric">
+              <p class="metric-label">04 / PRINCIPLE</p>
+              <p class="metric-value">No black boxes</p>
             </div>
           </div>
         </section>
 
-        <section id="services" class="border-y rule bg-[#eeede7]">
-          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-            <div class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <section id="services" class="section-band" aria-labelledby="services-title">
+          <div class="container section-inner">
+            <div class="commercial-header">
               <div>
-                <p class="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">01 / Commercial services</p>
-                <h2 class="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">Infrastructure that holds up.</h2>
+                <p class="section-kicker">01 / Commercial wedge · Sellable today</p>
+                <h2 id="services-title" class="section-heading">
+                  14-Day Databricks Lakehouse &amp; Legacy ERP Modernization Sprints
+                </h2>
               </div>
-              <p class="max-w-sm text-sm leading-6 text-stone-600">Focused engineering for complex systems, inherited data, and teams that need confidence in every run.</p>
+              <p class="commercial-summary">
+                Focused engineering for inherited data systems, deterministic operations, and AI-ready infrastructure.
+              </p>
             </div>
 
-            <div class="grid border-t rule md:grid-cols-2">
-              <article class="border-b rule py-7 md:border-b-0 md:border-r md:pr-10">
-                <p class="font-mono text-xs text-stone-500">SERVICE 01</p>
-                <h3 class="mt-5 max-w-sm text-2xl font-semibold leading-tight tracking-[-0.035em]">Legacy ERP &amp; AI-Readiness Engineering</h3>
-                <p class="mt-4 max-w-xl text-sm leading-7 text-stone-700">
-                  Migrating messy 5+ year old enterprise ERP databases and unstructured PDFs into governed, incremental Databricks lakehouses.
-                </p>
-                <p class="mt-6 font-mono text-xs text-[var(--accent)]">ERP MIGRATION&nbsp; · &nbsp;GOVERNED DATA&nbsp; · &nbsp;LAKEHOUSE</p>
-              </article>
-              <article class="py-7 md:pl-10">
-                <p class="font-mono text-xs text-stone-500">SERVICE 02</p>
-                <h3 class="mt-5 max-w-sm text-2xl font-semibold leading-tight tracking-[-0.035em]">Pipeline Reliability &amp; CI/CD Automation</h3>
-                <p class="mt-4 max-w-xl text-sm leading-7 text-stone-700">
-                  Replacing fragile full-recompute jobs and Fivetran connectors with metadata-driven PySpark/Lakeflow pipelines and 1-click Databricks Asset Bundles CI/CD.
-                </p>
-                <p class="mt-6 font-mono text-xs text-[var(--accent)]">PYSPARK&nbsp; · &nbsp;LAKEFLOW&nbsp; · &nbsp;ASSET BUNDLES</p>
-              </article>
+            <div class="commercial-content">
+              <p class="commercial-copy">
+                Stop burning Serverless DBUs on full-recompute jobs and Fivetran rate limits. We migrate hostile legacy SQL/Oracle/ERP databases into AI-ready Databricks lakehouses using metadata-driven PySpark ingestion, DataFrame rules engines, and 1-click Asset Bundles CI/CD.
+              </p>
+              <ul class="commercial-tags" aria-label="Sprint capabilities">
+                <li>ZERO-DOWNTIME</li>
+                <li>ASSET BUNDLES CI/CD</li>
+                <li>PYSPARK RULES ENGINE</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        <section id="work" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-          <div class="mb-8">
-            <p class="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">02 / Proof of work</p>
-            <h2 class="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">Built for production. Proven over time.</h2>
+        <section id="work" class="container proof" aria-labelledby="proof-title">
+          <div class="proof-heading">
+            <p class="section-kicker">02 / Proof of work</p>
+            <h2 id="proof-title" class="section-heading">Production Case: Zero-UB Databricks Pipelines</h2>
           </div>
-          <article class="terminal border border-[#333a34] p-5 text-stone-100 sm:p-8 lg:p-10">
-            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/15 pb-4">
-              <p class="font-mono text-xs uppercase tracking-[0.12em] text-[#c2cbbf]">Production Case: Zero-Downtime ERP Lakehouse</p>
-              <p class="font-mono text-[11px] text-[#9cad99]">STATUS: RUNNING&nbsp; / &nbsp;2+ YEARS</p>
+          <article class="terminal" aria-labelledby="terminal-title">
+            <div class="terminal-header">
+              <h3 id="terminal-title" class="terminal-title">Production Case: Zero-UB Databricks Pipelines</h3>
+              <p class="terminal-status">STATUS: RUNNING / 2+ YEARS</p>
             </div>
-            <p class="mt-7 max-w-4xl font-mono text-sm leading-7 text-[#d9ded6] sm:text-[15px] sm:leading-8">
-              "Architected and delivered an end-to-end medallion analytics platform and extensible PySpark DataFrame rules engine for enterprise ERP financial/payroll analytics. Engineered a metadata-driven snapshot ingestion framework (onboarding new tables via simple config inserts) and a 1-click CI/CD deployment wrapper using GitHub Actions, Databricks Asset Bundles, and Databricks Secrets—running cleanly in production for 2+ years."
+            <p class="terminal-copy">
+              Bypassing Databricks' full-recompute limits on non-deterministic <code>ai_query()</code> calls. Resolved <code>MATERIALIZED_VIEW_NOT_INCREMENTALIZABLE</code> on hostile ERP snapshots by deploying a custom <code>delta-ai-cache</code> utility. Cut enterprise token and DBU bills by 90%. Backed by 2 years of production experience running self-service enterprise lakehouses.
             </p>
-            <div class="mt-8 grid gap-3 border-t border-white/15 pt-5 font-mono text-xs text-[#b8c5b4] sm:grid-cols-3">
-              <p><span class="text-[#82987f]">›</span> Medallion architecture</p>
-              <p><span class="text-[#82987f]">›</span> Metadata-driven ingestion</p>
-              <p><span class="text-[#82987f]">›</span> One-click CI/CD</p>
-            </div>
+            <ul class="terminal-metrics" aria-label="Production results">
+              <li>Non-deterministic AI caching</li>
+              <li>90% lower token and DBU bills</li>
+              <li>2 years in production</li>
+            </ul>
           </article>
         </section>
 
-        <section id="research" class="border-y rule bg-[#eeede7]">
-          <div class="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-[1fr_1.2fr] md:gap-16">
+        <section id="research" class="section-band" aria-labelledby="research-title">
+          <div class="container section-inner research-layout">
             <div>
-              <p class="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">03 / The lab</p>
-              <h2 class="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">Research &amp; Open Source</h2>
+              <p class="section-kicker">03 / Applied R&amp;D track · The moat</p>
+              <h2 id="research-title" class="section-heading">
+                Deterministic AI Evaluation &amp; Verification Pipelines
+              </h2>
             </div>
             <div>
-              <p class="text-base leading-8 text-stone-700">
-                We are currently engineering neuro-symbolic logic firewalls and incremental execution middleware to prevent silent semantic corruption in AI-generated SQL and data pipelines.
+              <p class="research-copy">
+                AI agents hallucinate intermediate logic and execute destructive SQL mutations. We are building the AST/SMT verification gates and incremental execution harnesses that mathematically prove a 0.1% rule edit will not corrupt your Gold tables.
               </p>
               <a
-                class="mt-7 inline-flex border-b border-[var(--accent)] pb-1 text-sm font-semibold text-[var(--accent)] hover:text-[var(--ink)]"
+                class="research-link"
                 href="https://github.com/sidrahlabs"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Follow our research on GitHub <span aria-hidden="true" class="ml-2">-&gt;</span>
+                Follow our neuro-symbolic logic firewall research on GitHub <span aria-hidden="true">-&gt;</span>
               </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer id="contact" class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <p class="text-sm font-medium">Sidrah Labs. Think. Design. Build useful services.</p>
-        <nav class="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs text-stone-600" aria-label="Footer links">
-          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--ink)]">LinkedIn ↗</a>
-          <a href="https://github.com/sidrahlabs" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--ink)]">GitHub ↗</a>
-          <a href="mailto:azeem@sidrahlabs.com" class="hover:text-[var(--ink)]">Email ↗</a>
+      <footer id="contact" class="container site-footer">
+        <p class="footer-brand">Sidrah Labs. Think. Design. Build useful services.</p>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/sidrahlabs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="mailto:azeem@sidrahlabs.com">Email ↗</a>
         </nav>
       </footer>
     </div>
