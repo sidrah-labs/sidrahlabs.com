@@ -1,447 +1,237 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Sidrah Labs turns WhatsApp into a high-converting sales channel for Pakistan's merchants, with AI parsing, courier dispatch, and PKR-first infrastructure."
+      content="Sidrah Labs engineers high-assurance data infrastructure: Databricks pipelines, legacy ERP migrations, and deterministic AI evaluation."
     />
-    <title>Sidrah Labs | WhatsApp Commerce Infrastructure</title>
+    <meta name="theme-color" content="#f5f4ef" />
+    <title>Sidrah Labs — Verified Data Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: '#ecfdf5',
-                100: '#d1fae5',
-                200: '#a7f3d0',
-                300: '#6ee7b7',
-                400: '#34d399',
-                500: '#10b981',
-                600: '#059669',
-                700: '#047857',
-                800: '#065f46',
-                900: '#064e3b',
-              },
-              slatebg: '#07130f',
-              panel: '#0b1715',
-              soft: '#122723',
-            },
-            boxShadow: {
-              glow: '0 0 26px rgba(16, 185, 129, 0.26)',
-            },
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f5f4ef;
+        --ink: #171916;
+        --muted: #65675f;
+        --line: #d7d7ce;
+        --accent: #315d47;
+        --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--paper);
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      .font-mono {
+        font-family: var(--mono);
+      }
+
+      .paper-grid {
+        background-image: linear-gradient(to right, rgba(23, 25, 22, 0.035) 1px, transparent 1px);
+        background-size: 4.5rem 100%;
+      }
+
+      .rule {
+        border-color: var(--line);
+      }
+
+      .terminal {
+        background-color: #1c211d;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 100% 2rem;
+      }
+
+      @media (max-width: 640px) {
+        .paper-grid {
+          background-size: 2.5rem 100%;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-slatebg text-white antialiased selection:bg-emerald-500/30">
-    <div class="min-h-screen bg-[radial-gradient(circle_at_top,#183d35_0%,rgba(7,19,15,0.9)_28%,rgba(7,19,15,1)_100%)]">
-      <header class="sticky top-0 z-50 border-b border-white/10 bg-slatebg/75 backdrop-blur-xl">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
-          <a href="#top" class="flex items-center gap-3" aria-label="Sidrah Labs home">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-glow">
-              <span class="text-lg font-black text-slate-900">S</span>
-            </div>
-            <div>
-              <div class="text-base font-bold tracking-tight">Sidrah Labs</div>
-            </div>
-          </a>
-
-          <div class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
-            <a href="#solutions" class="transition hover:text-white">Platform</a>
-            <a href="#engine" class="transition hover:text-white">Engineering</a>
-            <a href="#faq" class="transition hover:text-white">FAQ</a>
-            <a href="#contact" class="transition hover:text-white">Contact</a>
-          </div>
-
-          <div class="hidden items-center gap-3 md:flex">
-            <a href="#faq" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-500/60 hover:text-white">See how it works</a>
-            <a href="https://wa.me/923207914744?text=Hello%20Sidrah%20Labs%2C%20I%27d%20like%20to%20learn%20more%20about%20Portal." target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">WhatsApp us</a>
-          </div>
-
-          <button
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-200 md:hidden"
-            aria-label="Toggle menu"
-            x-data
-            @click="$dispatch('menu-toggle')"
-          >
-            ☰
-          </button>
-        </nav>
-
-        <div
-          x-data="{ open: false }"
-          @menu-toggle.window="open = !open"
-          x-show="open"
-          x-transition
-          class="border-t border-white/10 bg-slatebg md:hidden"
-          style="display:none;"
+  <body>
+    <div class="paper-grid min-h-screen">
+      <header class="border-b rule">
+        <nav
+          class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-5 sm:px-8"
+          aria-label="Main navigation"
         >
-          <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-sm text-slate-300">
-            <a href="#solutions" class="hover:text-white">Platform</a>
-            <a href="#engine" class="hover:text-white">Engineering</a>
-            <a href="#faq" class="hover:text-white">FAQ</a>
-            <a href="#contact" class="hover:text-white">Contact</a>
+          <a class="text-sm font-bold tracking-tight sm:text-base" href="#top" aria-label="Sidrah Labs home">
+            Sidrah Labs <span lang="ar" dir="rtl" class="font-medium">سِدْرَة لابس</span>
+          </a>
+          <div class="flex items-center gap-4 text-xs text-stone-700 sm:gap-8 sm:text-sm">
+            <a href="#services" class="hover:underline">Services</a>
+            <a href="#research" class="hover:underline">Research</a>
+            <a href="https://github.com/sidrahlabs" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+            <a href="#contact" class="hover:underline">Contact</a>
           </div>
-        </div>
+        </nav>
       </header>
 
       <main id="top">
-        <section class="relative isolate overflow-hidden">
-          <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-12 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-20 lg:pt-20">
-            <div>
-              <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-200">
-                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                Portal by Sidrah Labs
+        <section class="mx-auto max-w-6xl px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:pt-32">
+          <div class="max-w-4xl">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
+              Independent data infrastructure lab <span class="text-stone-400">/</span> Est. for systems that matter
+            </p>
+            <h1 class="mt-8 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
+              Formally Verified Incremental Compute &amp; AI-Ready Data Lakehouses.
+            </h1>
+            <p class="mt-7 max-w-2xl text-base leading-7 text-stone-700 sm:text-lg sm:leading-8">
+              We engineer high-assurance Databricks pipelines, legacy ERP migrations, and deterministic AI evaluation harnesses. No generic SaaS wrappers. Just resilient enterprise data infrastructure.
+            </p>
+            <div class="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <a
+                href="mailto:azeem@sidrahlabs.com?subject=Architecture%20Audit"
+                class="inline-flex min-h-12 items-center justify-center bg-[var(--ink)] px-5 py-3 text-sm font-medium text-white hover:bg-[var(--accent)]"
+              >
+                Book an Architecture Audit
+                <span aria-hidden="true" class="ml-3">↗</span>
+              </a>
+              <a
+                href="https://github.com/sidrahlabs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-12 items-center border-b border-stone-400 py-3 text-sm font-medium hover:border-[var(--ink)]"
+              >
+                View GitHub <span aria-hidden="true" class="ml-2">↗</span>
+              </a>
+            </div>
+          </div>
+          <div class="mt-16 grid grid-cols-2 border-y rule py-5 sm:mt-20 sm:grid-cols-4">
+            <div class="py-2 sm:border-r rule sm:pr-5">
+              <p class="font-mono text-xs text-stone-500">01 / SYSTEMS</p>
+              <p class="mt-2 text-sm font-medium">Incremental by design</p>
+            </div>
+            <div class="py-2 sm:border-r rule sm:px-5">
+              <p class="font-mono text-xs text-stone-500">02 / CONTROL</p>
+              <p class="mt-2 text-sm font-medium">Deterministic pipelines</p>
+            </div>
+            <div class="py-2 sm:border-r rule sm:px-5">
+              <p class="font-mono text-xs text-stone-500">03 / DEPLOYMENT</p>
+              <p class="mt-2 text-sm font-medium">Production-grade CI/CD</p>
+            </div>
+            <div class="py-2 sm:pl-5">
+              <p class="font-mono text-xs text-stone-500">04 / PRINCIPLE</p>
+              <p class="mt-2 text-sm font-medium">No black boxes</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" class="border-y rule bg-[#eeede7]">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+            <div class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">01 / Commercial services</p>
+                <h2 class="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">Infrastructure that holds up.</h2>
               </div>
+              <p class="max-w-sm text-sm leading-6 text-stone-600">Focused engineering for complex systems, inherited data, and teams that need confidence in every run.</p>
+            </div>
 
-              <h1 class="max-w-xl text-4xl font-black leading-[0.95] tracking-[-0.07em] text-white sm:text-5xl lg:text-[4.3rem]">
-                The WhatsApp Frontend for Businesses. Turn chats into orders.
-              </h1>
+            <div class="grid border-t rule md:grid-cols-2">
+              <article class="border-b rule py-7 md:border-b-0 md:border-r md:pr-10">
+                <p class="font-mono text-xs text-stone-500">SERVICE 01</p>
+                <h3 class="mt-5 max-w-sm text-2xl font-semibold leading-tight tracking-[-0.035em]">Legacy ERP &amp; AI-Readiness Engineering</h3>
+                <p class="mt-4 max-w-xl text-sm leading-7 text-stone-700">
+                  Migrating messy 5+ year old enterprise ERP databases and unstructured PDFs into governed, incremental Databricks lakehouses.
+                </p>
+                <p class="mt-6 font-mono text-xs text-[var(--accent)]">ERP MIGRATION&nbsp; · &nbsp;GOVERNED DATA&nbsp; · &nbsp;LAKEHOUSE</p>
+              </article>
+              <article class="py-7 md:pl-10">
+                <p class="font-mono text-xs text-stone-500">SERVICE 02</p>
+                <h3 class="mt-5 max-w-sm text-2xl font-semibold leading-tight tracking-[-0.035em]">Pipeline Reliability &amp; CI/CD Automation</h3>
+                <p class="mt-4 max-w-xl text-sm leading-7 text-stone-700">
+                  Replacing fragile full-recompute jobs and Fivetran connectors with metadata-driven PySpark/Lakeflow pipelines and 1-click Databricks Asset Bundles CI/CD.
+                </p>
+                <p class="mt-6 font-mono text-xs text-[var(--accent)]">PYSPARK&nbsp; · &nbsp;LAKEFLOW&nbsp; · &nbsp;ASSET BUNDLES</p>
+              </article>
+            </div>
+          </div>
+        </section>
 
-              <p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-                Keep your website. Add a simple WhatsApp storefront that lets customers browse, ask questions, and place orders in the app they already use every day.
+        <section id="work" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+          <div class="mb-8">
+            <p class="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">02 / Proof of work</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">Built for production. Proven over time.</h2>
+          </div>
+          <article class="terminal border border-[#333a34] p-5 text-stone-100 sm:p-8 lg:p-10">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/15 pb-4">
+              <p class="font-mono text-xs uppercase tracking-[0.12em] text-[#c2cbbf]">Production Case: Zero-Downtime ERP Lakehouse</p>
+              <p class="font-mono text-[11px] text-[#9cad99]">STATUS: RUNNING&nbsp; / &nbsp;2+ YEARS</p>
+            </div>
+            <p class="mt-7 max-w-4xl font-mono text-sm leading-7 text-[#d9ded6] sm:text-[15px] sm:leading-8">
+              "Architected and delivered an end-to-end medallion analytics platform and extensible PySpark DataFrame rules engine for enterprise ERP financial/payroll analytics. Engineered a metadata-driven snapshot ingestion framework (onboarding new tables via simple config inserts) and a 1-click CI/CD deployment wrapper using GitHub Actions, Databricks Asset Bundles, and Databricks Secrets—running cleanly in production for 2+ years."
+            </p>
+            <div class="mt-8 grid gap-3 border-t border-white/15 pt-5 font-mono text-xs text-[#b8c5b4] sm:grid-cols-3">
+              <p><span class="text-[#82987f]">›</span> Medallion architecture</p>
+              <p><span class="text-[#82987f]">›</span> Metadata-driven ingestion</p>
+              <p><span class="text-[#82987f]">›</span> One-click CI/CD</p>
+            </div>
+          </article>
+        </section>
+
+        <section id="research" class="border-y rule bg-[#eeede7]">
+          <div class="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-[1fr_1.2fr] md:gap-16">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">03 / The lab</p>
+              <h2 class="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">Research &amp; Open Source</h2>
+            </div>
+            <div>
+              <p class="text-base leading-8 text-stone-700">
+                We are currently engineering neuro-symbolic logic firewalls and incremental execution middleware to prevent silent semantic corruption in AI-generated SQL and data pipelines.
               </p>
-
-              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="https://wa.me/923207914744?text=Hello%20Sidrah%20Labs%2C%20I%27d%20like%20to%20learn%20more%20about%20Portal." target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">WhatsApp us</a>
-                <a href="#solutions" class="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-white transition hover:border-emerald-500/60 hover:bg-emerald-500/5">See how it works</a>
-              </div>
-
-              <div class="mt-8 flex flex-wrap items-center gap-6 text-sm text-slate-300">
-                <div>
-                  <span class="block text-2xl font-black text-white">No website rebuild</span>
-                  <span>Keep your current store</span>
-                </div>
-                <div>
-                  <span class="block text-2xl font-black text-white">Less manual work</span>
-                  <span>Orders captured in chat</span>
-                </div>
-                <div>
-                  <span class="block text-2xl font-black text-white">Coming soon</span>
-                  <span>Pricing plans will be announced soon</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="relative">
-              <div class="absolute -left-8 top-12 h-24 w-24 rounded-full bg-emerald-500/20 blur-3xl"></div>
-              <div class="absolute -right-10 bottom-10 h-28 w-28 rounded-full bg-teal-400/20 blur-3xl"></div>
-
-              <div class="relative overflow-hidden rounded-[2rem] border border-emerald-500/25 bg-[#0c1716]/90 p-3 shadow-glow">
-                <div class="flex items-center justify-between border-b border-white/10 bg-[#111d1b] px-4 py-3">
-                  <div class="flex items-center gap-3">
-                    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/20 text-sm font-bold text-emerald-300">P</div>
-                    <div>
-                      <div class="text-sm font-semibold text-white">Portal</div>
-                      <div class="text-[10px] uppercase tracking-[0.18em] text-slate-400">Order parser</div>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-[10px] uppercase tracking-[0.14em] text-emerald-200">
-                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                    Live
-                  </div>
-                </div>
-
-                <div class="grid gap-4 p-4 md:grid-cols-[1fr_1.05fr]">
-                  <div class="rounded-[1.5rem] border border-white/10 bg-[#0e1917] p-3">
-                    <div class="mb-3 flex items-center justify-between text-[11px] uppercase tracking-[0.12em] text-slate-400">
-                      <span>Customer</span>
-                      <span>now</span>
-                    </div>
-
-                    <div class="space-y-3">
-                      <div class="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-emerald-500 px-3 py-2 text-sm text-slate-950">
-                        Assalamualaikum, mujhe 2 black hoodie chahiye. 0300-1234567, Karachi, Gulshan, flat no 11 near TCS.
-                      </div>
-                      <div class="max-w-[90%] rounded-2xl rounded-bl-md bg-[#1a2d2a] px-3 py-2 text-sm text-slate-100">
-                        Thanks! I’ve created your order and your shop has received it.
-                      </div>
-                    </div>
-
-                    <div class="mt-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-3 text-xs text-emerald-200">
-                      Synced to Shopify · Order #1048
-                    </div>
-                  </div>
-
-                  <div class="rounded-[1.5rem] border border-white/10 bg-[#111a19] p-3">
-                    <div class="flex items-center justify-between border-b border-white/10 pb-2">
-                      <span class="text-[11px] uppercase tracking-[0.16em] text-slate-400">Shopify admin</span>
-                      <span class="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] text-emerald-200">Paid</span>
-                    </div>
-
-                    <div class="mt-3 space-y-2 rounded-xl border border-white/10 bg-[#0d1716] p-2">
-                      <div class="flex items-center justify-between text-[10px] text-slate-400">
-                        <span>Order</span>
-                        <span>#1048</span>
-                      </div>
-                      <div class="flex items-center justify-between text-[10px] text-slate-300">
-                        <span>Ahsan</span>
-                        <span>Rs. 6,800</span>
-                      </div>
-                      <div class="mt-2 h-1.5 w-full rounded-full bg-white/5">
-                        <div class="h-1.5 w-[78%] rounded-full bg-emerald-500"></div>
-                      </div>
-                      <div class="grid grid-cols-2 gap-2 pt-1 text-[10px] text-slate-300">
-                        <div class="rounded-lg bg-white/5 p-2">
-                          <div class="text-slate-400">Product</div>
-                          <div class="mt-1 font-medium text-white">Black Hoodie</div>
-                        </div>
-                        <div class="rounded-lg bg-white/5 p-2">
-                          <div class="text-slate-400">Qty</div>
-                          <div class="mt-1 font-medium text-white">2</div>
-                        </div>
-                      </div>
-                      <div class="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-2 text-[10px] text-emerald-200">
-                        Shipping: Gulshan-e-Iqbal, House 11, near TCS
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="border-y border-white/10 bg-[#0a1715]/80">
-          <div class="mx-auto grid max-w-7xl gap-3 px-6 py-8 text-center text-xs font-medium uppercase tracking-[0.18em] text-slate-300 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
-            <div>Shopify</div>
-            <div>WooCommerce</div>
-            <div>PostEx</div>
-            <div>Trax</div>
-            <div>WhatsApp</div>
-          </div>
-        </section>
-
-        <section id="solutions" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div class="mb-12 max-w-3xl">
-            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">How Portal works</p>
-            <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Simple setup. More sales from the app customers already use.</h2>
-          </div>
-
-          <div class="grid gap-6 lg:grid-cols-3">
-            <article class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">01</div>
-              <h3 class="text-2xl font-bold text-white">Keep your store</h3>
-              <p class="mt-3 text-slate-300">Your website stays in place. Portal plugs into the way customers already buy from you on mobile.</p>
-            </article>
-            <article class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">02</div>
-              <h3 class="text-2xl font-bold text-white">Understand the order</h3>
-              <p class="mt-3 text-slate-300">Messy messages, Roman Urdu, and delivery notes are turned into clean order details without manual typing.</p>
-            </article>
-            <article class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">03</div>
-              <h3 class="text-2xl font-bold text-white">Send it forward</h3>
-              <p class="mt-3 text-slate-300">We prepare the order for dispatch, tracking, or internal processing depending on how your business runs.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="engine" class="bg-[#091613] py-20">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mb-12 max-w-3xl">
-              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Built for real business problems</p>
-              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Less admin, fewer missed sales, cleaner operations.</h2>
-            </div>
-
-            <div class="grid gap-6 lg:grid-cols-3">
-              <article class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-b from-[#0d1f1d] to-[#0b1514] p-6">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">A</div>
-                <h3 class="text-2xl font-bold text-white">Order intake</h3>
-                <p class="mt-3 text-slate-300">Customers send messages in their own way. Portal turns those messages into usable order data.</p>
-              </article>
-
-              <article class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-b from-[#0d1f1d] to-[#0b1514] p-6">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">B</div>
-                <h3 class="text-2xl font-bold text-white">Order checks</h3>
-                <p class="mt-3 text-slate-300">It helps catch weak address patterns and helps prevent costly mistakes before a parcel is sent.</p>
-              </article>
-
-              <article class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-b from-[#0d1f1d] to-[#0b1514] p-6">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-xl font-bold text-emerald-300">C</div>
-                <h3 class="text-2xl font-bold text-white">Tracking + books</h3>
-                <p class="mt-3 text-slate-300">Orders and payment records stay in one cleaner flow, instead of being spread across chats, Excel files, and courier portals.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Local infrastructure</p>
-              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Built for Pakistan. Flexible setup. Clear future plans.</h2>
-              <p class="mt-5 text-lg text-slate-300">Portal is designed for local commerce workflows, and our pricing will be announced when we are ready to launch plans publicly.</p>
-            </div>
-
-            <div class="grid gap-6 sm:grid-cols-2">
-              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-                <div class="text-3xl text-emerald-300">📲</div>
-                <h3 class="mt-4 text-xl font-bold text-white">Built for mobile buyers</h3>
-                <p class="mt-3 text-slate-300">Most customers are already on WhatsApp. This brings the buying flow into that channel.</p>
-              </div>
-              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-                <div class="text-3xl text-emerald-300">⚡</div>
-                <h3 class="mt-4 text-xl font-bold text-white">Fast setup</h3>
-                <p class="mt-3 text-slate-300">Lightweight setup that works alongside your current ecommerce workflow.</p>
-              </div>
-              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-                <div class="text-3xl text-emerald-300">🧩</div>
-                <h3 class="mt-4 text-xl font-bold text-white">Coming soon</h3>
-                <p class="mt-3 text-slate-300">Package pricing is being finalized and will be shared soon.</p>
-              </div>
-              <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-                <div class="text-3xl text-emerald-300">🧾</div>
-                <h3 class="mt-4 text-xl font-bold text-white">Less spreadsheet chaos</h3>
-                <p class="mt-3 text-slate-300">Fewer disconnected order notes and less manual reconciliation inside Excel.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" class="bg-[#091613] py-20">
-          <div class="mx-auto max-w-4xl px-6 lg:px-8">
-            <div class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-r from-emerald-500/10 via-[#0c1716] to-[#0c1716] p-8 text-center shadow-glow md:p-12">
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Coming soon</p>
-              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Pricing will be announced soon.</h2>
-              <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-300">We’re preparing the launch plans for merchants and will share package details once they’re ready.</p>
-              <div class="mt-8 inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-emerald-200">Stay tuned</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="faq" class="mx-auto max-w-5xl px-6 py-20 lg:px-8" x-data="{
-          open: 0,
-          items: [
-            {
-              q: 'Will this replace my website?',
-              a: 'No. Portal works alongside your current store. It gives you a WhatsApp sales channel without rebuilding your ecommerce setup.'
-            },
-            {
-              q: 'How does the AI understand Roman Urdu?',
-              a: 'It reads common customer messages in Roman Urdu and converts them into cleaner order details such as name, phone, city, item, and address.'
-            },
-            {
-              q: 'What if customers send messy delivery notes?',
-              a: 'Portal helps standardize the details so the order is easier to process and less likely to get lost in manual follow-up.'
-            },
-            {
-              q: 'Can I keep using my current courier?',
-              a: 'Yes. Portal is designed to fit into the way your business already ships and manages orders.'
-            }
-          ]
-        }">
-          <div class="mb-12 text-center">
-            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">FAQ</p>
-            <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Questions merchants usually ask before they try WhatsApp sales.</h2>
-          </div>
-
-          <div class="space-y-4">
-            <template x-for="(item, index) in items" :key="index">
-              <div class="rounded-[1.5rem] border border-white/10 bg-white/5">
-                <button
-                  type="button"
-                  class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-lg font-semibold text-white"
-                  @click="open = (open === index ? -1 : index)"
-                >
-                  <span x-text="item.q"></span>
-                  <span class="text-emerald-300" x-text="open === index ? '−' : '+'"></span>
-                </button>
-                <div x-show="open === index" x-transition class="px-5 pb-5 text-slate-300" x-text="item.a"></div>
-              </div>
-            </template>
-          </div>
-        </section>
-
-        <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-          <div class="rounded-[2rem] border border-emerald-500/20 bg-gradient-to-r from-emerald-500/10 via-transparent to-teal-500/10 p-8 text-center md:p-12">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Ready to move faster?</p>
-            <h2 class="mx-auto mt-4 max-w-3xl text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Turn more customer chats into real orders without adding more admin work.</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-300">Portal is meant to help merchants capture more mobile sales with less manual effort and more clarity.</p>
-            <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="https://wa.me/923207914744?text=Hello%20Sidrah%20Labs%2C%20I%27d%20like%20to%20learn%20more%20about%20Portal." target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">WhatsApp us</a>
-              <span class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-slate-300 opacity-80">Pricing coming soon</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">Contact</p>
-              <h2 class="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-5xl">Talk to us about your WhatsApp sales flow.</h2>
-              <p class="mt-5 text-lg text-slate-300">Tell us what you sell, where orders are getting lost today, and how you want to handle WhatsApp orders more cleanly.</p>
-
-              <div class="mt-8 space-y-4 text-slate-300">
-                <div class="flex items-center gap-3"><span class="text-emerald-300">✉</span> azeem@sidrahlabs.com</div>
-                <div class="flex items-center gap-3"><span class="text-emerald-300">📍</span> Pakistan • Local deployment • PKR billing</div>
-              </div>
-            </div>
-
-            <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8" x-data="{
-              form: { name: '', email: '', company: '', message: '' },
-              submitted: false,
-              submit() { this.submitted = true; }
-            }">
-              <form @submit.prevent="submit" class="space-y-5">
-                <div class="grid gap-5 sm:grid-cols-2">
-                  <label class="block text-sm text-slate-300">
-                    <span class="mb-2 block">Name</span>
-                    <input x-model="form.name" type="text" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="Your name" />
-                  </label>
-                  <label class="block text-sm text-slate-300">
-                    <span class="mb-2 block">Email</span>
-                    <input x-model="form.email" type="email" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="you@company.com" />
-                  </label>
-                </div>
-
-                <label class="block text-sm text-slate-300">
-                  <span class="mb-2 block">Business</span>
-                  <input x-model="form.company" type="text" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="Shop name or company" />
-                </label>
-
-                <label class="block text-sm text-slate-300">
-                  <span class="mb-2 block">What do you want to automate?</span>
-                  <textarea x-model="form.message" rows="5" class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white outline-none transition focus:border-emerald-500" placeholder="We want to capture more WhatsApp orders and reduce manual order entry."></textarea>
-                </label>
-
-                <div class="flex items-center justify-between gap-4">
-                  <button type="submit" class="rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-glow transition hover:bg-emerald-400">Send inquiry</button>
-                  <template x-if="submitted">
-                    <span class="text-sm text-emerald-300">Thanks — we’ll be in touch.</span>
-                  </template>
-                </div>
-              </form>
+              <a
+                class="mt-7 inline-flex border-b border-[var(--accent)] pb-1 text-sm font-semibold text-[var(--accent)] hover:text-[var(--ink)]"
+                href="https://github.com/sidrahlabs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow our research on GitHub <span aria-hidden="true" class="ml-2">-&gt;</span>
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer class="border-t border-white/10 bg-[#07130f]">
-        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between lg:px-8">
-          <p>© 2026 Sidrah Labs. Built for Pakistan’s next chapter of commerce.</p>
-          <div class="flex items-center gap-6">
-            <a href="#solutions" class="transition hover:text-white">Platform</a>
-            <a href="#contact" class="transition hover:text-white">Contact</a>
-            <a href="privacy.html" class="transition hover:text-white">Privacy Policy</a>
-          </div>
-        </div>
+      <footer id="contact" class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <p class="text-sm font-medium">Sidrah Labs. Think. Design. Build useful services.</p>
+        <nav class="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs text-stone-600" aria-label="Footer links">
+          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--ink)]">LinkedIn ↗</a>
+          <a href="https://github.com/sidrahlabs" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--ink)]">GitHub ↗</a>
+          <a href="mailto:azeem@sidrahlabs.com" class="hover:text-[var(--ink)]">Email ↗</a>
+        </nav>
       </footer>
     </div>
   </body>
