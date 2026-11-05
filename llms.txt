@@ -1,28 +1,28 @@
 # SIDRAH LABS
 
-> Sidrah Labs (سِدْرَة لابس) engineers AI-ready lakehouses today, while forging formal verification infrastructure to make AI-paced engineering safe tomorrow.
+> Sidrah Labs (سِدْرَة لابس) engineers AI-ready lakehouses and Un-SaaS data migrations today, while forging formal verification infrastructure for tomorrow.
 
-Build data systems you can trust—and change at AI speed.
+Build data systems you can trust—and change safely.
 
 ## What we do
 
-95% of enterprise AI pilots stall in production because stochastic models are plugged into fragmented legacy ERPs and un-governed data landfills. Meanwhile, AI-generated pipelines move faster than human review can catch silent bugs. We re-architect hostile legacy data into AI-ready Databricks lakehouses today—while forging the formal verification infrastructure required to safely run AI-paced engineering tomorrow.
+Enterprises are bleeding money on rented pipelines, and their AI pilots are stalling because the underlying legacy data is a fragile mess. We re-architect hostile databases into AI-ready Databricks lakehouses today—while building the deterministic logic firewalls required to safely run AI-paced engineering tomorrow.
 
 
 ## Fixed-scope deployments
 
-- **Legacy ERP & unstructured data to AI-ready Lakehouse** (A / AI-READINESS) — 14–21 days sprint target.
-  Transition hostile SQL/Oracle/ERP silos and complex PDF streams into a governed Databricks Medallion architecture—wired directly to a concrete last-mile activation (a governed Genie/BI space, MCP context endpoint, or automated financial workflow).
+- **Legacy ERP to AI-Ready Lakehouse** (A / AI-READINESS) — 14–21 days sprint target.
+  95% of AI pilots fail because they are plugged into undocumented, hostile legacy databases. We migrate locked-in SQL/Oracle/ERP silos into a governed Databricks Medallion architecture—delivering a clean, verified Gold layer ready for BI and AI agents.
 
-  Focus: Legacy ERP extraction · Unstructured-to-Delta · Last-mile AI activation
-- **Fivetran off-ramp & full-recompute refactoring** (B / UNSAAS) — 14 days sprint target.
-  Eliminate runaway MAR billing spikes, rigid SaaS data lock-in, and silent full-table recomputes draining Serverless DBUs. We replace managed connectors with owned, incremental Python (dlt / PySpark) pipelines inside your VPC with mathematical source parity.
+  Focus: Legacy ERP extraction · Unstructured-to-Delta · AI-ready Gold layer
+- **The 'Un-SaaS' Migration (Cost Off-Ramp)** (B / UNSAAS) — 14 days sprint target.
+  Stop paying rent on your data. We rip out expensive, metered SaaS connectors (like Fivetran) and replace them with owned, high-performance PySpark pipelines running directly inside your VPC. Slash your monthly data pipeline bills by up to 80% while retaining mathematical source parity.
 
-  Focus: UnSaaS ingestion · Row-hash parity · DBU & MAR cost reduction
-- **Pre-execution contract gates & Golden-SQL evals** (C / HARDENING) — 10–14 days sprint target.
-  When engineers and AI coding agents ship pipeline mutations at machine speed, syntax checks pass while join fan-outs and schema drift silently corrupt Gold tables. We install deterministic pre-execution gates and golden regression suites.
+  Focus: UnSaaS ingestion · Eliminate MAR billing · DBU cost reduction
+- **Pipeline Hardening & Logic Firewalls** (C / HARDENING) — 10–14 days sprint target.
+  When junior engineers or AI coding agents ship pipeline edits at machine speed, syntax checks pass while silent semantic errors corrupt production. We install explicit schema contracts and deterministic pre-execution gates that physically block destructive SQL before it executes.
 
-  Focus: Schema contracts · AST query checks · Golden-SQL evaluation
+  Focus: Schema contracts · Logic firewalls · Golden-SQL evaluation
 
 TIMELINES ARE SPRINT TARGETS; EXACT SCOPE AND PARITY GUARANTEES ARE LOCKED AFTER TECHNICAL DISCOVERY.
 
@@ -30,9 +30,9 @@ TIMELINES ARE SPRINT TARGETS; EXACT SCOPE AND PARITY GUARANTEES ARE LOCKED AFTER
 
 We don't start from a blank repository or bill hours to reinvent standard plumbing. Each sprint deploys our proprietary internal software accelerators directly into your cloud VPC—compounding our delivery speed and your pipeline reliability.
 
-- **Metadata-driven ingestion & UnSaaS kit**: Battle-tested PySpark and Python dlt frameworks for hostile ERP snapshot/merge diffing, high-concurrency API extraction, and zero-row-loss CDC reconciliation.
+- **Metadata-driven ingestion & UnSaaS kit**: Battle-tested PySpark frameworks for hostile ERP snapshot/merge diffing, high-concurrency API extraction, and zero-row-loss CDC reconciliation.
 - **Deterministic DataFrame rules & parity engine**: Modular business-logic harnesses and automated row-hash parity checkers that prove migrated tables mathematically match legacy financial ground truth.
-- **Pre-execution schema & AST logic gates**: Static query analysis, explicit contracts, and golden-dataset evaluation tools that intercept destructive SQL mutations and metric drift before execution.
+- **Pre-execution schema & logic gates**: Static query analysis, explicit contracts, and evaluation tools that intercept destructive SQL mutations and metric drift before execution.
 
 ## Production experience
 
@@ -45,10 +45,10 @@ We don't start from a blank repository or bill hours to reinvent standard plumbi
 As automated tools generate software and pipeline logic 240% faster, the enterprise bottleneck shifts from code creation to code trust. Without machine-checked verification, AI-paced engineering carries a poison pill: catastrophic, silent bugs in production.
 
 
-To capture the real economic velocity of AI, verification must run as fast as generation. Sidrah Labs is developing reusable formal verification infrastructure and neuro-symbolic logic firewalls. By combining relational-algebra/AST compilers with SMT solvers (Z3) and incremental diff engines, we aim to mathematically prove that AI-generated code patches, SQL queries, and agent tool-calls preserve strict business invariants before they ever execute.
+To capture the real economic velocity of AI, verification must run as fast as generation. Sidrah Labs is developing reusable formal verification infrastructure and neuro-symbolic logic firewalls. By combining relational-algebra compilers with SMT solvers (Z3) and incremental diff engines, we aim to mathematically prove that AI-generated code patches and SQL queries preserve strict business invariants before they ever execute.
 
 
-THE COMPOUNDING FLYWHEEL: Every enterprise migration and pipeline hardening sprint we execute exposes real-world failure modes that harden our internal verification harnesses—funding our independence today while forging the standalone verification infrastructure of tomorrow.
+THE COMPOUNDING FLYWHEEL: Every enterprise migration we execute exposes real-world failure modes that harden our internal verification harnesses—funding our independence today while forging the standalone verification infrastructure of tomorrow.
 
 
 ## Links
