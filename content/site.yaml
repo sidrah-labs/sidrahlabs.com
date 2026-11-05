@@ -1,19 +1,19 @@
 meta:
   title: "Sidrah Labs — Build Data Systems You Can Trust and Change at AI Speed"
-  description: "Sidrah Labs (سِدْرَة لابس) engineers AI-ready Databricks lakehouses, legacy ERP migrations, and pre-execution verification gates—forging formal verification infrastructure for AI-paced engineering."
+  description: "Sidrah Labs (سِدْرَة لابس) engineers AI-ready lakehouses today, while forging formal verification infrastructure to make AI-paced engineering safe tomorrow."
   canonical: "https://sidrahlabs.com/"
   theme_color: "#f4f1e8"
   author: "Sidrah Labs"
   og:
     type: "website"
-    title: "Sidrah Labs — Data Systems You Can Trust at AI Speed"
-    description: "AI-ready Databricks lakehouses, legacy ERP & Fivetran migrations, deterministic parity gates, and neuro-symbolic verification infrastructure."
+    title: "Sidrah Labs — Build Data Systems You Can Trust and Change at AI Speed"
+    description: "Sidrah Labs (سِدْرَة لابس) engineers AI-ready lakehouses today, while forging formal verification infrastructure to make AI-paced engineering safe tomorrow."
     url: "https://sidrahlabs.com/"
     image: "https://sidrahlabs.com/og-image.png"
   twitter:
     card: "summary_large_image"
-    title: "Sidrah Labs — Data Systems You Can Trust at AI Speed"
-    description: "AI-ready Databricks lakehouses, deterministic pipelines, and formal verification infrastructure for AI-generated software and data."
+    title: "Sidrah Labs — Build Data Systems You Can Trust and Change at AI Speed"
+    description: "Sidrah Labs (سِدْرَة لابس) engineers AI-ready lakehouses today, while forging formal verification infrastructure to make AI-paced engineering safe tomorrow."
 
 nav:
   wordmark_left: "SIDRAH"
@@ -35,13 +35,13 @@ nav:
     href: "mailto:azeem@sidrahlabs.com?subject=Data%20Systems%20%26%20AI-Readiness%20Engagement"
 
 hero:
-  eyebrow: "Applied systems, data infrastructure & verification lab"
+  eyebrow: "High-assurance data infrastructure & verification lab"
   meta_index: "INDEPENDENT / DATABRICKS CERTIFIED PRO / PRODUCTION-HARDENED"
   headline_prefix: "Build data systems you can "
   headline_accent: "trust"
   headline_suffix: "—and change at AI speed."
   body: >
-    95% of enterprise AI pilots stall in production because stochastic models are plugged into fragmented legacy ERPs and un-governed data landfills. Meanwhile, AI-generated code and SQL move faster than human review can catch silent bugs. We re-architect hostile legacy data into AI-ready Databricks lakehouses today—while forging the formal verification infrastructure required to safely run AI-paced engineering tomorrow.
+    95% of enterprise AI pilots stall in production because stochastic models are plugged into fragmented legacy ERPs and un-governed data landfills. Meanwhile, AI-generated pipelines move faster than human review can catch silent bugs. We re-architect hostile legacy data into AI-ready Databricks lakehouses today—while forging the formal verification infrastructure required to safely run AI-paced engineering tomorrow.
   cta:
     label: "Scope a production deployment"
     href: "mailto:azeem@sidrahlabs.com?subject=Production%20Lakehouse%20%26%20Verification%20Scoping"
@@ -64,25 +64,25 @@ deployments:
   intro: >
     Specific business outcomes, defined timelines, and high-margin engineering powered by our internal software harnesses. No open-ended hourly billing or staff-augmentation fluff.
   cards:
-    - code: "A / AI-READINESS & MIGRATION"
+    - code: "A / AI-READINESS"
       duration: "14–21 days"
       title: "Legacy ERP & unstructured data to AI-ready Lakehouse"
       description: >
-        Transition hostile SQL/Oracle/ERP silos and complex PDF/document streams into a governed Databricks Medallion architecture—wired directly to a concrete last-mile activation (a governed Genie/BI space, MCP context endpoint, or automated financial workflow).
+        Transition hostile SQL/Oracle/ERP silos and complex PDF streams into a governed Databricks Medallion architecture—wired directly to a concrete last-mile activation (a governed Genie/BI space, MCP context endpoint, or automated financial workflow).
       focus: "Legacy ERP extraction · Unstructured-to-Delta · Last-mile AI activation"
-    - code: "B / UNSAAS & COST OFF-RAMP"
+    - code: "B / UNSAAS"
       duration: "14 days"
       title: "Fivetran off-ramp & full-recompute refactoring"
       description: >
-        Eliminate $25k+/yr Fivetran MAR billing spikes, rigid SaaS data lock-in, and silent full-table recomputes draining Serverless DBUs. We replace managed connectors with owned, incremental Python (dlt / PySpark) pipelines inside your VPC with mathematical source parity.
+        Eliminate runaway MAR billing spikes, rigid SaaS data lock-in, and silent full-table recomputes draining Serverless DBUs. We replace managed connectors with owned, incremental Python (dlt / PySpark) pipelines inside your VPC with mathematical source parity.
       focus: "UnSaaS ingestion · Row-hash parity · DBU & MAR cost reduction"
-    - code: "C / PIPELINE HARDENING"
+    - code: "C / HARDENING"
       duration: "10–14 days"
       title: "Pre-execution contract gates & Golden-SQL evals"
       description: >
-        When engineers and AI coding/SQL agents ship pipeline mutations at machine speed, syntax checks pass while join fan-outs, rounding drift, and schema changes silently corrupt Gold tables. We install deterministic pre-execution gates and golden regression suites.
+        When engineers and AI coding agents ship pipeline mutations at machine speed, syntax checks pass while join fan-outs and schema drift silently corrupt Gold tables. We install deterministic pre-execution gates and golden regression suites.
       focus: "Schema contracts · AST query checks · Golden-SQL evaluation"
-  scope_note: "TIMELINES ARE FIXED SPRINT TARGETS; EXACT SCOPE AND PARITY GUARANTEES ARE LOCKED AFTER TECHNICAL DISCOVERY."
+  scope_note: "TIMELINES ARE SPRINT TARGETS; EXACT SCOPE AND PARITY GUARANTEES ARE LOCKED AFTER TECHNICAL DISCOVERY."
 
 architecture:
   kicker_number: "02"
@@ -90,11 +90,11 @@ architecture:
   title: "The high-assurance pattern"
   title_accent: "."
   intro: >
-    Every deployment installs a deterministic execution flow. Hostile structured and unstructured sources are normalized, mathematically reconciled for parity, and gated by explicit contracts before mutating production state or feeding AI agents.
+    Every deployment installs an explicit, deterministic flow. Hostile structured and unstructured sources are normalized, mathematically reconciled for parity, and gated by strict contracts before mutating production state or feeding AI agents.
   diagram_steps:
     - id: "01"
       title: "Hostile Sources"
-      desc: "Legacy ERPs, CDC-locked SQL DBs, SaaS APIs, messy PDFs"
+      desc: "Legacy ERPs, SaaS APIs, CDC-locked DBs, messy PDFs"
       tag: "EXTRACT"
     - id: "02"
       title: "Metadata & Rules Engine"
@@ -115,17 +115,17 @@ method:
   title: "Services, engineered as software"
   title_accent: "."
   intro: >
-    We don't start from a blank repository or bill hours to reinvent plumbing. Every sprint deploys our proprietary internal software accelerators directly into your cloud VPC—compounding our delivery speed and your pipeline reliability.
+    We don't start from a blank repository or bill hours to reinvent standard plumbing. Each sprint deploys our proprietary internal software accelerators directly into your cloud VPC—compounding our delivery speed and your pipeline reliability.
   pillars:
     - number: "01"
       title: "Metadata-driven ingestion & UnSaaS kit"
-      description: "Battle-tested PySpark and Python dlt frameworks for hostile ERP snapshot/merge diffing, high-concurrency API/web extraction, and zero-row-loss CDC reconciliation."
+      description: "Battle-tested PySpark and Python dlt frameworks for hostile ERP snapshot/merge diffing, high-concurrency API extraction, and zero-row-loss CDC reconciliation."
     - number: "02"
       title: "Deterministic DataFrame rules & parity engine"
-      description: "Modular business-logic harnesses and automated row-hash/distribution parity checkers that prove migrated tables match legacy financial and operational ground truth."
+      description: "Modular business-logic harnesses and automated row-hash parity checkers that prove migrated tables mathematically match legacy financial ground truth."
     - number: "03"
       title: "Pre-execution schema & AST logic gates"
-      description: "Static query analysis, explicit schema contracts, and golden-dataset evaluation harnesses that intercept destructive SQL mutations and silent metric drift before execution."
+      description: "Static query analysis, explicit contracts, and golden-dataset evaluation tools that intercept destructive SQL mutations and metric drift before execution."
   footer_left: "PROPRIETARY INTERNAL ACCELERATORS"
   footer_right: "DEPLOYED INSIDE YOUR CLOUD VPC ↗"
 
@@ -139,15 +139,15 @@ proof:
   entries:
     - index: "01"
       title: "Zero-downtime ERP Lakehouse & metadata ingestion"
-      description: "Architected and operated an end-to-end Databricks Medallion lakehouse across complex ERP financial and payroll schemas. Engineered a config-driven PySpark snapshot/merge framework (onboarding new tables via metadata inserts without code rewrites) and automated multi-environment promotion—running in production for 2+ years."
+      description: "Architected and operated an end-to-end Databricks Medallion lakehouse across complex ERP schemas. Engineered a config-driven PySpark snapshot/merge framework (onboarding new tables via config inserts) and automated multi-environment promotion—running in production for 2+ years."
       tag: "2+ YEARS PRODUCTION"
     - index: "02"
       title: "High-concurrency unstructured & HealthAI extraction"
-      description: "Engineered fault-tolerant extraction infrastructure for a Silicon Valley medical AI team and enterprise pipelines—combining 100+ asynchronous spiders (bounded semaphores, custom proxy/rate-limit governors) with layout-aware PDF/Table vision models to turn messy documents into schema-validated tables."
+      description: "Engineered fault-tolerant extraction infrastructure for a Silicon Valley medical AI team—combining 100+ asynchronous spiders with layout-aware PDF/vision models to turn messy documents into schema-validated analytical tables."
       tag: "100+ EXTRACTORS / VISION"
     - index: "03"
       title: "Symbolic execution & neuro-symbolic verification"
-      description: "Founded by a Databricks Certified Data Engineer Professional with applied formal-methods research extending JavaPathFinder (JPF) and NeuroSPF symbolic execution harnesses—bridging classical constraint solving with neural/LLM representations."
+      description: "Founded by a Databricks Certified Data Engineer Pro with applied formal-methods research extending JavaPathFinder (JPF) and NeuroSPF symbolic execution harnesses—bridging classical constraint solving with neural/LLM representations."
       tag: "JPF / NEURO-SYMBOLIC R&D"
   foot_notes:
     - "DATABRICKS CERTIFIED PRO"
@@ -161,13 +161,13 @@ research:
   title_sub: "of AI generation"
   title_accent: "."
   lead: >
-    AI coding agents and automated migration tools can generate 240%+ more commits and SQL transformations—but without machine-checked verification, AI-paced engineering carries a poison pill: catastrophic, silent bugs in production.
+    As automated tools generate software and pipeline logic 240% faster, the enterprise bottleneck shifts from code creation to code trust. Without machine-checked verification, AI-paced engineering carries a poison pill: catastrophic, silent bugs in production.
   body: >
-    To capture the real economic velocity of AI, verification must run as fast as generation. Sidrah Labs is developing reusable formal verification infrastructure and neuro-symbolic logic firewalls—combining relational-algebra/AST compilers with SMT solvers (Z3) and incremental diff engines to mathematically prove that AI-generated code patches, SQL queries, and agent tool-calls preserve strict business invariants before they ever execute.
+    To capture the real economic velocity of AI, verification must run as fast as generation. Sidrah Labs is developing reusable formal verification infrastructure and neuro-symbolic logic firewalls. By combining relational-algebra/AST compilers with SMT solvers (Z3) and incremental diff engines, we aim to mathematically prove that AI-generated code patches, SQL queries, and agent tool-calls preserve strict business invariants before they ever execute.
   boundary_note: >
     THE COMPOUNDING FLYWHEEL: Every enterprise migration and pipeline hardening sprint we execute exposes real-world failure modes that harden our internal verification harnesses—funding our independence today while forging the standalone verification infrastructure of tomorrow.
   github_link:
-    label: "Follow our verification research on GitHub"
+    label: "Explore our verification research on GitHub"
     href: "https://github.com/sidrah-labs"
 
 footer:
