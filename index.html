@@ -3,693 +3,423 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Sidrah Labs makes data systems safe to change with reliable lakehouses, deterministic pipelines, and research into software verification infrastructure."
+    <title>Sidrah Labs — Data systems you can trust</title>
+    <meta name="description" content="Sidrah Labs engineers reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks—forging foundational verification infrastructure from production data work." />
+    <meta name="theme-color" content="#f4f1e8" />
+    <meta name="author" content="Sidrah Labs" />
+    <link rel="canonical" href="https://sidrahlabs.com/" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sidrah Labs — Data systems you can trust" />
+    <meta property="og:description" content="Reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks." />
+    <meta property="og:url" content="https://sidrahlabs.com/" />
+    <meta property="og:image" content="https://sidrahlabs.com/og-image.png" />
+    <meta property="og:site_name" content="Sidrah Labs" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sidrah Labs — Data systems you can trust" />
+    <meta name="twitter:description" content="Reliable Databricks lakehouses with deterministic pipelines and pre-execution checks." />
+    <meta name="twitter:image" content="https://sidrahlabs.com/og-image.png" />
+
+    <!-- Favicon: Clean SVG Mark -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23171916'/%3E%3Ctext x='16' y='21' fill='%23f5f4ef' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle'%3ES%3Ctspan fill='%23315d47'%3E/%3E%3C/tspan%3EL%3C/text%3E%3C/svg%3E"
     />
-    <meta name="theme-color" content="#F5F4EF" />
-    <title>Sidrah Labs — High-Assurance Data Infrastructure</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        color-scheme: light;
-        --paper: #f5f4ef;
-        --ink: #171916;
-        --muted: #65675f;
-        --accent: #315d47;
-        --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
-        --line: #171916;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      html {
-        background: var(--paper);
-      }
-
-      body {
-        margin: 0;
-        background: var(--paper);
-        color: var(--ink);
-        font-family: Inter, "Segoe UI", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-      }
-
-      a {
-        color: inherit;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 4px;
-      }
-
-      a:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 4px;
-      }
-
-      .paper-grid {
-        min-height: 100vh;
-        background-color: var(--paper);
-        background-image: linear-gradient(to right, rgba(23, 25, 22, 0.035) 1px, transparent 1px);
-        background-size: 4.5rem 100%;
-      }
-
-      .font-mono {
-        font-family: var(--mono);
-      }
-
-      .rule {
-        border-color: var(--line);
-      }
-
-      .site-header {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .container {
-        width: min(100% - 2.5rem, 72rem);
-        margin-inline: auto;
-      }
-
-      .site-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-        padding-block: 1.25rem;
-      }
-
-      .brand {
-        font-size: 0.9375rem;
-        font-weight: 700;
-        letter-spacing: -0.025em;
-        text-decoration: none;
-      }
-
-      .brand span {
-        font-weight: 500;
-      }
-
-      .nav-links,
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1.5rem;
-        font-size: 0.8125rem;
-      }
-
-      .nav-links a,
-      .footer-links a {
-        text-decoration: none;
-      }
-
-      .nav-links a:hover,
-      .footer-links a:hover {
-        text-decoration: underline;
-      }
-
-      .hero {
-        padding-block: 6rem 5rem;
-      }
-
-      .eyebrow {
-        margin: 0;
-        color: var(--accent);
-        font-family: var(--mono);
-        font-size: 0.75rem;
-        letter-spacing: 0.16em;
-        line-height: 1.6;
-        text-transform: uppercase;
-      }
-
-      .eyebrow span {
-        color: #77796f;
-      }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin-top: 0;
-      }
-
-      .hero h1 {
-        max-width: 68rem;
-        margin-block: 2rem 0;
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        font-weight: 600;
-        letter-spacing: -0.055em;
-        line-height: 1.08;
-      }
-
-      .hero h1 span {
-        white-space: nowrap;
-      }
-
-      .hero-copy {
-        max-width: 54rem;
-        margin-block: 1.75rem 0;
-        color: #44463f;
-        font-size: clamp(1rem, 1.5vw, 1.125rem);
-        line-height: 1.8;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1.25rem;
-        margin-top: 2.25rem;
-      }
-
-      .button-primary {
-        display: inline-flex;
-        min-height: 3rem;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        padding: 0.75rem 1.25rem;
-        background: var(--ink);
-        color: #fff;
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-decoration: none;
-      }
-
-      .button-primary:hover {
-        background: var(--accent);
-      }
-
-      .button-secondary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding-block: 0.75rem;
-        border-bottom: 1px solid #77796f;
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-decoration: none;
-      }
-
-      .button-secondary:hover {
-        border-color: var(--ink);
-      }
-
-      .hero-metrics {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin-top: 5rem;
-        padding-block: 1.25rem;
-        border-block: 1px solid var(--line);
-      }
-
-      .hero-metric {
-        padding: 0.5rem 1.25rem;
-        border-right: 1px solid var(--line);
-      }
-
-      .hero-metric:first-child {
-        padding-left: 0;
-      }
-
-      .hero-metric:last-child {
-        padding-right: 0;
-        border-right: 0;
-      }
-
-      .metric-label,
-      .metric-value {
-        margin: 0;
-      }
-
-      .metric-label {
-        color: var(--muted);
-        font-family: var(--mono);
-        font-size: 0.6875rem;
-      }
-
-      .metric-value {
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-      }
-
-      .section-band {
-        border-block: 1px solid var(--line);
-        background: #eeede7;
-      }
-
-      .section-inner {
-        padding-block: 4.5rem;
-      }
-
-      .section-heading {
-        margin: 1rem 0 0;
-        font-size: clamp(1.875rem, 4vw, 2.5rem);
-        font-weight: 600;
-        letter-spacing: -0.045em;
-        line-height: 1.15;
-      }
-
-      .section-kicker {
-        margin: 0;
-        color: var(--accent);
-        font-family: var(--mono);
-        font-size: 0.75rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .commercial-header {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 2rem;
-        margin-bottom: 2.5rem;
-      }
-
-      .commercial-summary {
-        max-width: 23rem;
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.875rem;
-        line-height: 1.7;
-      }
-
-      .offer-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .offer-card {
-        padding: 1.5rem 2rem 0 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .offer-card + .offer-card {
-        padding-right: 0;
-        padding-left: 2rem;
-        border-left: 1px solid var(--line);
-      }
-
-      .offer-title {
-        max-width: 34rem;
-        margin: 0;
-        font-size: 1.375rem;
-        font-weight: 600;
-        letter-spacing: -0.035em;
-        line-height: 1.3;
-      }
-
-      .offer-copy {
-        margin: 1rem 0 0;
-        color: #44463f;
-        font-size: 0.9375rem;
-        line-height: 1.9;
-      }
-
-      .offer-tags {
-        margin: 1.25rem 0 0;
-        color: var(--accent);
-        font-family: var(--mono);
-        font-size: 0.6875rem;
-        letter-spacing: 0.04em;
-        line-height: 1.8;
-        text-transform: uppercase;
-      }
-
-      .proof {
-        padding-block: 4.5rem;
-      }
-
-      .proof-heading {
-        margin-bottom: 2rem;
-      }
-
-      .terminal {
-        padding: 2rem;
-        border: 1px solid #333a34;
-        background-color: #1c211d;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-        background-size: 100% 2rem;
-        color: #f5f4ef;
-      }
-
-      .terminal-header {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      }
-
-      .terminal-title,
-      .terminal-status {
-        margin: 0;
-        font-family: var(--mono);
-        text-transform: uppercase;
-      }
-
-      .terminal-title {
-        color: #c2cbbf;
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-      }
-
-      .terminal-status {
-        color: #9cad99;
-        font-size: 0.6875rem;
-      }
-
-      .terminal-copy {
-        max-width: 60rem;
-        margin: 1.75rem 0 0;
-        color: #d9ded6;
-        font-family: var(--mono);
-        font-size: 0.9375rem;
-        line-height: 2;
-      }
 
-      .terminal-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.75rem;
-        margin: 2rem 0 0;
-        padding: 1.25rem 0 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        color: #b8c5b4;
-        font-family: var(--mono);
-        font-size: 0.75rem;
-        list-style: none;
-      }
-
-      .terminal-metrics li::before {
-        content: "› ";
-        color: #82987f;
-      }
-
-      .research-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-        gap: 4rem;
-      }
-
-      .research-copy {
-        margin: 0;
-        color: #44463f;
-        font-size: 1rem;
-        line-height: 2;
-      }
-
-      .research-link {
-        display: inline-flex;
-        gap: 0.5rem;
-        margin-top: 1.75rem;
-        padding-bottom: 0.25rem;
-        border-bottom: 1px solid var(--accent);
-        color: var(--accent);
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-      .research-link:hover {
-        color: var(--ink);
-      }
-
-      .site-footer {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-        padding-block: 2rem;
-      }
-
-      .footer-brand {
-        margin: 0;
-        font-size: 0.875rem;
-        font-weight: 500;
-      }
-
-      .footer-links {
-        gap: 1.5rem;
-        color: var(--muted);
-        font-family: var(--mono);
-        font-size: 0.75rem;
-      }
-
-      @media (max-width: 700px) {
-        .container {
-          width: min(100% - 2rem, 72rem);
-        }
-
-        .paper-grid {
-          background-size: 2.5rem 100%;
-        }
-
-        .site-nav {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .nav-links {
-          gap: 1rem;
-        }
-
-        .hero {
-          padding-block: 4rem 3.5rem;
-        }
-
-        .hero h1 span {
-          white-space: normal;
-        }
-
-        .hero-metrics {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          margin-top: 3.5rem;
-        }
-
-        .hero-metric {
-          padding: 0.75rem 1rem;
-        }
-
-        .hero-metric:nth-child(2) {
-          border-right: 0;
-        }
-
-        .hero-metric:nth-child(3),
-        .hero-metric:nth-child(4) {
-          border-top: 1px solid var(--line);
-        }
-
-        .hero-metric:nth-child(3) {
-          padding-left: 0;
-        }
-
-        .hero-metric:last-child {
-          padding-right: 0;
-        }
-
-        .commercial-header,
-        .research-layout {
-          grid-template-columns: 1fr;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1.5rem;
-        }
-
-        .offer-grid {
-          grid-template-columns: 1fr;
-          gap: 1.75rem;
-        }
-
-        .offer-card,
-        .offer-card + .offer-card {
-          padding: 1.5rem 0 0;
-          border-left: 0;
-        }
-
-        .section-inner,
-        .proof {
-          padding-block: 3.5rem;
-        }
-
-        .terminal {
-          padding: 1.25rem;
-        }
-
-        .terminal-metrics {
-          grid-template-columns: 1fr;
-        }
-
-        .research-layout {
-          display: grid;
-        }
-      }
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Sidrah Labs",
+        "url": "https://sidrahlabs.com/",
+        "logo": "https://sidrahlabs.com/og-image.png",
+        "description": "Sidrah Labs engineers reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks—forging foundational verification infrastructure from production data work.",
+        "founder": {
+          "@type": "Person",
+          "name": "Muhammad Azeem",
+          "email": "azeem@sidrahlabs.com"
+        },
+        "sameAs": [
+          "https://github.com/sidrah-labs",
+          "https://www.linkedin.com/company/sidrah-labs"
+        ],
+        "knowsAbout": [
+          "Databricks Lakehouse",
+          "Databricks Asset Bundles (DABs)",
+          "Data Infrastructure",
+          "Deterministic Data Pipelines",
+          "Formal Verification",
+          "Schema Contracts"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div class="paper-grid">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-frame">
       <header class="site-header">
-        <nav class="container site-nav" aria-label="Main navigation">
-          <a class="brand" href="#top" aria-label="Sidrah Labs home">
-            Sidrah Labs <span lang="ar" dir="rtl">سِدْرَة لابس</span>
+        <nav class="wrap nav" aria-label="Main navigation">
+          <a class="wordmark" href="#top" aria-label="Sidrah Labs home">
+            SIDRAH<span class="wordmark-mark" aria-hidden="true">/</span>LABS
           </a>
           <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#research">Research</a>
-            <a href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#deployments">Deployments</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#method">Method</a>
+            <a href="#proof">Proof</a>
+            <a href="#research">R&D</a>
           </div>
+          <a class="nav-contact" href="mailto:azeem@sidrahlabs.com?subject=Data%20Systems%20Engagement">
+            Start a conversation <span aria-hidden="true">↗</span>
+          </a>
         </nav>
       </header>
 
-      <main id="top">
-        <section class="container hero" aria-labelledby="hero-title">
-          <p class="eyebrow">
-            Data infrastructure lab <span>/</span> Est. for systems that matter
-          </p>
-          <h1 id="hero-title">
-            Build data systems you can trust—and change safely.
-          </h1>
-          <p class="hero-copy">
-            We modernize legacy data platforms into reliable lakehouses, while developing the verification tools that help prevent generated code and pipeline changes from corrupting production data.
-          </p>
-          <div class="hero-actions">
-            <a
-              class="button-primary"
-              href="mailto:azeem@sidrahlabs.com?subject=Pipeline%20Architecture%20Audit"
-            >
-              Book a Pipeline Architecture Audit <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              class="button-secondary"
-              href="https://github.com/sidrah-labs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read Our Systems Research <span aria-hidden="true">↗</span>
-            </a>
+      <main id="main">
+        <!-- Hero Section -->
+        <section id="top" class="wrap hero" aria-labelledby="hero-title">
+          <div class="hero-meta">
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Applied systems & data infrastructure lab</p>
+            <p class="mono meta-index">INDEPENDENT / PRODUCTION-HARDENED</p>
           </div>
+          <h1 id="hero-title">
+            Build data systems you can <span>trust</span>—and change safely.
+          </h1>
+          <div class="hero-bottom">
+            <p class="hero-copy">
+              We engineer reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks. We deliver fixed-scope production deployments using battle-tested engineering harnesses—letting our hands-on work in production inform and harden the foundational software infrastructure we build.
 
-          <div class="hero-metrics" aria-label="Engineering principles">
-            <div class="hero-metric">
-              <p class="metric-label">SYSTEMS</p>
-              <p class="metric-value">Incremental by design</p>
+            </p>
+            <div class="hero-cta">
+              <a class="button button-dark" href="mailto:azeem@sidrahlabs.com?subject=Production%20Deployment%20Scoping">
+                Discuss a production deployment <span aria-hidden="true">↗</span>
+              </a>
+              <div class="cta-direct">
+                <span class="mono cta-email-label">DIRECT CONTACT:</span>
+                <button
+                  type="button"
+                  class="cta-copy-btn mono"
+                  data-email="azeem@sidrahlabs.com"
+                  aria-label="Copy direct email address to clipboard"
+                >
+                  <span class="cta-email-text">azeem@sidrahlabs.com</span>
+                  <span class="copy-badge" aria-hidden="true">COPY ⎘</span>
+                </button>
+              </div>
+              <p class="mono cta-note">FIXED SCOPE. DETERMINISTIC DELIVERY. REUSABLE INFRASTRUCTURE.</p>
             </div>
-            <div class="hero-metric">
-              <p class="metric-label">CONTROL</p>
-              <p class="metric-value">Deterministic pipelines</p>
-            </div>
-            <div class="hero-metric">
-              <p class="metric-label">DEPLOYMENT</p>
-              <p class="metric-value">Production-grade CI/CD</p>
-            </div>
-            <div class="hero-metric">
-              <p class="metric-label">PRINCIPLE</p>
-              <p class="metric-value">No black boxes</p>
-            </div>
+          </div>
+          <div class="hero-stamp" aria-hidden="true">
+            <span>DATA</span>
+            <span>→</span>
+            <span>CONTRACTS</span>
+            <span>→</span>
+            <span>VERIFICATION</span>
+            <span>→</span>
+            <span>PRODUCTION</span>
           </div>
         </section>
 
-        <section id="services" class="section-band" aria-labelledby="services-title">
-          <div class="container section-inner">
-            <div class="commercial-header">
+        <!-- Deployments Section -->
+        <section id="deployments" class="section section-ink" aria-labelledby="deployments-title">
+          <div class="wrap section-wrap">
+            <div class="section-top">
               <div>
-                <p class="section-kicker">Commercial services</p>
-                <h2 id="services-title" class="section-heading">Data Infrastructure Sprints</h2>
+                <p class="eyebrow eyebrow-light"><span>01</span> / Fixed-scope deployments</p>
+                <h2 id="deployments-title">Targeted deployments<span class="accent-mark">.</span></h2>
               </div>
-              <p class="commercial-summary">
-                Fixed-scope engineering to modernize legacy data platforms and make production pipelines safe to change.
+              <p class="section-intro">
+                Specific outcomes, defined timelines, and engineering built around the reality of your data estate. No open-ended hourly billing.
+
               </p>
             </div>
-
             <div class="offer-grid">
               <article class="offer-card">
-                <h3 class="offer-title">Resilient Lakehouse Engineering &amp; Legacy Migrations</h3>
-                <p class="offer-copy">
-                  We engineer fixed-scope migrations for legacy ERPs, hostile SQL databases, Fivetran-dependent pipelines, and unstructured data systems. By replacing fragile data pipelines with reliable Databricks lakehouse architectures, we eliminate runaway compute costs and silent data corruption.
+                <div class="offer-card-top">
+                  <span class="mono offer-number">A / MIGRATION</span>
+                  <span class="duration mono">14–21 days</span>
+                </div>
+                <h3>Legacy ERP & hostile SQL to Databricks</h3>
+                <p>Transition brittle, uncooperative source systems into a governed lakehouse foundation without turning the project into an indefinite rewrite.
+</p>
+                <p class="offer-result">
+                  <span>CORE FOCUS</span> Source discovery · Incremental ingestion · Lakehouse delivery
                 </p>
-                <p class="offer-tags">DATABRICKS LAKEHOUSES · ERP MIGRATIONS · UNSTRUCTURED DATA</p>
               </article>
               <article class="offer-card">
-                <h3 class="offer-title">Pre-Execution Checks &amp; Deterministic Pipelines</h3>
-                <p class="offer-copy">
-                  Data systems must be safe to change. We do not rely on hope or full-recompute batches. We architect deterministic data pipelines secured by explicit schema contracts, data-recipe rules engines, and pre-execution checks that mathematically catch bad logic edits before they reach your Gold tables.
+                <div class="offer-card-top">
+                  <span class="mono offer-number">B / OWNERSHIP</span>
+                  <span class="duration mono">14 days</span>
+                </div>
+                <h3>Fivetran & SaaS pipeline off-ramp</h3>
+                <p>Replace high-volume managed connectors with pipelines you own, understand, and operate—eliminating runaway row-sync taxes while keeping source parity.
+</p>
+                <p class="offer-result">
+                  <span>CORE FOCUS</span> Source parity · Owned pipelines · Run-cost visibility
                 </p>
-                <p class="offer-tags">SCHEMA CONTRACTS · DETERMINISTIC PIPELINES · PRE-EXECUTION CHECKS</p>
+              </article>
+              <article class="offer-card">
+                <div class="offer-card-top">
+                  <span class="mono offer-number">C / DELIVERY</span>
+                  <span class="duration mono">10 days</span>
+                </div>
+                <h3>Databricks Asset Bundles CI/CD & DBU optimization</h3>
+                <p>Standardize bundle-based multi-environment deployments, integrate schema validation gates, and eliminate avoidable compute spend across your clusters.
+</p>
+                <p class="offer-result">
+                  <span>CORE FOCUS</span> Deployment harness · Environment setup · Compute review
+                </p>
               </article>
             </div>
+            <p class="scope-note mono">TIMELINES ARE SPRINT TARGETS; FINAL SCOPE IS CONFIRMED AFTER A FOCUSED TECHNICAL DISCOVERY.</p>
           </div>
         </section>
 
-        <section id="work" class="container proof" aria-labelledby="proof-title">
-          <div class="proof-heading">
-            <p class="section-kicker">Production experience</p>
-            <h2 id="proof-title" class="section-heading">Production Case: Zero-Downtime ERP Lakehouse &amp; Pre-Execution Checks</h2>
-          </div>
-          <article class="terminal" aria-labelledby="terminal-title">
-            <div class="terminal-header">
-              <h3 id="terminal-title" class="terminal-title">Production Case: Zero-Downtime ERP Lakehouse &amp; Pre-Execution Checks</h3>
-              <p class="terminal-status">STATUS: RUNNING / 2+ YEARS</p>
+        <!-- System Architecture Pattern Section -->
+        <section id="architecture" class="section section-paper" aria-labelledby="arch-title">
+          <div class="wrap section-wrap">
+            <div class="section-top">
+              <div>
+                <p class="eyebrow"><span>02</span> / System topology</p>
+                <h2 id="arch-title">The high-assurance pattern<span class="accent-mark">.</span></h2>
+              </div>
+              <p class="section-intro">
+                Every deployment installs an explicit, deterministic flow. Data is validated before it mutates state; changes are gated before execution.
+
+              </p>
             </div>
-            <p class="terminal-copy">
-              Architected and delivered an end-to-end medallion analytics platform replacing brittle ETL. Engineered a metadata-driven snapshot ingestion framework and deterministic DataFrame rules engines. Deployed pre-execution schema contracts that catch bad data mutations before they hit Gold tables, running cleanly in production for 2+ years.
-            </p>
-            <ul class="terminal-metrics" aria-label="Production capabilities">
-              <li>Medallion architecture</li>
-              <li>Deterministic pipelines</li>
-              <li>Schema contracts</li>
-            </ul>
-          </article>
+            <div class="arch-schematic" role="region" aria-label="System topology diagram">
+              <div class="arch-grid">
+                <div class="arch-card">
+                  <div class="arch-card-header">
+                    <span class="mono arch-step-id">01</span>
+                    <span class="mono arch-tag">INGEST</span>
+                  </div>
+                  <h3 class="arch-card-title">Source Estate</h3>
+                  <p class="arch-card-desc">Legacy ERPs, relational databases, SaaS endpoints</p>
+                </div>
+                <div class="arch-connector" aria-hidden="true">
+                  <span>→</span>
+                </div>
+                <div class="arch-card">
+                  <div class="arch-card-header">
+                    <span class="mono arch-step-id">02</span>
+                    <span class="mono arch-tag">DISCOVER</span>
+                  </div>
+                  <h3 class="arch-card-title">Metadata Harness</h3>
+                  <p class="arch-card-desc">Config-driven discovery, incremental state capture</p>
+                </div>
+                <div class="arch-connector" aria-hidden="true">
+                  <span>→</span>
+                </div>
+                <div class="arch-card">
+                  <div class="arch-card-header">
+                    <span class="mono arch-step-id">03</span>
+                    <span class="mono arch-tag">VERIFY</span>
+                  </div>
+                  <h3 class="arch-card-title">Schema & Logic Gates</h3>
+                  <p class="arch-card-desc">Explicit contracts, pre-execution type and query checks</p>
+                </div>
+                <div class="arch-connector" aria-hidden="true">
+                  <span>→</span>
+                </div>
+                <div class="arch-card">
+                  <div class="arch-card-header">
+                    <span class="mono arch-step-id">04</span>
+                    <span class="mono arch-tag">PRODUCE</span>
+                  </div>
+                  <h3 class="arch-card-title">Governed Lakehouse</h3>
+                  <p class="arch-card-desc">Deterministic Delta tables, DABs-managed CI/CD</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="research" class="section-band" aria-labelledby="research-title">
-          <div class="container section-inner research-layout">
+        <!-- Method Section -->
+        <section id="method" class="section section-ink" aria-labelledby="method-title">
+          <div class="wrap section-wrap">
+            <div class="section-top method-heading">
+              <div>
+                <p class="eyebrow"><span>03</span> / Delivery engine</p>
+                <h2 id="method-title">Services, engineered as software<span class="accent-mark">.</span></h2>
+              </div>
+              <p class="section-intro">
+                We don't start from a blank repo or bill hours to reinvent standard plumbing. Each deployment adapts a modular set of proven engineering assets directly to your cloud.
+
+              </p>
+            </div>
+            <div class="method-grid">
+              <article class="method-item">
+                <span class="mono method-index">01</span>
+                <h3>Metadata ingestion framework</h3>
+                <p>Reusable patterns for source discovery, delta-tracking, and repeatable ingestion across structured enterprise systems.</p>
+              </article>
+              <article class="method-item">
+                <span class="mono method-index">02</span>
+                <h3>One-click DABs CI/CD harness</h3>
+                <p>A consistent, automated deployment baseline for Databricks Asset Bundles across dev, staging, and production environments.</p>
+              </article>
+              <article class="method-item">
+                <span class="mono method-index">03</span>
+                <h3>Pre-execution schema gates</h3>
+                <p>Explicit contract assertions that catch incompatible source mutations and type mismatches before pipelines run.</p>
+              </article>
+            </div>
+            <div class="method-footer mono">
+              <span>REUSABLE ENGINEERING ASSETS</span>
+              <span>DEPLOYED TO YOUR INFRASTRUCTURE ↗</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Production Proof Section -->
+        <section id="proof" class="section section-proof" aria-labelledby="proof-title">
+          <div class="wrap section-wrap">
+            <div class="proof-heading">
+              <p class="eyebrow"><span>04</span> / Field evidence</p>
+              <h2 id="proof-title">Built to run. Built to last<span class="accent-mark">.</span></h2>
+            </div>
+            <div class="terminal" aria-label="Production systems and experience">
+              <div class="terminal-bar">
+                <div class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+                <p class="mono">FIELD_NOTES / PRODUCTION_SYSTEMS</p>
+                <span class="mono terminal-live"><span class="status-dot" aria-hidden="true"></span> VERIFIED IN PRODUCTION</span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-entry">
+                  <span class="mono terminal-index">01</span>
+                  <div>
+                    <h3>Self-service ERP lakehouse</h3>
+                    <p>Engineered and delivered for production; operating continuously for more than two years without architectural regressions.</p>
+                  </div>
+                  <span class="mono terminal-tag">2+ YEARS RUNTIME</span>
+                </div>
+                <div class="terminal-entry">
+                  <span class="mono terminal-index">02</span>
+                  <div>
+                    <h3>Deterministic DataFrame rules engine</h3>
+                    <p>Reusable, rule-based processing engine ensuring idempotent and predictable data transformations across complex business logic.</p>
+                  </div>
+                  <span class="mono terminal-tag">DATA INTEGRITY</span>
+                </div>
+                <div class="terminal-entry">
+                  <span class="mono terminal-index">03</span>
+                  <div>
+                    <h3>HealthAI extraction pipeline</h3>
+                    <p>High-integrity extraction and transformation pipeline engineering for a Silicon Valley medical AI infrastructure team.</p>
+                  </div>
+                  <span class="mono terminal-tag">EXTRACTION PIPELINE</span>
+                </div>
+              </div>
+              <div class="terminal-foot mono">
+                <span>DETERMINISTIC PIPELINES</span>
+                <span>EXPLICIT CONTRACTS</span>
+                <span>ZERO RUNAWAY COMPUTE</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section section-research" aria-labelledby="research-title">
+          <div class="wrap research-layout">
             <div>
-              <p class="section-kicker">Applied research</p>
-              <h2 id="research-title" class="section-heading">
-                Reusable Verification Infrastructure
+              <p class="eyebrow eyebrow-light"><span>05</span> / Applied R&D</p>
+              <h2 id="research-title">
+                Trust the change,<br />not just the output<span class="research-period">.</span>
               </h2>
             </div>
-            <div>
-              <p class="research-copy">
-                As more software and pipeline logic is generated automatically, the enterprise bottleneck shifts from code creation to code trust. Sidrah Labs is researching and developing the reusable formal verification infrastructure and neuro-symbolic logic firewalls needed to prove that autonomous agents and generated software cannot execute destructive pipeline mutations.
+            <div class="research-content">
+              <p class="research-lead">
+                As software and pipeline generation accelerates, the critical bottleneck shifts from writing code to knowing whether a proposed mutation is safe to run.
+
               </p>
+              <p>
+                Our applied research explores AST- and SMT-based pre-execution query verification and deterministic pipeline testing. We believe durable infrastructure tools cannot be theorized in the abstract—they are forged by solving difficult, real-world data problems in production today.
+
+              </p>
+              <p class="research-boundary mono">THE WORK IN PERSPECTIVE: Hands-on deployments fund our independence and sharpen our engineering judgment; our verification research guides how we build resilient data systems.
+</p>
               <a
                 class="research-link"
                 href="https://github.com/sidrah-labs"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read our systems research on GitHub <span aria-hidden="true">-&gt;</span>
+                Explore our open-source repositories <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer id="contact" class="container site-footer">
-        <p class="footer-brand">Sidrah Labs. Think. Design. Build useful services.</p>
-        <nav class="footer-links" aria-label="Footer links">
-          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="mailto:azeem@sidrahlabs.com">Email ↗</a>
+      <footer id="contact" class="wrap footer">
+        <a class="wordmark footer-wordmark" href="#top">
+          SIDRAH<span class="wordmark-mark" aria-hidden="true">/</span>LABS
+        </a>
+        <p class="mono footer-note">DATA SYSTEMS YOU CAN TRUST—AND CHANGE SAFELY.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+          <a href="mailto:azeem@sidrahlabs.com" >
+            Email ↗
+          </a>
         </nav>
+        <a class="mono back-top" href="#top">BACK TO TOP ↑</a>
       </footer>
     </div>
+
+    <!-- Minimal clipboard enhancement -->
+    <script>
+      (function() {
+        var copyBtn = document.querySelector('.cta-copy-btn');
+        if (!copyBtn) return;
+        copyBtn.addEventListener('click', function() {
+          var email = this.getAttribute('data-email');
+          if (!email) return;
+          var badge = this.querySelector('.copy-badge');
+          var originalText = badge.textContent;
+
+          function showSuccess() {
+            badge.textContent = 'COPIED ✓';
+            badge.classList.add('copied');
+            setTimeout(function() {
+              badge.textContent = originalText;
+              badge.classList.remove('copied');
+            }, 2200);
+          }
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(showSuccess).catch(function() {
+              window.location.href = 'mailto:' + email;
+            });
+          } else {
+            window.location.href = 'mailto:' + email;
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

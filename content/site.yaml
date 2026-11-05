@@ -1,0 +1,185 @@
+meta:
+  title: "Sidrah Labs — Data systems you can trust"
+  description: "Sidrah Labs engineers reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks—forging foundational verification infrastructure from production data work."
+  canonical: "https://sidrahlabs.com/"
+  theme_color: "#f4f1e8"
+  author: "Sidrah Labs"
+  og:
+    type: "website"
+    title: "Sidrah Labs — Data systems you can trust"
+    description: "Reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks."
+    url: "https://sidrahlabs.com/"
+    image: "https://sidrahlabs.com/og-image.png"
+  twitter:
+    card: "summary_large_image"
+    title: "Sidrah Labs — Data systems you can trust"
+    description: "Reliable Databricks lakehouses with deterministic pipelines and pre-execution checks."
+
+nav:
+  wordmark_left: "SIDRAH"
+  wordmark_slash: "/"
+  wordmark_right: "LABS"
+  links:
+    - label: "Deployments"
+      href: "#deployments"
+    - label: "Architecture"
+      href: "#architecture"
+    - label: "Method"
+      href: "#method"
+    - label: "Proof"
+      href: "#proof"
+    - label: "R&D"
+      href: "#research"
+  contact:
+    label: "Start a conversation"
+    href: "mailto:azeem@sidrahlabs.com?subject=Data%20Systems%20Engagement"
+
+hero:
+  eyebrow: "Applied systems & data infrastructure lab"
+  meta_index: "INDEPENDENT / PRODUCTION-HARDENED"
+  headline_prefix: "Build data systems you can "
+  headline_accent: "trust"
+  headline_suffix: "—and change safely."
+  body: >
+    We engineer reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks. We deliver fixed-scope production deployments using battle-tested engineering harnesses—letting our hands-on work in production inform and harden the foundational software infrastructure we build.
+  cta:
+    label: "Discuss a production deployment"
+    href: "mailto:azeem@sidrahlabs.com?subject=Production%20Deployment%20Scoping"
+    note: "FIXED SCOPE. DETERMINISTIC DELIVERY. REUSABLE INFRASTRUCTURE."
+    email: "azeem@sidrahlabs.com"
+  stamp:
+    - "DATA"
+    - "→"
+    - "CONTRACTS"
+    - "→"
+    - "VERIFICATION"
+    - "→"
+    - "PRODUCTION"
+
+deployments:
+  kicker_number: "01"
+  kicker_label: "Fixed-scope deployments"
+  title: "Targeted deployments"
+  title_accent: "."
+  intro: >
+    Specific outcomes, defined timelines, and engineering built around the reality of your data estate. No open-ended hourly billing.
+  cards:
+    - code: "A / MIGRATION"
+      duration: "14–21 days"
+      title: "Legacy ERP & hostile SQL to Databricks"
+      description: >
+        Transition brittle, uncooperative source systems into a governed lakehouse foundation without turning the project into an indefinite rewrite.
+      focus: "Source discovery · Incremental ingestion · Lakehouse delivery"
+    - code: "B / OWNERSHIP"
+      duration: "14 days"
+      title: "Fivetran & SaaS pipeline off-ramp"
+      description: >
+        Replace high-volume managed connectors with pipelines you own, understand, and operate—eliminating runaway row-sync taxes while keeping source parity.
+      focus: "Source parity · Owned pipelines · Run-cost visibility"
+    - code: "C / DELIVERY"
+      duration: "10 days"
+      title: "Databricks Asset Bundles CI/CD & DBU optimization"
+      description: >
+        Standardize bundle-based multi-environment deployments, integrate schema validation gates, and eliminate avoidable compute spend across your clusters.
+      focus: "Deployment harness · Environment setup · Compute review"
+  scope_note: "TIMELINES ARE SPRINT TARGETS; FINAL SCOPE IS CONFIRMED AFTER A FOCUSED TECHNICAL DISCOVERY."
+
+architecture:
+  kicker_number: "02"
+  kicker_label: "System topology"
+  title: "The high-assurance pattern"
+  title_accent: "."
+  intro: >
+    Every deployment installs an explicit, deterministic flow. Data is validated before it mutates state; changes are gated before execution.
+  diagram_steps:
+    - id: "01"
+      title: "Source Estate"
+      desc: "Legacy ERPs, relational databases, SaaS endpoints"
+      tag: "INGEST"
+    - id: "02"
+      title: "Metadata Harness"
+      desc: "Config-driven discovery, incremental state capture"
+      tag: "DISCOVER"
+    - id: "03"
+      title: "Schema & Logic Gates"
+      desc: "Explicit contracts, pre-execution type and query checks"
+      tag: "VERIFY"
+    - id: "04"
+      title: "Governed Lakehouse"
+      desc: "Deterministic Delta tables, DABs-managed CI/CD"
+      tag: "PRODUCE"
+
+method:
+  kicker_number: "03"
+  kicker_label: "Delivery engine"
+  title: "Services, engineered as software"
+  title_accent: "."
+  intro: >
+    We don't start from a blank repo or bill hours to reinvent standard plumbing. Each deployment adapts a modular set of proven engineering assets directly to your cloud.
+  pillars:
+    - number: "01"
+      title: "Metadata ingestion framework"
+      description: "Reusable patterns for source discovery, delta-tracking, and repeatable ingestion across structured enterprise systems."
+    - number: "02"
+      title: "One-click DABs CI/CD harness"
+      description: "A consistent, automated deployment baseline for Databricks Asset Bundles across dev, staging, and production environments."
+    - number: "03"
+      title: "Pre-execution schema gates"
+      description: "Explicit contract assertions that catch incompatible source mutations and type mismatches before pipelines run."
+  footer_left: "REUSABLE ENGINEERING ASSETS"
+  footer_right: "DEPLOYED TO YOUR INFRASTRUCTURE ↗"
+
+proof:
+  kicker_number: "04"
+  kicker_label: "Field evidence"
+  title: "Built to run. Built to last"
+  title_accent: "."
+  bar_title: "FIELD_NOTES / PRODUCTION_SYSTEMS"
+  status_badge: "VERIFIED IN PRODUCTION"
+  entries:
+    - index: "01"
+      title: "Self-service ERP lakehouse"
+      description: "Engineered and delivered for production; operating continuously for more than two years without architectural regressions."
+      tag: "2+ YEARS RUNTIME"
+    - index: "02"
+      title: "Deterministic DataFrame rules engine"
+      description: "Reusable, rule-based processing engine ensuring idempotent and predictable data transformations across complex business logic."
+      tag: "DATA INTEGRITY"
+    - index: "03"
+      title: "HealthAI extraction pipeline"
+      description: "High-integrity extraction and transformation pipeline engineering for a Silicon Valley medical AI infrastructure team."
+      tag: "EXTRACTION PIPELINE"
+  foot_notes:
+    - "DETERMINISTIC PIPELINES"
+    - "EXPLICIT CONTRACTS"
+    - "ZERO RUNAWAY COMPUTE"
+
+research:
+  kicker_number: "05"
+  kicker_label: "Applied R&D"
+  title: "Trust the change,"
+  title_sub: "not just the output"
+  title_accent: "."
+  lead: >
+    As software and pipeline generation accelerates, the critical bottleneck shifts from writing code to knowing whether a proposed mutation is safe to run.
+  body: >
+    Our applied research explores AST- and SMT-based pre-execution query verification and deterministic pipeline testing. We believe durable infrastructure tools cannot be theorized in the abstract—they are forged by solving difficult, real-world data problems in production today.
+  boundary_note: >
+    THE WORK IN PERSPECTIVE: Hands-on deployments fund our independence and sharpen our engineering judgment; our verification research guides how we build resilient data systems.
+  github_link:
+    label: "Explore our open-source repositories"
+    href: "https://github.com/sidrah-labs"
+
+footer:
+  wordmark_left: "SIDRAH"
+  wordmark_slash: "/"
+  wordmark_right: "LABS"
+  tagline: "DATA SYSTEMS YOU CAN TRUST—AND CHANGE SAFELY."
+  links:
+    - label: "GitHub ↗"
+      href: "https://github.com/sidrah-labs"
+    - label: "LinkedIn ↗"
+      href: "https://www.linkedin.com/company/sidrah-labs"
+    - label: "Email ↗"
+      href: "mailto:azeem@sidrahlabs.com"
+  back_to_top: "BACK TO TOP ↑"

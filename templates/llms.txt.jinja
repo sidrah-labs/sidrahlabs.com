@@ -1,0 +1,47 @@
+# {{ nav.wordmark_left }} {{ nav.wordmark_right }}
+
+> {{ meta.description }}
+
+{{ hero.headline_prefix }}{{ hero.headline_accent }}{{ hero.headline_suffix }}
+
+## What we do
+
+{{ hero.body }}
+
+## Fixed-scope deployments
+
+{% for card in deployments.cards %}
+- **{{ card.title }}** ({{ card.code }}) — {{ card.duration }} sprint target.
+  {{ card.description }}
+  Focus: {{ card.focus }}
+{% endfor %}
+
+{{ deployments.scope_note }}
+
+## How we deliver
+
+{{ method.intro }}
+{% for item in method.pillars %}
+- **{{ item.title }}**: {{ item.description }}
+{% endfor %}
+
+## Production experience
+
+{% for entry in proof.entries %}
+- **{{ entry.title }}**: {{ entry.description }} ({{ entry.tag }})
+{% endfor %}
+
+## Applied R&D
+
+{{ research.lead }}
+
+{{ research.body }}
+
+{{ research.boundary_note }}
+
+## Links
+
+- [Website]({{ meta.canonical }})
+{% for link in footer.links %}
+- [{{ link.label | replace(' ↗', '') }}]({{ link.href }})
+{% endfor %}

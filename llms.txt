@@ -1,0 +1,59 @@
+# SIDRAH LABS
+
+> Sidrah Labs engineers reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks—forging foundational verification infrastructure from production data work.
+
+Build data systems you can trust—and change safely.
+
+## What we do
+
+We engineer reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks. We deliver fixed-scope production deployments using battle-tested engineering harnesses—letting our hands-on work in production inform and harden the foundational software infrastructure we build.
+
+
+## Fixed-scope deployments
+
+- **Legacy ERP & hostile SQL to Databricks** (A / MIGRATION) — 14–21 days sprint target.
+  Transition brittle, uncooperative source systems into a governed lakehouse foundation without turning the project into an indefinite rewrite.
+
+  Focus: Source discovery · Incremental ingestion · Lakehouse delivery
+- **Fivetran & SaaS pipeline off-ramp** (B / OWNERSHIP) — 14 days sprint target.
+  Replace high-volume managed connectors with pipelines you own, understand, and operate—eliminating runaway row-sync taxes while keeping source parity.
+
+  Focus: Source parity · Owned pipelines · Run-cost visibility
+- **Databricks Asset Bundles CI/CD & DBU optimization** (C / DELIVERY) — 10 days sprint target.
+  Standardize bundle-based multi-environment deployments, integrate schema validation gates, and eliminate avoidable compute spend across your clusters.
+
+  Focus: Deployment harness · Environment setup · Compute review
+
+TIMELINES ARE SPRINT TARGETS; FINAL SCOPE IS CONFIRMED AFTER A FOCUSED TECHNICAL DISCOVERY.
+
+## How we deliver
+
+We don't start from a blank repo or bill hours to reinvent standard plumbing. Each deployment adapts a modular set of proven engineering assets directly to your cloud.
+
+- **Metadata ingestion framework**: Reusable patterns for source discovery, delta-tracking, and repeatable ingestion across structured enterprise systems.
+- **One-click DABs CI/CD harness**: A consistent, automated deployment baseline for Databricks Asset Bundles across dev, staging, and production environments.
+- **Pre-execution schema gates**: Explicit contract assertions that catch incompatible source mutations and type mismatches before pipelines run.
+
+## Production experience
+
+- **Self-service ERP lakehouse**: Engineered and delivered for production; operating continuously for more than two years without architectural regressions. (2+ YEARS RUNTIME)
+- **Deterministic DataFrame rules engine**: Reusable, rule-based processing engine ensuring idempotent and predictable data transformations across complex business logic. (DATA INTEGRITY)
+- **HealthAI extraction pipeline**: High-integrity extraction and transformation pipeline engineering for a Silicon Valley medical AI infrastructure team. (EXTRACTION PIPELINE)
+
+## Applied R&D
+
+As software and pipeline generation accelerates, the critical bottleneck shifts from writing code to knowing whether a proposed mutation is safe to run.
+
+
+Our applied research explores AST- and SMT-based pre-execution query verification and deterministic pipeline testing. We believe durable infrastructure tools cannot be theorized in the abstract—they are forged by solving difficult, real-world data problems in production today.
+
+
+THE WORK IN PERSPECTIVE: Hands-on deployments fund our independence and sharpen our engineering judgment; our verification research guides how we build resilient data systems.
+
+
+## Links
+
+- [Website](https://sidrahlabs.com/)
+- [GitHub](https://github.com/sidrah-labs)
+- [LinkedIn](https://www.linkedin.com/company/sidrah-labs)
+- [Email](mailto:azeem@sidrahlabs.com)
