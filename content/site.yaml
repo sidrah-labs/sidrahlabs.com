@@ -1,23 +1,23 @@
 meta:
-  title: "Sidrah Labs — Data systems you can trust"
+  title: "Sidrah Labs — Data Systems You Can Trust"
   description: "Sidrah Labs engineers reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks—forging foundational verification infrastructure from production data work."
   canonical: "https://sidrahlabs.com/"
   theme_color: "#f4f1e8"
   author: "Sidrah Labs"
   og:
     type: "website"
-    title: "Sidrah Labs — Data systems you can trust"
+    title: "Sidrah Labs — Data Systems You Can Trust"
     description: "Reliable Databricks lakehouses with deterministic pipelines, explicit schema contracts, and pre-execution checks."
     url: "https://sidrahlabs.com/"
     image: "https://sidrahlabs.com/og-image.png"
   twitter:
     card: "summary_large_image"
-    title: "Sidrah Labs — Data systems you can trust"
+    title: "Sidrah Labs — Data Systems You Can Trust"
     description: "Reliable Databricks lakehouses with deterministic pipelines and pre-execution checks."
 
 nav:
   wordmark_left: "SIDRAH"
-  wordmark_slash: "/"
+  wordmark_slash: " / "
   wordmark_right: "LABS"
   links:
     - label: "Deployments"
