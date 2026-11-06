@@ -1,72 +1,87 @@
-# Sidrah Labs (سِدْرَة لابس)
+# Sidrah Labs
 
-> Sidrah Labs (سِدْرَة لابس) modernizes legacy ERPs and costly SaaS pipelines into AI-ready Databricks lakehouses—backed by pre-execution checks and formal verification research.
+> Sidrah Labs is an applied data and verification lab. We start with technical discovery and deliver services-as-software—turning legacy databases and costly SaaS pipelines into verified, AI-ready lakehouses.
 
-Data systems you can trust—and change safely.
+Data systems your business can trust—delivered as software.
 
-Enterprises are bleeding budget on rented data connectors, stalled AI pilots over messy legacy ERPs, and fragile pipelines that break when changed at AI speed. Sidrah Labs delivers fixed-scope, AI-ready Databricks lakehouses powered by our internal verification toolchain—while researching formal verification for generated software and data.
+## Overview
 
-
-## Operating Thesis
-
-Pre-built toolchains compress delivery. Explicit contracts guarantee parity. Verification research makes change safe.
-
-- **Deployments (Fixed-Scope Outcomes)**: Legacy ERP-to-Lakehouse migrations, Fivetran/SaaS cost off-ramps, and deterministic pipeline hardening in 10–21 days.
-- **Toolchain (VPC-Deployed Accelerators)**: Reusable PySpark ingestion frameworks, row-hash parity engines, and pre-execution schema gates deployed directly in your cloud.
-- **Research (Formal Verification)**: AST/SMT logic firewalls, symbolic execution (JPF/NeuroSPF), and mathematical proofs for AI-paced code and SQL mutations.
-
-## Fixed-Scope Engagements
-
-- **Legacy ERP & Unstructured Data to AI-Ready Lakehouse** (ENG-01 — 14–21 days): Most AI and analytics pilots stall because models are plugged into undocumented legacy databases and messy PDFs. We migrate locked-in SQL, Oracle, and ERP silos into a governed Databricks Medallion architecture—wired to a concrete BI, Genie, or MCP agent workflow.
-  Deliverables:
-  - Config-driven PySpark snapshot/merge ingestion & unstructured extraction
-  - Reconciled Bronze, Silver, and AI-ready Gold layers with verified business rules
-  - Zero-code table onboarding via metadata configuration
-- **The 'Un-SaaS' Pipeline Off-Ramp (Cost & Ownership)** (ENG-02 — 14 days): Stop paying runaway monthly rent on your data. We replace metered SaaS connectors (like Fivetran) and full-recompute batch jobs with owned, incremental Python (dlt / PySpark) pipelines inside your VPC—cutting connector and DBU spend by up to 80%.
-  Deliverables:
-  - Self-hosted, zero-row-loss incremental ingestion inside your VPC
-  - Mathematical row-hash and distribution parity against legacy tables
-  - Elimination of third-party MAR billing spikes and vendor lock-in
-- **Pipeline Hardening & Pre-Execution Contract Gates** (ENG-03 — 10–14 days): When engineers and AI coding agents ship SQL and pipeline edits at machine speed, syntax checks pass while join fan-outs, rounding errors, and schema drift silently corrupt production. We install deterministic pre-execution gates that block bad mutations before runtime.
-  Deliverables:
-  - Static AST query validation & explicit pre-execution schema contracts
-  - Deterministic DataFrame business-rule and invariant assertions
-  - Automated Golden-SQL regression & parity evaluation suites
-
-Timelines are fixed sprint targets. Exact scope and mathematical parity guarantees are locked after technical discovery.
-
-## Internal Toolchain
-
-We do not start from a blank repository or bill hours to reinvent standard plumbing. Every engagement deploys our battle-tested software modules directly into your cloud estate—delivering in days what traditional consultancies take months to scope.
-
-- **Metadata Ingestion & Un-SaaS Kit** (PKG / INGEST): High-concurrency PySpark and Python dlt frameworks for hostile ERP snapshot/merge diffing, API/document extraction, and zero-row-loss CDC reconciliation.
-- **Deterministic Rules & Parity Engine** (PKG / PARITY): Modular DataFrame business-logic engine and automated row-hash/distribution checkers proving migrated tables mathematically match legacy financial ground truth.
-- **Pre-Execution Schema & AST Gates** (PKG / GATES): Static query analysis and explicit contract assertions that intercept breaking schema drift, unsafe joins, and destructive DDL before queries touch Gold tables.
-
-## Applied Research
-
-As AI accelerates code and SQL generation by 240%+, the enterprise bottleneck shifts from writing software to proving a mutation is safe to run.
-
-Without machine-checked verification, AI-paced engineering carries a poison pill: silent, catastrophic bugs in production. Sidrah Labs investigates AST/SMT-based query verification (Z3), relational algebra equivalence, and neuro-symbolic execution harnesses (extending JavaPathFinder and NeuroSPF) to build reusable logic firewalls that mathematically prove generated code patches and data transformations preserve strict business invariants prior to execution.
+Sidrah Labs is an applied engineering and verification lab. We start with technical discovery to find why your data is slow, expensive, or unreliable. Then we deploy our own software inside your cloud to fix it—cutting pipeline costs by up to 80%, preparing legacy data for AI, and proving every number matches its source.
 
 
-Key focus: AST/SMT query verification, relational algebra compilation, symbolic execution (JPF/NeuroSPF).
+## Why data projects stall—and why hiring more people doesn't fix them.
 
-Flywheel: Real-world enterprise migrations expose hostile edge cases and undocumented failure modes. Those anonymized failure patterns become formal benchmarks in our research lab—continuously hardening the verification gates we deploy.
+Most teams face the same three problems: AI projects that can't launch because the underlying data is a mess, SaaS pipeline bills that grow every month, and agencies that charge by the hour to build everything from scratch.
 
-GitHub: https://github.com/sidrah-labs
 
-## Field Notes & Production Experience
+- **AI fails when nobody trusts the numbers**: Most AI pilots never leave staging because they sit on top of undocumented ERPs and legacy databases. If finance and operations can't reconcile an AI output against the system of record, the project gets shelved.
+- **Metered SaaS tools tax your growth**: Connector tools like Fivetran charge by the row. As your business grows, your bill climbs for simple data movement that could run inside your own cloud at a fraction of the cost.
+- **Hourly consulting rewards slow delivery**: Traditional agencies start from a blank repository and bill you to reinvent standard plumbing. Worse, as teams and AI coding tools push changes faster, silent errors slip past basic tests and corrupt executive reports.
 
-- **Zero-Downtime Self-Service ERP Lakehouse** (Enterprise Production — 2+ YRS): Architected and operated an end-to-end Databricks Medallion lakehouse across complex ERP financial and payroll schemas. Engineered a config-driven PySpark snapshot/merge framework and deterministic DataFrame rules engine running continuously for 2+ years without architectural regressions.
-- **High-Concurrency HealthAI Extraction Infrastructure** (Silicon Valley HealthAI Team — 100+ SPIDERS): Engineered fault-tolerant extraction pipelines combining 100+ asynchronous extractors (bounded semaphores, custom rate-limit governors) with layout-aware PDF/table vision models to convert messy documents into schema-validated analytical tables.
-- **Neuro-Symbolic & Symbolic Execution Research** (Formal Methods R&D — JPF / SMT): Applied formal-methods research extending JavaPathFinder (JPF) and NeuroSPF symbolic execution harnesses—bridging classical constraint solving with neural and LLM representations.
+## Commercial Sprints (Start with discovery. Deliver in weeks.)
 
-Verification Credential: Led by Muhammad Azeem — Databricks Certified Data Engineer Professional.
+Every engagement begins with technical discovery: we audit your sources, costs, and failure modes, and agree on a fixed scope and price. Then we deploy our own tested software inside your cloud to deliver the result in weeks, not quarters.
 
-## Contact & Engagement
 
-- Discovery: azeem@sidrahlabs.com
+- **Legacy ERP to AI-ready lakehouse** (01 · AI-Ready Data · 14–21 days)
+  Outcome: Clean, reconciled data that leadership, analysts, and AI agents can use immediately.
+  We pull data out of locked-in SQL, Oracle, and ERP systems into a governed Databricks lakehouse. Every table is checked row-for-row against your legacy records so finance signs off on day one.
+
+  Deliverables: Databricks Medallion lakehouse · Reconciled financial & operational tables · Ready for BI & AI
+- **Replace metered SaaS pipelines** (02 · Cost Reduction · 14 days)
+  Outcome: Cut recurring pipeline bills by up to 80% and own the code outright.
+  Stop paying monthly rent per row. We replace metered SaaS connectors with fast, reliable pipelines that run inside your own cloud account—with zero downtime and verified parity during the switch.
+
+  Deliverables: End per-row SaaS billing · Runs in your VPC · Verified zero-loss cutover
+- **Automated checks before code hits production** (03 · Reliability · 10–14 days)
+  Outcome: Ship pipeline changes fast without breaking dashboards or corrupting metrics.
+  When engineers or AI tools edit SQL and pipelines, syntax checks pass while broken logic slips through. We install automated pre-execution gates that block bad changes before they touch production data.
+
+  Deliverables: Explicit data contracts · Pre-execution logic checks · No silent metric drift
+
+Timelines are sprint targets. Exact scope, deliverables, and parity guarantees are locked after discovery.
+
+## Field Evidence
+
+The software we deploy in client sprints comes from years of running production data systems and our own research in formal verification.
+
+
+- **Enterprise ERP lakehouse with zero downtime** (2+ years in production): Built and ran an end-to-end Databricks lakehouse across complex ERP schemas. Our configuration-driven ingestion engine cut new-table onboarding from weeks of custom code to a single config change—and has run in production for over two years.
+- **Unstructured document pipelines for healthcare AI** (100+ production extractors): Built fault-tolerant extraction infrastructure for a Silicon Valley medical AI company—combining over 100 concurrent crawlers with vision models to turn messy clinical documents into validated analytical tables.
+- **Applied formal verification research** (In-house R&D): Led by a Databricks Certified Data Engineer Professional with published research extending the JavaPathFinder (JPF) and NeuroSPF symbolic execution engines—applying mathematical verification to modern software and AI.
+
+## The Applied Lab Model
+
+We are built like a product and research lab, not a staffing firm. Because we bring our own software to every engagement—and improve it through in-house R&D—you get the speed of a product with the precision of custom engineering.
+
+
+- **Research-led discovery first**: We don't guess or sell open-ended retainers. We start by auditing your schemas, pipeline spend, and business rules—and hand you a clear architecture and fixed-scope plan.
+- **Delivered with our own software**: We deploy our internal ingestion, diffing, and parity engines directly into your cloud VPC. You keep the code, with no lock-in or recurring license fees.
+- **Moated by in-house verification**: Our verification tools check that every migration and pipeline edit preserves your business rules—giving you a level of mathematical assurance that manual testing cannot match.
+
+## System Architecture
+
+Every engagement follows the same repeatable pattern inside your VPC.
+
+
+1. [Sources] **Extract**: Pull from ERPs, databases, APIs, and documents without slowing down source systems.
+2. [Engine] **Standardize**: Clean and structure data using repeatable rules instead of brittle one-off scripts.
+3. [Gate] **Verify**: Prove row-for-row parity and check business rules before any production table updates.
+4. [Outcome] **Deliver**: Serve trusted tables to executive dashboards, analysts, and AI applications.
+
+## In-House Research
+
+AI has made writing code fast, but trusting code hard. When engineers and AI assistants generate SQL and pipeline changes in seconds, manual review can't keep up—and one bad query can quietly corrupt months of reporting.
+
+
+Our lab builds verification tools that check data logic automatically. Using mathematical solvers (SMT/Z3) and relational-algebra analysis, we test whether a proposed query or pipeline change can break your business rules before it ever runs.
+
+
+Why this matters to clients: Every client project shows us real-world failure modes that make our verification tools sharper—and every advance in our lab makes your next deployment faster and safer.
+
+
+## Contact
+
 - Website: https://sidrahlabs.com/
 - GitHub: https://github.com/sidrah-labs
-- LinkedIn: https://www.linkedin.com/company/sidrah-labs
+- Direct Discovery: azeem@sidrahlabs.com

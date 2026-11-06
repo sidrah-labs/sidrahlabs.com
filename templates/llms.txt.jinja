@@ -1,62 +1,68 @@
-# Sidrah Labs (سِدْرَة لابس)
+# {{ nav.wordmark_left }} {{ nav.wordmark_right }}
 
 > {{ meta.description }}
 
-{{ hero.headline }}
+{{ hero.headline_prefix }}{{ hero.headline_accent }}{{ hero.headline_suffix }}
 
-{{ hero.sub }}
+## Overview
 
-## Operating Thesis
+{{ hero.body }}
 
-{{ hero.thesis }}
+## {{ thesis.title }}
 
-{% for pillar in thesis_pillars %}
-- **{{ pillar.name }} ({{ pillar.role }})**: {{ pillar.desc }}
+{{ thesis.lead }}
+
+{% for pt in thesis.points %}
+- **{{ pt.title }}**: {{ pt.description }}
 {% endfor %}
 
-## Fixed-Scope Engagements
+## Commercial Sprints ({{ deployments.title }})
 
-{% for eng in engagements.entries %}
-- **{{ eng.name }}** ({{ eng.code }} — {{ eng.duration }}): {{ eng.desc }}
-  Deliverables:
-  {% for d in eng.deliverables %}
-  - {{ d }}
-  {% endfor %}
+{{ deployments.intro }}
+
+{% for card in deployments.cards %}
+- **{{ card.title }}** ({{ card.code }} · {{ card.duration }})
+  Outcome: {{ card.outcome }}
+  {{ card.description }}
+  Deliverables: {{ card.focus }}
 {% endfor %}
 
-{{ engagements.note }}
+{{ deployments.scope_note }}
 
-## Internal Toolchain
+## Field Evidence
 
-{{ toolchain.desc }}
+{{ proof.intro }}
 
-{% for mod in toolchain.modules %}
-- **{{ mod.title }}** ({{ mod.mono_tag }}): {{ mod.details }}
+{% for entry in proof.entries %}
+- **{{ entry.title }}** ({{ entry.tag }}): {{ entry.description }}
 {% endfor %}
 
-## Applied Research
+## The Applied Lab Model
 
-{{ research.premise }}
+{{ method.intro }}
+
+{% for p in method.pillars %}
+- **{{ p.title }}**: {{ p.description }}
+{% endfor %}
+
+## System Architecture
+
+{{ architecture.intro }}
+
+{% for step in architecture.diagram_steps %}
+{{ loop.index }}. [{{ step.tag }}] **{{ step.title }}**: {{ step.desc }}
+{% endfor %}
+
+## In-House Research
+
+{{ research.lead }}
 
 {{ research.body }}
 
-Key focus: AST/SMT query verification, relational algebra compilation, symbolic execution (JPF/NeuroSPF).
+{{ research.boundary_note }}
 
-Flywheel: {{ research.flywheel }}
+## Contact
 
-GitHub: {{ research.github_url }}
-
-## Field Notes & Production Experience
-
-{% for note in field_notes.entries %}
-- **{{ note.title }}** ({{ note.client }} — {{ note.metric }}): {{ note.summary }}
-{% endfor %}
-
-Verification Credential: {{ field_notes.credential }}
-
-## Contact & Engagement
-
-- Discovery: {{ contact.email }}
 - Website: {{ meta.canonical }}
-- GitHub: https://github.com/sidrah-labs
-- LinkedIn: https://www.linkedin.com/company/sidrah-labs
+- GitHub: {{ research.github_link.href }}
+- Direct Discovery: {{ hero.cta.email }}

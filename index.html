@@ -3,37 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sidrah Labs — Build Data Systems You Can Trust and Change Safely</title>
-    <meta name="description" content="Sidrah Labs (سِدْرَة لابس) modernizes legacy ERPs and costly SaaS pipelines into AI-ready Databricks lakehouses—backed by pre-execution checks and formal verification research." />
+    <title>Sidrah Labs — Applied Data & Verification Lab</title>
+    <meta name="description" content="Sidrah Labs is an applied data and verification lab. We start with technical discovery and deliver services-as-software—turning legacy databases and costly SaaS pipelines into verified, AI-ready lakehouses." />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://sidrahlabs.com/" />
 
-    <!-- OpenGraph / Metadata -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sidrah Labs — Build Data Systems You Can Trust and Change Safely" />
-    <meta property="og:description" content="Sidrah Labs (سِدْرَة لابس) modernizes legacy ERPs and costly SaaS pipelines into AI-ready Databricks lakehouses—backed by pre-execution checks and formal verification research." />
+    <meta property="og:title" content="Sidrah Labs — Applied Data & Verification Lab" />
+    <meta property="og:description" content="Sidrah Labs is an applied data and verification lab. We start with technical discovery and deliver services-as-software—turning legacy databases and costly SaaS pipelines into verified, AI-ready lakehouses." />
     <meta property="og:url" content="https://sidrahlabs.com/" />
     <meta property="og:image" content="https://sidrahlabs.com/og-image.png" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sidrah Labs — Applied Data & Verification Lab" />
+    <meta name="twitter:description" content="Sidrah Labs is an applied data and verification lab. We start with technical discovery and deliver services-as-software—turning legacy databases and costly SaaS pipelines into verified, AI-ready lakehouses." />
 
-    <!-- Minimal SVG Monogram Favicon -->
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Ctext x='16' y='21' fill='%23ffffff' font-family='monospace' font-size='14' font-weight='bold' text-anchor='middle'%3ES/L%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d0f12'/%3E%3Ctext x='16' y='21.5' fill='%23ffffff' font-family='Space Grotesk,system-ui,sans-serif' font-size='14' font-weight='700' letter-spacing='-0.5' text-anchor='middle'%3ESL%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
     />
 
     <link rel="stylesheet" href="/styles.css" />
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Sidrah Labs",
         "url": "https://sidrahlabs.com/",
-        "description": "Sidrah Labs (\u0633\u0650\u062f\u0652\u0631\u064e\u0629 \u0644\u0627\u0628\u0633) modernizes legacy ERPs and costly SaaS pipelines into AI-ready Databricks lakehouses\u2014backed by pre-execution checks and formal verification research.",
-        "email": "azeem@sidrahlabs.com",
+        "description": "Sidrah Labs is an applied data and verification lab. We start with technical discovery and deliver services-as-software—turning legacy databases and costly SaaS pipelines into verified, AI-ready lakehouses.",
+        "founder": {
+          "@type": "Person",
+          "name": "Muhammad Azeem",
+          "email": "azeem@sidrahlabs.com"
+        },
         "sameAs": [
           "https://github.com/sidrah-labs",
           "https://www.linkedin.com/company/sidrah-labs"
@@ -42,246 +52,270 @@
     </script>
   </head>
   <body>
-    <a class="skip" href="#main">Skip to main content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="masthead">
-      <div class="wrap masthead-inner">
-        <a class="brand" href="/" aria-label="Sidrah Labs homepage">
-          <span class="brand-name">SIDRAH LABS</span>
-          <span class="brand-sub">/ SYSTEMS &amp; VERIFICATION</span>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="#top" aria-label="Sidrah Labs, home">
+          <span class="wm-mark" aria-hidden="true"></span>
+          <span class="wm-primary">Sidrah</span>
+          <span class="wm-sep" aria-hidden="true">/</span>
+          <span class="wm-secondary">Labs</span>
         </a>
-        <nav class="nav" aria-label="Site navigation">
-          <a href="#engagements">Engagements</a>
-          <a href="#toolchain">Toolchain</a>
+        <nav class="nav" aria-label="Main">
+          <a href="#thesis">Why us</a>
+          <a href="#deployments">Engagements</a>
+          <a href="#proof">Evidence</a>
+          <a href="#method">How we work</a>
           <a href="#research">Research</a>
-          <a href="#field-notes">Field Notes</a>
+          <a class="nav-cta" href="mailto:azeem@sidrahlabs.com?subject=Technical%20Discovery%20%E2%80%94%20Sidrah%20Labs">Start discovery &rarr;</a>
         </nav>
-        <a class="btn-discovery" href="mailto:azeem@sidrahlabs.com?subject=Technical%20discovery">Discovery Call &rarr;</a>
       </div>
     </header>
 
     <main id="main">
-      <!-- Hero Section -->
-      <section class="wrap hero-section" aria-labelledby="hero-heading">
-        <div class="hero-kicker">APPLIED SYSTEMS &bull; PRODUCTION SERVICES &bull; FORMAL VERIFICATION</div>
-        <h1 id="hero-heading" class="hero-title">Data systems you can trust—and change safely.</h1>
-        <p class="hero-lead">Enterprises are bleeding budget on rented data connectors, stalled AI pilots over messy legacy ERPs, and fragile pipelines that break when changed at AI speed. Sidrah Labs delivers fixed-scope, AI-ready Databricks lakehouses powered by our internal verification toolchain—while researching formal verification for generated software and data.
-</p>
-        
-        <div class="hero-action-bar">
-          <a class="btn-primary" href="mailto:azeem@sidrahlabs.com?subject=Technical%20discovery">Scope an Engagement &rarr;</a>
-          <span class="direct-contact">or email directly: <a href="mailto:azeem@sidrahlabs.com">azeem@sidrahlabs.com</a></span>
-        </div>
-
-        <!-- The Thesis Model (Services -> Software -> Research) -->
-        <div class="thesis-matrix" role="region" aria-label="Operating Model">
-          <div class="matrix-banner">
-            <span class="mono-label">OPERATING THESIS</span>
-            <span class="matrix-summary">Pre-built toolchains compress delivery. Explicit contracts guarantee parity. Verification research makes change safe.</span>
+      <!-- Hero -->
+      <section id="top" class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Applied Data & Verification Lab</p>
+          <h1>
+            Data systems your business can <span class="headline-em">trust</span>—delivered as software.
+          </h1>
+          <p class="hero-body">Sidrah Labs is an applied engineering and verification lab. We start with technical discovery to find why your data is slow, expensive, or unreliable. Then we deploy our own software inside your cloud to fix it—cutting pipeline costs by up to 80%, preparing legacy data for AI, and proving every number matches its source.</p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:azeem@sidrahlabs.com?subject=Technical%20Discovery%20%E2%80%94%20Sidrah%20Labs">Start with technical discovery &rarr;</a>
+            <a class="text-link" href="mailto:azeem@sidrahlabs.com">azeem@sidrahlabs.com</a>
           </div>
-          <div class="matrix-grid">
-            <div class="matrix-col">
-              <div class="col-head">
-                <span class="col-id">01</span>
-                <span class="col-name">Deployments</span>
-              </div>
-              <h3 class="col-role">Fixed-Scope Outcomes</h3>
-              <p class="col-desc">Legacy ERP-to-Lakehouse migrations, Fivetran/SaaS cost off-ramps, and deterministic pipeline hardening in 10–21 days.</p>
-            </div>
-            <div class="matrix-col">
-              <div class="col-head">
-                <span class="col-id">02</span>
-                <span class="col-name">Toolchain</span>
-              </div>
-              <h3 class="col-role">VPC-Deployed Accelerators</h3>
-              <p class="col-desc">Reusable PySpark ingestion frameworks, row-hash parity engines, and pre-execution schema gates deployed directly in your cloud.</p>
-            </div>
-            <div class="matrix-col">
-              <div class="col-head">
-                <span class="col-id">03</span>
-                <span class="col-name">Research</span>
-              </div>
-              <h3 class="col-role">Formal Verification</h3>
-              <p class="col-desc">AST/SMT logic firewalls, symbolic execution (JPF/NeuroSPF), and mathematical proofs for AI-paced code and SQL mutations.</p>
+          <p class="hero-meta">Research-led discovery · Services-as-software · Deployed in your cloud</p>
+        </div>
+      </section>
+
+      <!-- 01: Business Thesis / Why initiatives stall -->
+      <section id="thesis" class="section">
+        <div class="wrap grid">
+          <p class="label">Why us</p>
+          <div>
+            <h2>Why data projects stall—and why hiring more people doesn't fix them.</h2>
+            <p class="intro">Most teams face the same three problems: AI projects that can't launch because the underlying data is a mess, SaaS pipeline bills that grow every month, and agencies that charge by the hour to build everything from scratch.</p>
+            <ol class="rows">
+              <li class="row">
+                <p class="row-meta">01</p>
+                <div>
+                  <h3>AI fails when nobody trusts the numbers</h3>
+                  <p>Most AI pilots never leave staging because they sit on top of undocumented ERPs and legacy databases. If finance and operations can't reconcile an AI output against the system of record, the project gets shelved.</p>
+                </div>
+              </li>
+              <li class="row">
+                <p class="row-meta">02</p>
+                <div>
+                  <h3>Metered SaaS tools tax your growth</h3>
+                  <p>Connector tools like Fivetran charge by the row. As your business grows, your bill climbs for simple data movement that could run inside your own cloud at a fraction of the cost.</p>
+                </div>
+              </li>
+              <li class="row">
+                <p class="row-meta">03</p>
+                <div>
+                  <h3>Hourly consulting rewards slow delivery</h3>
+                  <p>Traditional agencies start from a blank repository and bill you to reinvent standard plumbing. Worse, as teams and AI coding tools push changes faster, silent errors slip past basic tests and corrupt executive reports.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02: Commercial Sprints (Services-as-Software) -->
+      <section id="deployments" class="section">
+        <div class="wrap grid">
+          <p class="label">Engagements</p>
+          <div>
+            <h2>Start with discovery. Deliver in weeks.</h2>
+            <p class="intro">Every engagement begins with technical discovery: we audit your sources, costs, and failure modes, and agree on a fixed scope and price. Then we deploy our own tested software inside your cloud to deliver the result in weeks, not quarters.</p>
+            <ol class="rows">
+              <li class="row">
+                <div class="row-meta-stack">
+                  <span class="meta-code">01 · AI-Ready Data</span>
+                  <span class="meta-duration">14–21 days</span>
+                </div>
+                <div>
+                  <h3>Legacy ERP to AI-ready lakehouse</h3>
+                  <p class="row-outcome">Clean, reconciled data that leadership, analysts, and AI agents can use immediately.</p>
+                  <p>We pull data out of locked-in SQL, Oracle, and ERP systems into a governed Databricks lakehouse. Every table is checked row-for-row against your legacy records so finance signs off on day one.</p>
+                  <p class="focus">Databricks Medallion lakehouse · Reconciled financial & operational tables · Ready for BI & AI</p>
+                </div>
+              </li>
+              <li class="row">
+                <div class="row-meta-stack">
+                  <span class="meta-code">02 · Cost Reduction</span>
+                  <span class="meta-duration">14 days</span>
+                </div>
+                <div>
+                  <h3>Replace metered SaaS pipelines</h3>
+                  <p class="row-outcome">Cut recurring pipeline bills by up to 80% and own the code outright.</p>
+                  <p>Stop paying monthly rent per row. We replace metered SaaS connectors with fast, reliable pipelines that run inside your own cloud account—with zero downtime and verified parity during the switch.</p>
+                  <p class="focus">End per-row SaaS billing · Runs in your VPC · Verified zero-loss cutover</p>
+                </div>
+              </li>
+              <li class="row">
+                <div class="row-meta-stack">
+                  <span class="meta-code">03 · Reliability</span>
+                  <span class="meta-duration">10–14 days</span>
+                </div>
+                <div>
+                  <h3>Automated checks before code hits production</h3>
+                  <p class="row-outcome">Ship pipeline changes fast without breaking dashboards or corrupting metrics.</p>
+                  <p>When engineers or AI tools edit SQL and pipelines, syntax checks pass while broken logic slips through. We install automated pre-execution gates that block bad changes before they touch production data.</p>
+                  <p class="focus">Explicit data contracts · Pre-execution logic checks · No silent metric drift</p>
+                </div>
+              </li>
+            </ol>
+            <p class="note">Timelines are sprint targets. Exact scope, deliverables, and parity guarantees are locked after discovery.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03: Field Evidence (Production & Research Proof) -->
+      <section id="proof" class="section">
+        <div class="wrap grid">
+          <p class="label">Evidence</p>
+          <div>
+            <h2>Proven in production. Backed by research.</h2>
+            <p class="intro">The software we deploy in client sprints comes from years of running production data systems and our own research in formal verification.</p>
+            <ol class="rows">
+              <li class="row">
+                <p class="row-meta">2+ years in production</p>
+                <div>
+                  <h3>Enterprise ERP lakehouse with zero downtime</h3>
+                  <p>Built and ran an end-to-end Databricks lakehouse across complex ERP schemas. Our configuration-driven ingestion engine cut new-table onboarding from weeks of custom code to a single config change—and has run in production for over two years.</p>
+                </div>
+              </li>
+              <li class="row">
+                <p class="row-meta">100+ production extractors</p>
+                <div>
+                  <h3>Unstructured document pipelines for healthcare AI</h3>
+                  <p>Built fault-tolerant extraction infrastructure for a Silicon Valley medical AI company—combining over 100 concurrent crawlers with vision models to turn messy clinical documents into validated analytical tables.</p>
+                </div>
+              </li>
+              <li class="row">
+                <p class="row-meta">In-house R&D</p>
+                <div>
+                  <h3>Applied formal verification research</h3>
+                  <p>Led by a Databricks Certified Data Engineer Professional with published research extending the JavaPathFinder (JPF) and NeuroSPF symbolic execution engines—applying mathematical verification to modern software and AI.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04: The Applied Lab Model (How we execute) -->
+      <section id="method" class="section">
+        <div class="wrap grid">
+          <p class="label">How we work</p>
+          <div>
+            <h2>Services-as-software, powered by an applied lab.</h2>
+            <p class="intro">We are built like a product and research lab, not a staffing firm. Because we bring our own software to every engagement—and improve it through in-house R&D—you get the speed of a product with the precision of custom engineering.</p>
+            <ol class="rows">
+              <li class="row">
+                <p class="row-meta">01</p>
+                <div>
+                  <h3>Research-led discovery first</h3>
+                  <p>We don't guess or sell open-ended retainers. We start by auditing your schemas, pipeline spend, and business rules—and hand you a clear architecture and fixed-scope plan.</p>
+                </div>
+              </li>
+              <li class="row">
+                <p class="row-meta">02</p>
+                <div>
+                  <h3>Delivered with our own software</h3>
+                  <p>We deploy our internal ingestion, diffing, and parity engines directly into your cloud VPC. You keep the code, with no lock-in or recurring license fees.</p>
+                </div>
+              </li>
+              <li class="row">
+                <p class="row-meta">03</p>
+                <div>
+                  <h3>Moated by in-house verification</h3>
+                  <p>Our verification tools check that every migration and pipeline edit preserves your business rules—giving you a level of mathematical assurance that manual testing cannot match.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="sub-block">
+              <p class="sub-label">Execution Flow — Four steps, inside your cloud.</p>
+              <ol class="steps">
+                <li>
+                  <p class="step-tag">01 · Sources</p>
+                  <h3>Extract</h3>
+                  <p>Pull from ERPs, databases, APIs, and documents without slowing down source systems.</p>
+                </li>
+                <li>
+                  <p class="step-tag">02 · Engine</p>
+                  <h3>Standardize</h3>
+                  <p>Clean and structure data using repeatable rules instead of brittle one-off scripts.</p>
+                </li>
+                <li>
+                  <p class="step-tag">03 · Gate</p>
+                  <h3>Verify</h3>
+                  <p>Prove row-for-row parity and check business rules before any production table updates.</p>
+                </li>
+                <li>
+                  <p class="step-tag">04 · Outcome</p>
+                  <h3>Deliver</h3>
+                  <p>Serve trusted tables to executive dashboards, analysts, and AI applications.</p>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 01: Engagements -->
-      <section id="engagements" class="wrap content-section" aria-labelledby="engagements-heading">
-        <div class="section-title-bar">
-          <span class="sec-num">01</span>
-          <h2 id="engagements-heading">Fixed-Scope Engagements</h2>
-        </div>
-
-        <div class="engagements-list">
-          <article class="eng-row">
-            <div class="eng-meta">
-              <span class="eng-code">ENG-01</span>
-              <span class="eng-dur">14–21 days</span>
-            </div>
-            <div class="eng-main">
-              <h3 class="eng-title">Legacy ERP & Unstructured Data to AI-Ready Lakehouse</h3>
-              <p class="eng-desc">Most AI and analytics pilots stall because models are plugged into undocumented legacy databases and messy PDFs. We migrate locked-in SQL, Oracle, and ERP silos into a governed Databricks Medallion architecture—wired to a concrete BI, Genie, or MCP agent workflow.</p>
-              <ul class="eng-deliverables">
-                <li>&bull; Config-driven PySpark snapshot/merge ingestion & unstructured extraction</li>
-                <li>&bull; Reconciled Bronze, Silver, and AI-ready Gold layers with verified business rules</li>
-                <li>&bull; Zero-code table onboarding via metadata configuration</li>
-              </ul>
-            </div>
-          </article>
-          <article class="eng-row">
-            <div class="eng-meta">
-              <span class="eng-code">ENG-02</span>
-              <span class="eng-dur">14 days</span>
-            </div>
-            <div class="eng-main">
-              <h3 class="eng-title">The 'Un-SaaS' Pipeline Off-Ramp (Cost & Ownership)</h3>
-              <p class="eng-desc">Stop paying runaway monthly rent on your data. We replace metered SaaS connectors (like Fivetran) and full-recompute batch jobs with owned, incremental Python (dlt / PySpark) pipelines inside your VPC—cutting connector and DBU spend by up to 80%.</p>
-              <ul class="eng-deliverables">
-                <li>&bull; Self-hosted, zero-row-loss incremental ingestion inside your VPC</li>
-                <li>&bull; Mathematical row-hash and distribution parity against legacy tables</li>
-                <li>&bull; Elimination of third-party MAR billing spikes and vendor lock-in</li>
-              </ul>
-            </div>
-          </article>
-          <article class="eng-row">
-            <div class="eng-meta">
-              <span class="eng-code">ENG-03</span>
-              <span class="eng-dur">10–14 days</span>
-            </div>
-            <div class="eng-main">
-              <h3 class="eng-title">Pipeline Hardening & Pre-Execution Contract Gates</h3>
-              <p class="eng-desc">When engineers and AI coding agents ship SQL and pipeline edits at machine speed, syntax checks pass while join fan-outs, rounding errors, and schema drift silently corrupt production. We install deterministic pre-execution gates that block bad mutations before runtime.</p>
-              <ul class="eng-deliverables">
-                <li>&bull; Static AST query validation & explicit pre-execution schema contracts</li>
-                <li>&bull; Deterministic DataFrame business-rule and invariant assertions</li>
-                <li>&bull; Automated Golden-SQL regression & parity evaluation suites</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <p class="section-footnote">Timelines are fixed sprint targets. Exact scope and mathematical parity guarantees are locked after technical discovery.</p>
-      </section>
-
-      <!-- Section 02: Toolchain -->
-      <section id="toolchain" class="wrap content-section" aria-labelledby="toolchain-heading">
-        <div class="section-title-bar">
-          <span class="sec-num">02</span>
-          <h2 id="toolchain-heading">Internal Toolchain</h2>
-        </div>
-        <p class="section-subtext">We do not start from a blank repository or bill hours to reinvent standard plumbing. Every engagement deploys our battle-tested software modules directly into your cloud estate—delivering in days what traditional consultancies take months to scope.</p>
-
-        <div class="toolchain-grid">
-          <div class="tool-card">
-            <span class="tool-tag">PKG / INGEST</span>
-            <h3 class="tool-title">Metadata Ingestion & Un-SaaS Kit</h3>
-            <p class="tool-desc">High-concurrency PySpark and Python dlt frameworks for hostile ERP snapshot/merge diffing, API/document extraction, and zero-row-loss CDC reconciliation.</p>
-          </div>
-          <div class="tool-card">
-            <span class="tool-tag">PKG / PARITY</span>
-            <h3 class="tool-title">Deterministic Rules & Parity Engine</h3>
-            <p class="tool-desc">Modular DataFrame business-logic engine and automated row-hash/distribution checkers proving migrated tables mathematically match legacy financial ground truth.</p>
-          </div>
-          <div class="tool-card">
-            <span class="tool-tag">PKG / GATES</span>
-            <h3 class="tool-title">Pre-Execution Schema & AST Gates</h3>
-            <p class="tool-desc">Static query analysis and explicit contract assertions that intercept breaking schema drift, unsafe joins, and destructive DDL before queries touch Gold tables.</p>
+      <!-- 05: In-House Research Moat -->
+      <section id="research" class="section">
+        <div class="wrap grid">
+          <p class="label">Research</p>
+          <div class="prose">
+            <h2>Our moat: verifying changes at the speed of AI.</h2>
+            <p class="lead">AI has made writing code fast, but trusting code hard. When engineers and AI assistants generate SQL and pipeline changes in seconds, manual review can't keep up—and one bad query can quietly corrupt months of reporting.</p>
+            <p>Our lab builds verification tools that check data logic automatically. Using mathematical solvers (SMT/Z3) and relational-algebra analysis, we test whether a proposed query or pipeline change can break your business rules before it ever runs.</p>
+            <p class="flywheel">Why this matters to clients: Every client project shows us real-world failure modes that make our verification tools sharper—and every advance in our lab makes your next deployment faster and safer.</p>
+            <p class="prose-link">
+              <a class="text-link" href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">See our research on GitHub &#8599;</a>
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- Section 03: Research -->
-      <section id="research" class="wrap content-section" aria-labelledby="research-heading">
-        <div class="section-title-bar">
-          <span class="sec-num">03</span>
-          <h2 id="research-heading">Applied Research</h2>
-        </div>
-
-        <div class="research-layout">
-          <div class="research-left">
-            <p class="research-premise">As AI accelerates code and SQL generation by 240%+, the enterprise bottleneck shifts from writing software to proving a mutation is safe to run.</p>
-            <p class="research-body">Without machine-checked verification, AI-paced engineering carries a poison pill: silent, catastrophic bugs in production. Sidrah Labs investigates AST/SMT-based query verification (Z3), relational algebra equivalence, and neuro-symbolic execution harnesses (extending JavaPathFinder and NeuroSPF) to build reusable logic firewalls that mathematically prove generated code patches and data transformations preserve strict business invariants prior to execution.
-</p>
-            <a class="research-link" href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">
-              View open-source research on GitHub &rarr;
-            </a>
-          </div>
-          <div class="research-right">
-            <div class="flywheel-box">
-              <span class="flywheel-header">THE COMPOUNDING FLYWHEEL</span>
-              <p class="flywheel-text">Real-world enterprise migrations expose hostile edge cases and undocumented failure modes. Those anonymized failure patterns become formal benchmarks in our research lab—continuously hardening the verification gates we deploy.</p>
+      <!-- Contact / Discovery -->
+      <section id="contact" class="section contact">
+        <div class="wrap grid">
+          <p class="label">Discovery</p>
+          <div>
+            <h2 class="contact-title">Start with technical discovery.</h2>
+            <p class="intro">Tell us which legacy system is slowing you down, or what you're spending on data pipelines today. We'll review your setup directly and come back with a clear, fixed-scope plan.</p>
+            <div class="hero-actions">
+              <a class="button" href="mailto:azeem@sidrahlabs.com?subject=Technical%20Discovery%20%E2%80%94%20Sidrah%20Labs">Start with technical discovery &rarr;</a>
+              <a class="text-link" href="mailto:azeem@sidrahlabs.com">azeem@sidrahlabs.com</a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 04: Field Notes -->
-      <section id="field-notes" class="wrap content-section" aria-labelledby="notes-heading">
-        <div class="section-title-bar">
-          <span class="sec-num">04</span>
-          <h2 id="notes-heading">Field Notes & Track Record</h2>
-        </div>
-
-        <div class="notes-table">
-          <div class="note-row">
-            <div class="note-metric">2+ YRS</div>
-            <div class="note-info">
-              <h3 class="note-title">Zero-Downtime Self-Service ERP Lakehouse</h3>
-              <span class="note-client">Enterprise Production</span>
-              <p class="note-summary">Architected and operated an end-to-end Databricks Medallion lakehouse across complex ERP financial and payroll schemas. Engineered a config-driven PySpark snapshot/merge framework and deterministic DataFrame rules engine running continuously for 2+ years without architectural regressions.</p>
-            </div>
-          </div>
-          <div class="note-row">
-            <div class="note-metric">100+ SPIDERS</div>
-            <div class="note-info">
-              <h3 class="note-title">High-Concurrency HealthAI Extraction Infrastructure</h3>
-              <span class="note-client">Silicon Valley HealthAI Team</span>
-              <p class="note-summary">Engineered fault-tolerant extraction pipelines combining 100+ asynchronous extractors (bounded semaphores, custom rate-limit governors) with layout-aware PDF/table vision models to convert messy documents into schema-validated analytical tables.</p>
-            </div>
-          </div>
-          <div class="note-row">
-            <div class="note-metric">JPF / SMT</div>
-            <div class="note-info">
-              <h3 class="note-title">Neuro-Symbolic & Symbolic Execution Research</h3>
-              <span class="note-client">Formal Methods R&D</span>
-              <p class="note-summary">Applied formal-methods research extending JavaPathFinder (JPF) and NeuroSPF symbolic execution harnesses—bridging classical constraint solving with neural and LLM representations.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Closing Callout -->
-      <section class="wrap closing-section">
-        <div class="closing-card">
-          <h2>Start with a technical discovery.</h2>
-          <p>Bring your hostile legacy ERP, your runaway Fivetran/DBU invoice, or the production pipeline your team is afraid to change. You receive a concrete architecture diagnosis, parity verification plan, and fixed sprint timeline before any work begins.</p>
-          <div class="closing-actions">
-            <a class="btn-primary" href="mailto:azeem@sidrahlabs.com?subject=Technical%20discovery">Discuss a Fixed-Scope Sprint &rarr;</a>
-            <span class="closing-email">azeem@sidrahlabs.com</span>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Minimalist Technical Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div class="footer-left">
-          <span>Sidrah Labs (سِدْرَة لابس) — High-assurance Data Infrastructure & Verification Research.</span>
+        <div class="footer-brand">
+          <span class="wordmark wordmark-footer">
+            <span class="wm-mark" aria-hidden="true"></span>
+            <span class="wm-primary">Sidrah</span>
+            <span class="wm-sep" aria-hidden="true">/</span>
+            <span class="wm-secondary">Labs</span>
+          </span>
+          <span class="footer-tagline">Applied data & verification lab.</span>
         </div>
-        <div class="footer-links">
-          <a href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href="mailto:azeem@sidrahlabs.com" >
-            Email
-          </a>
-        </div>
+        <nav aria-label="Footer">
+          <a href="https://github.com/sidrah-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/company/sidrah-labs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:azeem@sidrahlabs.com">Email</a>
+        </nav>
       </div>
     </footer>
   </body>
