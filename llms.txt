@@ -1,63 +1,63 @@
 # Sidrah Labs
 
-> Sidrah Labs is an applied data and verification lab. We start with technical discovery and deliver services-as-software—turning legacy databases and costly SaaS pipelines into verified, AI-ready lakehouses.
+> Sidrah Labs makes data systems safe to change. We modernize legacy platforms with software that verifies migrations and pipeline changes—and build toward trustworthy automatically generated software.
 
-Data systems your business can trust—delivered as software.
+Make data systems safe to change.
 
 ## Overview
 
-Sidrah Labs is an applied engineering and verification lab. We start with technical discovery to find why your data is slow, expensive, or unreliable. Then we deploy our own software inside your cloud to fix it—cutting pipeline costs by up to 80%, preparing legacy data for AI, and proving every number matches its source.
+We modernize legacy data platforms with software that checks migrations and pipeline changes against the systems and rules they must preserve. Today, that means safer changes, lower operating costs, and trusted data for analytics and AI. In parallel, we are building the verification infrastructure to make automatically generated software safe to trust.
 
 
-## Why data projects stall—and why hiring more people doesn't fix them.
+## The hard part isn't moving data. It's changing systems without breaking trust.
 
-Most teams face the same three problems: AI projects that can't launch because the underlying data is a mess, SaaS pipeline bills that grow every month, and agencies that charge by the hour to build everything from scratch.
-
-
-- **AI fails when nobody trusts the numbers**: Most AI pilots never leave staging because they sit on top of undocumented ERPs and legacy databases. If finance and operations can't reconcile an AI output against the system of record, the project gets shelved.
-- **Metered SaaS tools tax your growth**: Connector tools like Fivetran charge by the row. As your business grows, your bill climbs for simple data movement that could run inside your own cloud at a fraction of the cost.
-- **Hourly consulting rewards slow delivery**: Traditional agencies start from a blank repository and bill you to reinvent standard plumbing. Worse, as teams and AI coding tools push changes faster, silent errors slip past basic tests and corrupt executive reports.
-
-## Commercial Sprints (Start with discovery. Deliver in weeks.)
-
-Every engagement begins with technical discovery: we audit your sources, costs, and failure modes, and agree on a fixed scope and price. Then we deploy our own tested software inside your cloud to deliver the result in weeks, not quarters.
+Legacy systems encode years of business rules, but those rules are rarely documented well enough to safely migrate or modify. Meanwhile, brittle pipelines and metered tools make change costly. We bring the engineering and verification infrastructure to modernize these systems without losing confidence in the results.
 
 
-- **Legacy ERP to AI-ready lakehouse** (01 · AI-Ready Data · 14–21 days)
-  Outcome: Clean, reconciled data that leadership, analysts, and AI agents can use immediately.
-  We pull data out of locked-in SQL, Oracle, and ERP systems into a governed Databricks lakehouse. Every table is checked row-for-row against your legacy records so finance signs off on day one.
+- **Undocumented rules make modernization risky**: Legacy databases and ERPs hold critical business logic in schemas, queries, and operational habits. Without a reliable way to surface and check those rules, teams cannot tell whether a migration preserves the meaning of the data.
+- **Pipeline economics punish growth**: Per-row connectors can make routine data movement more expensive as volumes grow. For the right workloads, operating pipelines in your own cloud can reduce recurring costs and give you more control.
+- **Faster code needs stronger guarantees**: Basic tests catch syntax and known examples, not every semantic regression. As engineers and AI coding tools produce changes faster, teams need automated checks that establish whether critical behavior has been preserved.
 
-  Deliverables: Databricks Medallion lakehouse · Reconciled financial & operational tables · Ready for BI & AI
+## Commercial Sprints (Modernize legacy platforms. Verify every change.)
+
+We begin with technical discovery to map your data sources, business rules, costs, and failure modes. Then we deploy purpose-built software in your cloud to modernize the platform and verify the outcome—with a clear scope, timeline, and price agreed upfront.
+
+
+- **Modernize a legacy data platform** (01 · AI-Ready Data · 14–21 days)
+  Outcome: A governed lakehouse with data reconciled to the system of record.
+  We move data from SQL, Oracle, and ERP systems into a governed Databricks lakehouse. Reconciliation checks compare migrated tables with legacy records, giving your team evidence to review and sign off before relying on the new platform.
+
+  Deliverables: Databricks Medallion lakehouse · Reconciled financial & operational data · Foundation for BI & AI
 - **Replace metered SaaS pipelines** (02 · Cost Reduction · 14 days)
-  Outcome: Cut recurring pipeline bills by up to 80% and own the code outright.
-  Stop paying monthly rent per row. We replace metered SaaS connectors with fast, reliable pipelines that run inside your own cloud account—with zero downtime and verified parity during the switch.
+  Outcome: Reduce recurring pipeline costs and run the code in your own cloud.
+  We assess metered SaaS connectors and, where the economics fit, replace them with pipelines that run in your cloud account. Parity checks compare old and new outputs during cutover to help protect continuity.
 
-  Deliverables: End per-row SaaS billing · Runs in your VPC · Verified zero-loss cutover
-- **Automated checks before code hits production** (03 · Reliability · 10–14 days)
-  Outcome: Ship pipeline changes fast without breaking dashboards or corrupting metrics.
-  When engineers or AI tools edit SQL and pipelines, syntax checks pass while broken logic slips through. We install automated pre-execution gates that block bad changes before they touch production data.
+  Deliverables: Reduce per-row SaaS costs · Runs in your VPC · Output parity checks during cutover
+- **Verify pipeline changes before execution** (03 · Reliability · 10–14 days)
+  Outcome: Catch changes that violate defined data contracts and business rules.
+  Syntax checks cannot detect every logic error. We install automated pre-execution checks for defined contracts and business rules, so teams can identify risky changes before they affect production data.
 
-  Deliverables: Explicit data contracts · Pre-execution logic checks · No silent metric drift
+  Deliverables: Explicit data contracts · Automated pre-execution checks · Earlier detection of metric drift
 
 Timelines are sprint targets. Exact scope, deliverables, and parity guarantees are locked after discovery.
 
 ## Field Evidence
 
-The software we deploy in client sprints comes from years of running production data systems and our own research in formal verification.
+Our work combines experience operating production data systems with research in formal verification. The results inform practical tools for making data changes more observable and dependable.
 
 
-- **Enterprise ERP lakehouse with zero downtime** (2+ years in production): Built and ran an end-to-end Databricks lakehouse across complex ERP schemas. Our configuration-driven ingestion engine cut new-table onboarding from weeks of custom code to a single config change—and has run in production for over two years.
-- **Unstructured document pipelines for healthcare AI** (100+ production extractors): Built fault-tolerant extraction infrastructure for a Silicon Valley medical AI company—combining over 100 concurrent crawlers with vision models to turn messy clinical documents into validated analytical tables.
-- **Applied formal verification research** (In-house R&D): Led by a Databricks Certified Data Engineer Professional with published research extending the JavaPathFinder (JPF) and NeuroSPF symbolic execution engines—applying mathematical verification to modern software and AI.
+- **Enterprise ERP lakehouse with zero downtime** (2+ years in production): Built and operated an end-to-end Databricks lakehouse across complex ERP schemas. A configuration-driven ingestion engine reduced new-table onboarding from weeks of custom code to a configuration change and has run in production for over two years.
+- **Unstructured document pipelines for healthcare AI** (100+ production extractors): Built fault-tolerant extraction infrastructure for a medical AI company, combining more than 100 concurrent crawlers with vision models to turn clinical documents into validated analytical tables.
+- **Applied formal verification research** (In-house R&D): Our research extends the JavaPathFinder (JPF) and NeuroSPF symbolic execution engines. This work in formal methods and symbolic execution informs our longer-term effort to verify software, including software produced by AI systems.
 
 ## The Applied Lab Model
 
-We are built like a product and research lab, not a staffing firm. Because we bring our own software to every engagement—and improve it through in-house R&D—you get the speed of a product with the precision of custom engineering.
+We pair hands-on platform engineering with reusable internal software and applied research. Each engagement solves a concrete infrastructure problem today, while production experience informs the verification tools we are building for safer change tomorrow.
 
 
-- **Research-led discovery first**: We don't guess or sell open-ended retainers. We start by auditing your schemas, pipeline spend, and business rules—and hand you a clear architecture and fixed-scope plan.
-- **Delivered with our own software**: We deploy our internal ingestion, diffing, and parity engines directly into your cloud VPC. You keep the code, with no lock-in or recurring license fees.
-- **Moated by in-house verification**: Our verification tools check that every migration and pipeline edit preserves your business rules—giving you a level of mathematical assurance that manual testing cannot match.
+- **Understand the system before changing it**: We map your schemas, pipeline costs, dependencies, and business rules, then agree on a clear architecture and fixed scope before implementation.
+- **Run in your environment**: We deploy our ingestion, diffing, and parity tools in your cloud VPC. You retain the delivered code and avoid a dependency on a recurring software license.
+- **Make change verifiable**: We use reconciliation, explicit data contracts, and automated checks to test whether migrations and pipeline edits preserve defined behavior. Our research is advancing these methods toward stronger formal guarantees.
 
 ## System Architecture
 
@@ -71,13 +71,13 @@ Every engagement follows the same repeatable pattern inside your VPC.
 
 ## In-House Research
 
-AI has made writing code fast, but trusting code hard. When engineers and AI assistants generate SQL and pipeline changes in seconds, manual review can't keep up—and one bad query can quietly corrupt months of reporting.
+AI can generate code faster than teams can manually inspect every change. The challenge is not just producing software, but establishing that it preserves the properties people rely on.
 
 
-Our lab builds verification tools that check data logic automatically. Using mathematical solvers (SMT/Z3) and relational-algebra analysis, we test whether a proposed query or pipeline change can break your business rules before it ever runs.
+We are developing verification tools that analyze data logic before execution. Using SMT solvers such as Z3 and relational-algebra analysis, we investigate whether proposed query and pipeline changes can violate specified rules. Our long-term goal is to extend this infrastructure to software generated automatically.
 
 
-Why this matters to clients: Every client project shows us real-world failure modes that make our verification tools sharper—and every advance in our lab makes your next deployment faster and safer.
+How this connects to client work: Modernization engagements expose real failure modes and business rules. Those lessons shape our tools, while advances in verification help make future deployments safer and more repeatable.
 
 
 ## Contact
