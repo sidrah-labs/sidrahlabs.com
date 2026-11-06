@@ -1,59 +1,72 @@
-# SIDRAH LABS
+# Sidrah Labs (سِدْرَة لابس)
 
-> Sidrah Labs (سِدْرَة لابس) engineers AI-ready lakehouses and Un-SaaS data migrations today, while forging formal verification infrastructure for tomorrow.
+> Sidrah Labs (سِدْرَة لابس) is a services-as-software lab. We deliver fixed-scope Databricks lakehouses on our own engineering toolchain, hardened by verification research.
 
-Build data systems you can trust—and change safely.
+Data systems you can trust—and change safely.
 
-## What we do
-
-Enterprises are bleeding money on rented pipelines, and their AI pilots are stalling because the underlying legacy data is a fragile mess. We re-architect hostile databases into AI-ready Databricks lakehouses today—while building the deterministic logic firewalls required to safely run AI-paced engineering tomorrow.
+Sidrah Labs is a services-as-software company. We deliver fixed-scope Databricks lakehouses on our own engineering toolchain, and harden that toolchain with formal verification research.
 
 
-## Fixed-scope deployments
+## Operating Thesis
 
-- **Legacy ERP to AI-Ready Lakehouse** (A / AI-READINESS) — 14–21 days sprint target.
-  95% of AI pilots fail because they are plugged into undocumented, hostile legacy databases. We migrate locked-in SQL/Oracle/ERP silos into a governed Databricks Medallion architecture—delivering a clean, verified Gold layer ready for BI and AI agents.
+Services fund the lab. Engagements test the software. Research hardens the foundation.
 
-  Focus: Legacy ERP extraction · Unstructured-to-Delta · AI-ready Gold layer
-- **The 'Un-SaaS' Migration (Cost Off-Ramp)** (B / UNSAAS) — 14 days sprint target.
-  Stop paying rent on your data. We rip out expensive, metered SaaS connectors (like Fivetran) and replace them with owned, high-performance PySpark pipelines running directly inside your VPC. Slash your monthly data pipeline bills by up to 80% while retaining mathematical source parity.
+- **Services (Production Deployments)**: Fixed-scope migrations, connector off-ramps, and pipeline hardening on Databricks. 10–21 days.
+- **Software (Internal Toolchain)**: Reused ingestion harnesses, row-hash parity checkers, and schema gates. Deployed directly into your VPC.
+- **Research (Formal Verification)**: SMT-based logic firewalls, symbolic execution (JPF/NeuroSPF), and pre-execution query verification.
 
-  Focus: UnSaaS ingestion · Eliminate MAR billing · DBU cost reduction
-- **Pipeline Hardening & Logic Firewalls** (C / HARDENING) — 10–14 days sprint target.
-  When junior engineers or AI coding agents ship pipeline edits at machine speed, syntax checks pass while silent semantic errors corrupt production. We install explicit schema contracts and deterministic pre-execution gates that physically block destructive SQL before it executes.
+## Fixed-Scope Engagements
 
-  Focus: Schema contracts · Logic firewalls · Golden-SQL evaluation
+- **Legacy ERP to AI-Ready Lakehouse** (ENG-01 — 14–21 days): Migrate locked-in SQL, Oracle, and ERP silos into a governed Databricks Medallion architecture. Delivered as a reconciled Gold layer ready for BI, Genie, and AI agents.
+  Deliverables:
+  - Config-driven PySpark snapshot/merge diffing
+  - Structured Bronze, Silver, and reconciled Gold layers
+  - Direct table onboarding by configuration, not bespoke code
+- **Un-SaaS Pipeline Off-Ramp** (ENG-02 — 14 days): Replace metered SaaS connectors (such as Fivetran) with high-performance PySpark pipelines running inside your own VPC, eliminating runaway row-sync billing.
+  Deliverables:
+  - Self-hosted, zero-row-loss ingestion pipelines
+  - Mathematical row-hash parity against legacy source
+  - Full data sovereignty with no third-party transit
+- **Pipeline Hardening & Logic Firewalls** (ENG-03 — 10–14 days): Install explicit schema contracts and pre-execution gates that intercept destructive mutations and silent semantic drift before execution—whether written by humans or AI agents.
+  Deliverables:
+  - Pre-execution AST query validation & schema contracts
+  - Databricks Asset Bundles (DABs) multi-environment CI/CD
+  - Automated Golden-SQL regression testing
 
-TIMELINES ARE SPRINT TARGETS; EXACT SCOPE AND PARITY GUARANTEES ARE LOCKED AFTER TECHNICAL DISCOVERY.
+Timelines are sprint targets. Scope and parity guarantees are fixed after a technical discovery.
 
-## How we deliver
+## Internal Toolchain
 
-We don't start from a blank repository or bill hours to reinvent standard plumbing. Each sprint deploys our proprietary internal software accelerators directly into your cloud VPC—compounding our delivery speed and your pipeline reliability.
+We do not bill hours to reinvent plumbing from scratch. Each engagement adapts the same battle-tested software assets directly to your cloud estate.
 
-- **Metadata-driven ingestion & UnSaaS kit**: Battle-tested PySpark frameworks for hostile ERP snapshot/merge diffing, high-concurrency API extraction, and zero-row-loss CDC reconciliation.
-- **Deterministic DataFrame rules & parity engine**: Modular business-logic harnesses and automated row-hash parity checkers that prove migrated tables mathematically match legacy financial ground truth.
-- **Pre-execution schema & logic gates**: Static query analysis, explicit contracts, and evaluation tools that intercept destructive SQL mutations and metric drift before execution.
+- **Metadata Ingestion Framework** (PKG / INGEST): High-concurrency PySpark frameworks for snapshot/merge diffing, high-watermark CDC reconciliation, and structured schema evolution.
+- **Rules & Parity Engine** (PKG / PARITY): Modular DataFrame rules engine and automated row-hash reconciliation proving migrated tables mathematically match legacy ground truth.
+- **Pre-Execution Schema Gates** (PKG / GATES): Static query analysis and invariant assertions that intercept breaking changes, type mismatches, and destructive DDL prior to runtime.
 
-## Production experience
+## Applied Research
 
-- **Zero-downtime ERP Lakehouse & metadata ingestion**: Architected and operated an end-to-end Databricks Medallion lakehouse across complex ERP schemas. Engineered a config-driven PySpark snapshot/merge framework (onboarding new tables via config inserts) and automated multi-environment promotion—running in production for 2+ years. (2+ YEARS PRODUCTION)
-- **High-concurrency unstructured & HealthAI extraction**: Engineered fault-tolerant extraction infrastructure for a Silicon Valley medical AI team—combining 100+ asynchronous spiders with layout-aware PDF/vision models to turn messy documents into schema-validated analytical tables. (100+ EXTRACTORS / VISION)
-- **Symbolic execution & neuro-symbolic verification**: Founded by a Databricks Certified Data Engineer Pro with applied formal-methods research extending JavaPathFinder (JPF) and NeuroSPF symbolic execution harnesses—bridging classical constraint solving with neural/LLM representations. (JPF / NEURO-SYMBOLIC R&D)
+As code generation accelerates, the bottleneck shifts from writing changes to verifying their safety.
 
-## Applied R&D
-
-As automated tools generate software and pipeline logic 240% faster, the enterprise bottleneck shifts from code creation to code trust. Without machine-checked verification, AI-paced engineering carries a poison pill: catastrophic, silent bugs in production.
+Sidrah Labs investigates AST/SMT-based query verification, relational algebra compilation, and symbolic execution harnesses (extending JavaPathFinder and NeuroSPF). Our goal is proving that proposed pipeline transformations cannot execute destructive mutations or corrupt production invariants.
 
 
-To capture the real economic velocity of AI, verification must run as fast as generation. Sidrah Labs is developing reusable formal verification infrastructure and neuro-symbolic logic firewalls. By combining relational-algebra compilers with SMT solvers (Z3) and incremental diff engines, we aim to mathematically prove that AI-generated code patches and SQL queries preserve strict business invariants before they ever execute.
+Key focus: AST/SMT query verification, relational algebra compilation, symbolic execution (JPF/NeuroSPF).
 
+Flywheel: Production deployments expose edge-case failure modes. Those failures become formal test cases for our verification research, which in turn hardens the gates installed in future deployments.
 
-THE COMPOUNDING FLYWHEEL: Every enterprise migration we execute exposes real-world failure modes that harden our internal verification harnesses—funding our independence today while forging the standalone verification infrastructure of tomorrow.
+GitHub: https://github.com/sidrah-labs
 
+## Field Notes & Production Experience
 
-## Links
+- **Self-Service ERP Lakehouse** (Enterprise Production — 2+ YRS): End-to-end Databricks Medallion lakehouse operating across complex ERP schemas. Reusable PySpark snapshot/merge framework operating continuously without architectural regressions.
+- **HealthAI Extraction Infrastructure** (Silicon Valley HealthAI Team — 100+ SPIDERS): Fault-tolerant extraction pipelines combining 100+ asynchronous extractors with layout-aware vision models to feed schema-validated analytical tables.
+- **Neuro-Symbolic & Symbolic Execution** (Formal Methods Laboratory — RESEARCH): Applied formal-methods research extending JavaPathFinder (JPF) and NeuroSPF symbolic execution harnesses, bridging constraint solving with neural representations.
 
-- [Website](https://sidrahlabs.com/)
-- [GitHub](https://github.com/sidrah-labs)
-- [LinkedIn](https://www.linkedin.com/company/sidrah-labs)
-- [Email](mailto:azeem@sidrahlabs.com)
+Verification Credential: Led by a Databricks Certified Data Engineer Professional.
+
+## Contact & Engagement
+
+- Discovery: azeem@sidrahlabs.com
+- Website: https://sidrahlabs.com/
+- GitHub: https://github.com/sidrah-labs
+- LinkedIn: https://www.linkedin.com/company/sidrah-labs

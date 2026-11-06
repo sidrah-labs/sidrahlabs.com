@@ -6,332 +6,215 @@
     <title>{{ meta.title }}</title>
     <meta name="description" content="{{ meta.description }}" />
     <meta name="theme-color" content="{{ meta.theme_color }}" />
-    <meta name="author" content="{{ meta.author }}" />
     <link rel="canonical" href="{{ meta.canonical }}" />
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="{{ meta.og.type }}" />
-    <meta property="og:title" content="{{ meta.og.title }}" />
-    <meta property="og:description" content="{{ meta.og.description }}" />
-    <meta property="og:url" content="{{ meta.og.url }}" />
-    <meta property="og:image" content="{{ meta.og.image }}" />
-    <meta property="og:site_name" content="Sidrah Labs" />
+    <!-- OpenGraph / Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ meta.title }}" />
+    <meta property="og:description" content="{{ meta.description }}" />
+    <meta property="og:url" content="{{ meta.canonical }}" />
+    <meta property="og:image" content="{{ meta.og_image }}" />
+    <meta name="twitter:card" content="summary" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="{{ meta.twitter.card }}" />
-    <meta name="twitter:title" content="{{ meta.twitter.title }}" />
-    <meta name="twitter:description" content="{{ meta.twitter.description }}" />
-    <meta name="twitter:image" content="{{ meta.og.image }}" />
-
-    <!-- Favicon: Clean SVG Mark -->
+    <!-- Minimal SVG Monogram Favicon -->
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23171916'/%3E%3Ctext x='16' y='21' fill='%23f5f4ef' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle'%3ES%3Ctspan fill='%23315d47'%3E/%3E%3C/tspan%3EL%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Ctext x='16' y='21' fill='%23ffffff' font-family='monospace' font-size='14' font-weight='bold' text-anchor='middle'%3ES/L%3C/text%3E%3C/svg%3E"
     />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles.css" />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Sidrah Labs",
-        "url": "{{ meta.canonical }}",
-        "logo": "{{ meta.og.image }}",
-        "description": "{{ meta.description }}",
-        "founder": {
-          "@type": "Person",
-          "name": "Muhammad Azeem",
-          "email": "azeem@sidrahlabs.com"
-        },
+        "url": {{ meta.canonical | tojson }},
+        "description": {{ meta.description | tojson }},
+        "email": {{ contact.email | tojson }},
         "sameAs": [
           "https://github.com/sidrah-labs",
           "https://www.linkedin.com/company/sidrah-labs"
-        ],
-        "knowsAbout": [
-          "Databricks Lakehouse",
-          "Databricks Asset Bundles (DABs)",
-          "Data Infrastructure",
-          "Deterministic Data Pipelines",
-          "Formal Verification",
-          "Schema Contracts"
         ]
       }
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip" href="#main">Skip to main content</a>
 
-    <div class="page-frame">
-      <header class="site-header">
-        <nav class="wrap nav" aria-label="Main navigation">
-          <a class="wordmark" href="#top" aria-label="Sidrah Labs home">
-            {{ nav.wordmark_left }}<span class="wordmark-mark" aria-hidden="true">{{ nav.wordmark_slash }}</span>{{ nav.wordmark_right }}
-          </a>
-          <div class="nav-links">
-            {% for link in nav.links %}
-            <a href="{{ link.href }}">{{ link.label }}</a>
-            {% endfor %}
-          </div>
-          <a class="nav-contact" href="{{ nav.contact.href }}">
-            {{ nav.contact.label }} <span aria-hidden="true">↗</span>
-          </a>
-        </nav>
-      </header>
-
-      <main id="main">
-        <!-- Hero Section -->
-        <section id="top" class="wrap hero" aria-labelledby="hero-title">
-          <div class="hero-meta">
-            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> {{ hero.eyebrow }}</p>
-            <p class="mono meta-index">{{ hero.meta_index }}</p>
-          </div>
-          <h1 id="hero-title">
-            {{ hero.headline_prefix }}<span>{{ hero.headline_accent }}</span>{{ hero.headline_suffix }}
-          </h1>
-          <div class="hero-bottom">
-            <p class="hero-copy">
-              {{ hero.body }}
-            </p>
-            <div class="hero-cta">
-              <a class="button button-dark" href="{{ hero.cta.href }}">
-                {{ hero.cta.label }} <span aria-hidden="true">↗</span>
-              </a>
-              <div class="cta-direct">
-                <span class="mono cta-email-label">DIRECT CONTACT:</span>
-                <button
-                  type="button"
-                  class="cta-copy-btn mono"
-                  data-email="{{ hero.cta.email }}"
-                  aria-label="Copy direct email address to clipboard"
-                >
-                  <span class="cta-email-text">{{ hero.cta.email }}</span>
-                  <span class="copy-badge" aria-hidden="true">COPY ⎘</span>
-                </button>
-              </div>
-              <p class="mono cta-note">{{ hero.cta.note }}</p>
-            </div>
-          </div>
-          <div class="hero-stamp" aria-hidden="true">
-            {% for item in hero.stamp %}
-            <span>{{ item }}</span>
-            {% endfor %}
-          </div>
-        </section>
-
-        <!-- Deployments Section -->
-        <section id="deployments" class="section section-ink" aria-labelledby="deployments-title">
-          <div class="wrap section-wrap">
-            <div class="section-top">
-              <div>
-                <p class="eyebrow eyebrow-light"><span>{{ deployments.kicker_number }}</span> / {{ deployments.kicker_label }}</p>
-                <h2 id="deployments-title">{{ deployments.title }}<span class="accent-mark">{{ deployments.title_accent }}</span></h2>
-              </div>
-              <p class="section-intro">
-                {{ deployments.intro }}
-              </p>
-            </div>
-            <div class="offer-grid">
-              {% for card in deployments.cards %}
-              <article class="offer-card">
-                <div class="offer-card-top">
-                  <span class="mono offer-number">{{ card.code }}</span>
-                  <span class="duration mono">{{ card.duration }}</span>
-                </div>
-                <h3>{{ card.title }}</h3>
-                <p>{{ card.description }}</p>
-                <p class="offer-result">
-                  <span>CORE FOCUS</span> {{ card.focus }}
-                </p>
-              </article>
-              {% endfor %}
-            </div>
-            <p class="scope-note mono">{{ deployments.scope_note }}</p>
-          </div>
-        </section>
-
-        <!-- System Architecture Pattern Section -->
-        <section id="architecture" class="section section-paper" aria-labelledby="arch-title">
-          <div class="wrap section-wrap">
-            <div class="section-top">
-              <div>
-                <p class="eyebrow"><span>{{ architecture.kicker_number }}</span> / {{ architecture.kicker_label }}</p>
-                <h2 id="arch-title">{{ architecture.title }}<span class="accent-mark">{{ architecture.title_accent }}</span></h2>
-              </div>
-              <p class="section-intro">
-                {{ architecture.intro }}
-              </p>
-            </div>
-            <div class="arch-schematic" role="region" aria-label="System topology diagram">
-              <div class="arch-grid">
-                {% for step in architecture.diagram_steps %}
-                <div class="arch-card">
-                  <div class="arch-card-header">
-                    <span class="mono arch-step-id">{{ step.id }}</span>
-                    <span class="mono arch-tag">{{ step.tag }}</span>
-                  </div>
-                  <h3 class="arch-card-title">{{ step.title }}</h3>
-                  <p class="arch-card-desc">{{ step.desc }}</p>
-                </div>
-                {% if not loop.last %}
-                <div class="arch-connector" aria-hidden="true">
-                  <span>→</span>
-                </div>
-                {% endif %}
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Method Section -->
-        <section id="method" class="section section-ink" aria-labelledby="method-title">
-          <div class="wrap section-wrap">
-            <div class="section-top method-heading">
-              <div>
-                <p class="eyebrow"><span>{{ method.kicker_number }}</span> / {{ method.kicker_label }}</p>
-                <h2 id="method-title">{{ method.title }}<span class="accent-mark">{{ method.title_accent }}</span></h2>
-              </div>
-              <p class="section-intro">
-                {{ method.intro }}
-              </p>
-            </div>
-            <div class="method-grid">
-              {% for item in method.pillars %}
-              <article class="method-item">
-                <span class="mono method-index">{{ item.number }}</span>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-              </article>
-              {% endfor %}
-            </div>
-            <div class="method-footer mono">
-              <span>{{ method.footer_left }}</span>
-              <span>{{ method.footer_right }}</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Production Proof Section -->
-        <section id="proof" class="section section-proof" aria-labelledby="proof-title">
-          <div class="wrap section-wrap">
-            <div class="proof-heading">
-              <p class="eyebrow"><span>{{ proof.kicker_number }}</span> / {{ proof.kicker_label }}</p>
-              <h2 id="proof-title">{{ proof.title }}<span class="accent-mark">{{ proof.title_accent }}</span></h2>
-            </div>
-            <div class="terminal" aria-label="Production systems and experience">
-              <div class="terminal-bar">
-                <div class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></div>
-                <p class="mono">{{ proof.bar_title }}</p>
-                <span class="mono terminal-live"><span class="status-dot" aria-hidden="true"></span> {{ proof.status_badge }}</span>
-              </div>
-              <div class="terminal-body">
-                {% for entry in proof.entries %}
-                <div class="terminal-entry">
-                  <span class="mono terminal-index">{{ entry.index }}</span>
-                  <div>
-                    <h3>{{ entry.title }}</h3>
-                    <p>{{ entry.description }}</p>
-                  </div>
-                  <span class="mono terminal-tag">{{ entry.tag }}</span>
-                </div>
-                {% endfor %}
-              </div>
-              <div class="terminal-foot mono">
-                {% for foot in proof.foot_notes %}
-                <span>{{ foot }}</span>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Research Section -->
-        <section id="research" class="section section-research" aria-labelledby="research-title">
-          <div class="wrap research-layout">
-            <div>
-              <p class="eyebrow eyebrow-light"><span>{{ research.kicker_number }}</span> / {{ research.kicker_label }}</p>
-              <h2 id="research-title">
-                {{ research.title }}<br />{{ research.title_sub }}<span class="research-period">{{ research.title_accent }}</span>
-              </h2>
-            </div>
-            <div class="research-content">
-              <p class="research-lead">
-                {{ research.lead }}
-              </p>
-              <p>
-                {{ research.body }}
-              </p>
-              <p class="research-boundary mono">{{ research.boundary_note }}</p>
-              <a
-                class="research-link"
-                href="{{ research.github_link.href }}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {{ research.github_link.label }} <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer id="contact" class="wrap footer">
-        <a class="wordmark footer-wordmark" href="#top">
-          {{ footer.wordmark_left }}<span class="wordmark-mark" aria-hidden="true">{{ footer.wordmark_slash }}</span>{{ footer.wordmark_right }}
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="/" aria-label="Sidrah Labs homepage">
+          <span class="brand-name">SIDRAH LABS</span>
+          <span class="brand-sub">/ SYSTEMS &amp; VERIFICATION</span>
         </a>
-        <p class="mono footer-note">{{ footer.tagline }}</p>
-        <nav class="footer-links" aria-label="Footer navigation">
+        <nav class="nav" aria-label="Site navigation">
+          {% for item in nav %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+          {% endfor %}
+        </nav>
+        <a class="btn-discovery" href="{{ contact.href }}">Discovery Call &rarr;</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="wrap hero-section" aria-labelledby="hero-heading">
+        <div class="hero-kicker">APPLIED SYSTEMS &bull; PRODUCTION SERVICES &bull; FORMAL VERIFICATION</div>
+        <h1 id="hero-heading" class="hero-title">{{ hero.headline }}</h1>
+        <p class="hero-lead">{{ hero.sub }}</p>
+        
+        <div class="hero-action-bar">
+          <a class="btn-primary" href="{{ contact.href }}">Scope an Engagement &rarr;</a>
+          <span class="direct-contact">or email directly: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></span>
+        </div>
+
+        <!-- The Thesis Model (Services -> Software -> Research) -->
+        <div class="thesis-matrix" role="region" aria-label="Operating Model">
+          <div class="matrix-banner">
+            <span class="mono-label">OPERATING THESIS</span>
+            <span class="matrix-summary">{{ hero.thesis }}</span>
+          </div>
+          <div class="matrix-grid">
+            {% for pillar in thesis_pillars %}
+            <div class="matrix-col">
+              <div class="col-head">
+                <span class="col-id">{{ pillar.id }}</span>
+                <span class="col-name">{{ pillar.name }}</span>
+              </div>
+              <h3 class="col-role">{{ pillar.role }}</h3>
+              <p class="col-desc">{{ pillar.desc }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 01: Engagements -->
+      <section id="engagements" class="wrap content-section" aria-labelledby="engagements-heading">
+        <div class="section-title-bar">
+          <span class="sec-num">{{ engagements.section_id }}</span>
+          <h2 id="engagements-heading">{{ engagements.title }}</h2>
+        </div>
+
+        <div class="engagements-list">
+          {% for eng in engagements.entries %}
+          <article class="eng-row">
+            <div class="eng-meta">
+              <span class="eng-code">{{ eng.code }}</span>
+              <span class="eng-dur">{{ eng.duration }}</span>
+            </div>
+            <div class="eng-main">
+              <h3 class="eng-title">{{ eng.name }}</h3>
+              <p class="eng-desc">{{ eng.desc }}</p>
+              <ul class="eng-deliverables">
+                {% for d in eng.deliverables %}
+                <li>&bull; {{ d }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        <p class="section-footnote">{{ engagements.note }}</p>
+      </section>
+
+      <!-- Section 02: Toolchain -->
+      <section id="toolchain" class="wrap content-section" aria-labelledby="toolchain-heading">
+        <div class="section-title-bar">
+          <span class="sec-num">{{ toolchain.section_id }}</span>
+          <h2 id="toolchain-heading">{{ toolchain.title }}</h2>
+        </div>
+        <p class="section-subtext">{{ toolchain.desc }}</p>
+
+        <div class="toolchain-grid">
+          {% for mod in toolchain.modules %}
+          <div class="tool-card">
+            <span class="tool-tag">{{ mod.mono_tag }}</span>
+            <h3 class="tool-title">{{ mod.title }}</h3>
+            <p class="tool-desc">{{ mod.details }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Section 03: Research -->
+      <section id="research" class="wrap content-section" aria-labelledby="research-heading">
+        <div class="section-title-bar">
+          <span class="sec-num">{{ research.section_id }}</span>
+          <h2 id="research-heading">{{ research.title }}</h2>
+        </div>
+
+        <div class="research-layout">
+          <div class="research-left">
+            <p class="research-premise">{{ research.premise }}</p>
+            <p class="research-body">{{ research.body }}</p>
+            <a class="research-link" href="{{ research.github_url }}" target="_blank" rel="noopener noreferrer">
+              View open-source research on GitHub &rarr;
+            </a>
+          </div>
+          <div class="research-right">
+            <div class="flywheel-box">
+              <span class="flywheel-header">THE COMPOUNDING FLYWHEEL</span>
+              <p class="flywheel-text">{{ research.flywheel }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 04: Field Notes -->
+      <section id="field-notes" class="wrap content-section" aria-labelledby="notes-heading">
+        <div class="section-title-bar">
+          <span class="sec-num">{{ field_notes.section_id }}</span>
+          <h2 id="notes-heading">{{ field_notes.title }}</h2>
+        </div>
+
+        <div class="notes-table">
+          {% for note in field_notes.entries %}
+          <div class="note-row">
+            <div class="note-metric">{{ note.metric }}</div>
+            <div class="note-info">
+              <h3 class="note-title">{{ note.title }}</h3>
+              <span class="note-client">{{ note.client }}</span>
+              <p class="note-summary">{{ note.summary }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="credential-bar">
+          <span>VERIFIED: {{ field_notes.credential }}</span>
+        </div>
+      </section>
+
+      <!-- Closing Callout -->
+      <section class="wrap closing-section">
+        <div class="closing-card">
+          <h2>{{ closing.title }}</h2>
+          <p>{{ closing.desc }}</p>
+          <div class="closing-actions">
+            <a class="btn-primary" href="{{ contact.href }}">Discuss a Fixed-Scope Sprint &rarr;</a>
+            <span class="closing-email">{{ contact.email }}</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Minimalist Technical Footer -->
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <div class="footer-left">
+          <span>{{ footer.note }}</span>
+        </div>
+        <div class="footer-links">
           {% for link in footer.links %}
-          <a href="{{ link.href }}" {% if link.href.startswith('http') %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          <a href="{{ link.url }}" {% if link.url.startswith('http') %}target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ link.label }}
           </a>
           {% endfor %}
-        </nav>
-        <a class="mono back-top" href="#top">{{ footer.back_to_top }}</a>
-      </footer>
-    </div>
-
-    <!-- Minimal clipboard enhancement -->
-    <script>
-      (function() {
-        var copyBtn = document.querySelector('.cta-copy-btn');
-        if (!copyBtn) return;
-        copyBtn.addEventListener('click', function() {
-          var email = this.getAttribute('data-email');
-          if (!email) return;
-          var badge = this.querySelector('.copy-badge');
-          var originalText = badge.textContent;
-
-          function showSuccess() {
-            badge.textContent = 'COPIED ✓';
-            badge.classList.add('copied');
-            setTimeout(function() {
-              badge.textContent = originalText;
-              badge.classList.remove('copied');
-            }, 2200);
-          }
-
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(email).then(showSuccess).catch(function() {
-              window.location.href = 'mailto:' + email;
-            });
-          } else {
-            window.location.href = 'mailto:' + email;
-          }
-        });
-      })();
-    </script>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

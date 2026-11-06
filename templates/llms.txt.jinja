@@ -1,47 +1,62 @@
-# {{ nav.wordmark_left }} {{ nav.wordmark_right }}
+# Sidrah Labs (سِدْرَة لابس)
 
 > {{ meta.description }}
 
-{{ hero.headline_prefix }}{{ hero.headline_accent }}{{ hero.headline_suffix }}
+{{ hero.headline }}
 
-## What we do
+{{ hero.sub }}
 
-{{ hero.body }}
+## Operating Thesis
 
-## Fixed-scope deployments
+{{ hero.thesis }}
 
-{% for card in deployments.cards %}
-- **{{ card.title }}** ({{ card.code }}) — {{ card.duration }} sprint target.
-  {{ card.description }}
-  Focus: {{ card.focus }}
+{% for pillar in thesis_pillars %}
+- **{{ pillar.name }} ({{ pillar.role }})**: {{ pillar.desc }}
 {% endfor %}
 
-{{ deployments.scope_note }}
+## Fixed-Scope Engagements
 
-## How we deliver
-
-{{ method.intro }}
-{% for item in method.pillars %}
-- **{{ item.title }}**: {{ item.description }}
+{% for eng in engagements.entries %}
+- **{{ eng.name }}** ({{ eng.code }} — {{ eng.duration }}): {{ eng.desc }}
+  Deliverables:
+  {% for d in eng.deliverables %}
+  - {{ d }}
+  {% endfor %}
 {% endfor %}
 
-## Production experience
+{{ engagements.note }}
 
-{% for entry in proof.entries %}
-- **{{ entry.title }}**: {{ entry.description }} ({{ entry.tag }})
+## Internal Toolchain
+
+{{ toolchain.desc }}
+
+{% for mod in toolchain.modules %}
+- **{{ mod.title }}** ({{ mod.mono_tag }}): {{ mod.details }}
 {% endfor %}
 
-## Applied R&D
+## Applied Research
 
-{{ research.lead }}
+{{ research.premise }}
 
 {{ research.body }}
 
-{{ research.boundary_note }}
+Key focus: AST/SMT query verification, relational algebra compilation, symbolic execution (JPF/NeuroSPF).
 
-## Links
+Flywheel: {{ research.flywheel }}
 
-- [Website]({{ meta.canonical }})
-{% for link in footer.links %}
-- [{{ link.label | replace(' ↗', '') }}]({{ link.href }})
+GitHub: {{ research.github_url }}
+
+## Field Notes & Production Experience
+
+{% for note in field_notes.entries %}
+- **{{ note.title }}** ({{ note.client }} — {{ note.metric }}): {{ note.summary }}
 {% endfor %}
+
+Verification Credential: {{ field_notes.credential }}
+
+## Contact & Engagement
+
+- Discovery: {{ contact.email }}
+- Website: {{ meta.canonical }}
+- GitHub: https://github.com/sidrah-labs
+- LinkedIn: https://www.linkedin.com/company/sidrah-labs
