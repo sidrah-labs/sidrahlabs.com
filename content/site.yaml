@@ -35,16 +35,16 @@ nav:
 
 hero:
   eyebrow: "High-Assurance Infrastructure Lab"
-  headline_prefix: "Make data systems "
-  headline_accent: "safe to change"
-  headline_suffix: "."
+  headline_prefix: "Build data systems you can "
+  headline_accent: "trust"
+  headline_suffix: "—and change at AI speed."
   body: >
-    We modernize legacy data platforms with software that checks migrations and pipeline changes against the systems and rules they must preserve. Today, that means safer changes, lower operating costs, and trusted data for analytics and AI. In parallel, we are building the verification infrastructure to make automatically generated software safe to trust.
+    Enterprise AI pilots stall in production when stochastic models meet fragmented legacy ERPs and ungoverned data. Meanwhile, AI-generated pipelines move faster than human review can catch silent bugs. We re-architect legacy data into AI-ready Databricks lakehouses today, while building the formal verification infrastructure needed to make AI-paced engineering safer tomorrow.
   cta:
     label: "Start with technical discovery"
     href: "mailto:azeem@sidrahlabs.com?subject=Technical%20Discovery%20%E2%80%94%20Sidrah%20Labs"
     email: "azeem@sidrahlabs.com"
-  meta_index: "Legacy modernization · Verified change · Research toward trustworthy generated software"
+  meta_index: "AI-ready Lakehouses · Infrastructure for AI-Pace"
 
 thesis:
   kicker_label: "Why us"

@@ -2,11 +2,11 @@
 
 > Sidrah Labs makes data systems safe to change. We modernize legacy platforms with software that verifies migrations and pipeline changes—and build toward trustworthy automatically generated software.
 
-Make data systems safe to change.
+Build data systems you can trust—and change at AI speed.
 
 ## Overview
 
-We modernize legacy data platforms with software that checks migrations and pipeline changes against the systems and rules they must preserve. Today, that means safer changes, lower operating costs, and trusted data for analytics and AI. In parallel, we are building the verification infrastructure to make automatically generated software safe to trust.
+Enterprise AI pilots stall in production when stochastic models meet fragmented legacy ERPs and ungoverned data. Meanwhile, AI-generated pipelines move faster than human review can catch silent bugs. We re-architect legacy data into AI-ready Databricks lakehouses today, while building the formal verification infrastructure needed to make AI-paced engineering safer tomorrow.
 
 
 ## The hard part isn't moving data. It's changing systems without breaking trust.
